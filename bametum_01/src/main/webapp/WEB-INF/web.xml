@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>JoinService</servlet-name>
+  	<display-name>JoinService</display-name>
+  	<description></description>
+  	<servlet-class>com.tscm.controller.JoinService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JoinService</servlet-name>
+  	<url-pattern>/JoinService</url-pattern>
+  </servlet-mapping>
 </web-app>

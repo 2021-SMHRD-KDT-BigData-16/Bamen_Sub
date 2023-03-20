@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tscm.model.MemberDAO">
+
+  <insert id="join" parameterType="com.tscm.model.MemberDTO">
+  
+<!-- 
+	1-1) SQL 문 안에 세미콜론 금지 
+	1-2) #{} 안에 공백금지, #{}는 getter method 를 사용함. 
+-->  
+	insert into WEB_MEMBER 
+		values (#{email}, #{pw}, #{tel}, #{address})
+  
+  </insert>
+  
+  <select id="login" 
+  		parameterType="com.tscm.model.MemberDTO" 
+  		resultType="com.tscm.model.MemberDTO">
+<!-- 
+	1-1) SQL 문 안에 세미콜론 금지 
+	1-2) #{} 안에 공백금지, #{}는 getter method 를 사용함. 
+-->  
+	select * from WEB_MEMBER 
+		where email = #{email} and pw = #{pw}
+  
+  </select>
+  
+  
+</mapper>

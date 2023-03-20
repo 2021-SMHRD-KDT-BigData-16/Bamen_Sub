@@ -1,0 +1,86 @@
+23-03-19 16:54:17 [http-nio-8082-exec-1] DEBUG org.apache.jsp.main_jsp-- session getAttribute user : null 
+23-03-19 16:54:17 [http-nio-8082-exec-10] DEBUG org.apache.jsp.main_jsp-- session getAttribute user : null 
+23-03-19 16:54:19 [http-nio-8082-exec-13] DEBUG org.apache.jsp.main_jsp-- session getAttribute user : null 
+23-03-19 16:54:19 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp-- session getAttribute user : null 
+23-03-19 16:54:30 [http-nio-8082-exec-11] DEBUG com.tscm.controller.JoinService-- JoinService - service - start
+23-03-19 16:54:30 [http-nio-8082-exec-11] DEBUG com.tscm.controller.JoinService-- email : 12, pw : 12, tel : 12, add : 12 
+23-03-19 17:23:20 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG com.tscm.controller.JoinService- email : 12, pw : 12, tel : 12, add : 12 
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 282745016.
+23-03-19 17:23:27 [http-nio-8082-exec-3] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-19 17:23:28 [http-nio-8082-exec-3] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: 12(String), 12(String), 12(String), 12(String)
+23-03-19 17:23:28 [http-nio-8082-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@10da58b8]
+23-03-19 17:23:28 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 282745016 to pool.
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.controller.JoinService- email : gg, pw : gg, tel : gg, add : gg 
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 282745016 from pool.
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: gg(String), gg(String), gg(String), gg(String)
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.model.MemberDAO.join- <==    Updates: 1
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.model.MemberDAO- insert join - cnt: 1 
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@10da58b8]
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 282745016 to pool.
+23-03-19 17:24:05 [http-nio-8082-exec-6] DEBUG com.tscm.controller.JoinService- dao.join success cnt : 1
+23-03-19 23:26:42 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:28:10 [http-nio-8082-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:29:17 [http-nio-8082-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:29:44 [http-nio-8082-exec-7] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:30:53 [http-nio-8082-exec-10] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:30:55 [http-nio-8082-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:31:11 [http-nio-8082-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:35:01 [http-nio-8082-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:35:04 [http-nio-8082-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:07 [http-nio-8082-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:20 [http-nio-8082-exec-3] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:41 [http-nio-8082-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:41 [http-nio-8082-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:42 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:42 [http-nio-8082-exec-3] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:42 [http-nio-8082-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:59 [http-nio-8082-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:36:59 [http-nio-8082-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:37:00 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:37:01 [http-nio-8082-exec-3] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:37:42 [http-nio-8082-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:37:44 [http-nio-8082-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:38:31 [http-nio-8082-exec-3] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:39:54 [http-nio-8082-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:40:20 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:40:21 [http-nio-8082-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:40:55 [http-nio-8082-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:40:56 [http-nio-8082-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:41:21 [http-nio-8082-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:41:36 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:43:57 [http-nio-8082-exec-7] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:43:59 [http-nio-8082-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:44:38 [http-nio-8082-exec-10] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:44:55 [http-nio-8082-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:44:56 [http-nio-8082-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:45:07 [http-nio-8082-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-19 23:45:37 [http-nio-8082-exec-10] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 08:49:41 [http-nio-8082-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 08:49:50 [http-nio-8082-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 08:49:56 [http-nio-8082-exec-3] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-20 08:49:56 [http-nio-8082-exec-3] DEBUG com.tscm.controller.JoinService- email : 12, pw : 12, tel : 12, add : 12 
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 1620387717.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: 12(String), 12(String), 12(String), 12(String)
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG com.tscm.model.MemberDAO.join- <==    Updates: 1
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG com.tscm.model.MemberDAO- insert join - cnt: 1 
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@60952785]
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1620387717 to pool.
+23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG com.tscm.controller.JoinService- dao.join success cnt : 1
