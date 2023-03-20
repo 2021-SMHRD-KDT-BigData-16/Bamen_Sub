@@ -14,7 +14,7 @@
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>
-			D:/Git/WebProject/bametum_01/logs/bamentum.log
+			D:/TeamGit/Bamen_Sub/bametum_01/logs/bamentum.log
 			<!-- TestBatis.log -->
 		</file>
 		<rollingPolicy
@@ -22,7 +22,7 @@
 			<!-- daily rollover. Make sure the path matches the one in the file element 
 				or else the rollover logs are placed in the working directory. -->
 			<fileNamePattern>
-				D:/Git/WebProject/bametum_01/logs/bamentum_%d{yyyy-MM-dd}.%i.log
+				D:/TeamGit/Bamen_Sub/bametum_01/logs/bamentum_%d{yyyy-MM-dd}.%i.log
 				<!-- TestBatis_%d{yyyy-MM-dd}.%i.log -->
 			</fileNamePattern>
 

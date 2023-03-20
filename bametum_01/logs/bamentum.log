@@ -84,3 +84,59 @@
 23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@60952785]
 23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1620387717 to pool.
 23-03-20 08:49:57 [http-nio-8082-exec-3] DEBUG com.tscm.controller.JoinService- dao.join success cnt : 1
+23-03-20 12:12:34 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG com.tscm.controller.JoinService- email : aaa@aaa.aaa, pw : aaa, tel : 010-0101-0101, add : 남구송하동 
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:13:23 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 265330720.
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: aaa@aaa.aaa(String), aaa(String), 010-0101-0101(String), 남구송하동(String)
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG com.tscm.model.MemberDAO.join- <==    Updates: 1
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG com.tscm.model.MemberDAO- insert join - cnt: 1 
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@fd0a020]
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 265330720 to pool.
+23-03-20 12:13:24 [http-nio-8087-exec-7] DEBUG com.tscm.controller.JoinService- dao.join success cnt : 1
+23-03-20 12:30:22 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG com.tscm.controller.JoinService- email : 133, pw : 133, tel : 133, add : 133 
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-20 12:30:47 [http-nio-8087-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 1309095721.
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: 133(String), 133(String), 133(String), 133(String)
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG com.tscm.model.MemberDAO.join- <==    Updates: 1
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG com.tscm.model.MemberDAO- insert join - cnt: 1 
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4e073729]
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1309095721 to pool.
+23-03-20 12:30:48 [http-nio-8087-exec-6] DEBUG com.tscm.controller.JoinService- dao.join success cnt : 1
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG com.tscm.controller.JoinService- email : 133, pw : 133, tel : 133, add : 133 
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1309095721 from pool.
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: 133(String), 133(String), 133(String), 133(String)
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4e073729]
+23-03-20 12:31:23 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1309095721 to pool.
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.controller.JoinService- JoinService - service - start
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.controller.JoinService- email : 144, pw : 144, tel : 144, add : 144 
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1309095721 from pool.
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.model.MemberDAO.join- ==>  Preparing: insert into WEB_MEMBER values (?, ?, ?, ?)
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.model.MemberDAO.join- ==> Parameters: 144(String), 144(String), 144(String), 144(String)
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.model.MemberDAO.join- <==    Updates: 1
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.model.MemberDAO- insert join - cnt: 1 
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4e073729]
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1309095721 to pool.
+23-03-20 12:31:47 [http-nio-8087-exec-1] DEBUG com.tscm.controller.JoinService- dao.join success cnt : 1
+23-03-20 12:39:08 [http-nio-8087-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 12:40:22 [http-nio-8087-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-20 13:34:06 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 

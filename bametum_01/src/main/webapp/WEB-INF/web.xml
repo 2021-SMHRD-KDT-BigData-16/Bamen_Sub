@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>com.tscm.controller.JoinService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogInService</servlet-name>
+  	<display-name>LogInService</display-name>
+  	<description></description>
+  	<servlet-class>com.tscm.controller.LogInService</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/JoinService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogInService</servlet-name>
+  	<url-pattern>/LogInService</url-pattern>
   </servlet-mapping>
 </web-app>

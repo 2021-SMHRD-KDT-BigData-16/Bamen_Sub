@@ -18,7 +18,9 @@
 
 <!-- 
 	<img alt="이미지가 없네요" src="./DATA/PostImage/img001.jpg">
+	<img alt="이미지가 없네요" src="./DATA/PostImage/img021.jpg">
  -->
+	<img alt="이미지가 없네요" src="./DATA/PostImage/img021.jpg">
  
 	<!-- 회원가입 전체 흐름
 	
@@ -27,7 +29,6 @@
 		-> memberDAO.java -> JoinServive.java -> join_success.jsp
 	-->
 
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -35,7 +36,15 @@
 		<header id="header" class="alt"> <a href="index.jsp" class="logo">
 			<strong>해품달</strong> <span> 바멘텀 01 </span></a> 
 			<nav>
-				<a href="#menu">로그인</a> <!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오. -->
+			 	<c:if test="${empty user}">
+					<a href="#menu">로그인</a>
+				</c:if>
+	
+			 	<c:if test="${!empty user}">
+					<a href="update.jsp">개인정보수정</a>
+					<a href="LogoutService">로그아웃</a>
+				</c:if>
+			
 			</nav> 
 		</header>
 
@@ -43,11 +52,11 @@
 		<nav id="menu">
 		<ul class="links">
 			<li><h5>로그인</h5></li>
-			<form>
-				<li><input type="text" placeholder="Email을 입력하세요"></li>
-				<li><input type="password" placeholder="PW를 입력하세요"></li>
-				<li><input type="submit" value="LogIn" class="button fit"></li>
-			</form>
+				<form action="LogInService" method="post" >
+					<li><input type="text" name="email" placeholder="Email을 입력하세요"></li>
+					<li><input type="password" name="pw" placeholder="PW를 입력하세요"></li>
+					<li><input type="submit" value="LogIn" class="button fit"></li>
+				</form>
 		</ul>
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
