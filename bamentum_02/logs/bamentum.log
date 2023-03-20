@@ -1,0 +1,47 @@
+23-03-21 00:01:15 [http-nio-8082-exec-23] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.controller.LogInService-  email : ccc@ccc.ccc, pw : ccc
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.model.BmtUserDAO-  login email: ccc@ccc.ccc, pw:ccc 
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1288481353 from pool.
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: ccc@ccc.ccc(String), ccc(String)
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.model.BmtUserDAO-  login success email : ccc@ccc.ccc 
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4cccaa49]
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1288481353 to pool.
+23-03-21 00:01:33 [http-nio-8082-exec-22] DEBUG com.tscm.controller.LogInService-  return email : ccc@ccc.ccc 
+23-03-21 00:01:33 [http-nio-8082-exec-24] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@2851bb0f 
+23-03-21 08:29:44 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 1804702302.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@6b91925e]
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1804702302 to pool.
+23-03-21 08:29:58 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 08:29:58 [http-nio-8087-exec-7] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@48738d83 
+23-03-21 08:30:05 [http-nio-8087-exec-3] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  email : ddd@ddd.ddd, pw : ddd
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO-  login email: ddd@ddd.ddd, pw:ddd 
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1804702302 from pool.
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: ddd@ddd.ddd(String), ddd(String)
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.model.BmtUserDAO-  login success email : ddd@ddd.ddd 
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@6b91925e]
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1804702302 to pool.
+23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  return email : ddd@ddd.ddd 
+23-03-21 08:30:15 [http-nio-8087-exec-7] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3d1e585b 
