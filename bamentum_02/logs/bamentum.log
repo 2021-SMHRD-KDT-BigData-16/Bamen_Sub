@@ -45,3 +45,484 @@
 23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1804702302 to pool.
 23-03-21 08:30:15 [http-nio-8087-exec-8] DEBUG com.tscm.controller.LogInService-  return email : ddd@ddd.ddd 
 23-03-21 08:30:15 [http-nio-8087-exec-7] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3d1e585b 
+23-03-21 08:46:53 [http-nio-8087-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService-  email : bbb@bbb.bbb, pw : bbb
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO-  login email: bbb@bbb.bbb, pw:bbb 
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1804702302 from pool.
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: bbb@bbb.bbb(String), bbb(String)
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO-  login success email : bbb@bbb.bbb 
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@6b91925e]
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1804702302 to pool.
+23-03-21 08:47:10 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService-  return email : bbb@bbb.bbb 
+23-03-21 08:47:10 [http-nio-8087-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@7c0c9b95 
+23-03-21 10:12:39 [http-nio-8087-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  email : aas@aaa.aaa, pw : aaa
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO-  login email: aas@aaa.aaa, pw:aaa 
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1804702302 from pool.
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aas@aaa.aaa(String), aaa(String)
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 0
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO-  login fail : null 
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@6b91925e]
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1804702302 to pool.
+23-03-21 10:12:51 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  return retDto : null 
+23-03-21 10:12:51 [http-nio-8087-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1804702302 from pool.
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@6b91925e]
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1804702302 to pool.
+23-03-21 10:13:06 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 10:13:06 [http-nio-8087-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@5e3b2a63 
+23-03-21 10:14:15 [http-nio-8087-exec-9] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@5e3b2a63 
+23-03-21 11:41:51 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 214549394.
+23-03-21 11:42:02 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 11:42:03 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 11:42:03 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 11:42:03 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 11:42:03 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@cc9c392]
+23-03-21 11:42:03 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 214549394 to pool.
+23-03-21 11:42:03 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 11:42:03 [http-nio-8087-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3a7b51b5 
+23-03-21 11:42:08 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:42:08 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start
+23-03-21 11:43:16 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:43:16 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start
+23-03-21 11:48:08 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 11:48:17 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 1775146340.
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@69ce9564]
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1775146340 to pool.
+23-03-21 11:48:18 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 11:48:18 [http-nio-8087-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3dbe8a79 
+23-03-21 11:48:23 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:48:23 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 11:48:23 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start
+23-03-21 11:50:47 [http-nio-8087-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3dbe8a79 
+23-03-21 11:50:50 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:50:50 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 11:50:50 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start
+23-03-21 11:51:13 [http-nio-8087-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1775146340 from pool.
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@69ce9564]
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1775146340 to pool.
+23-03-21 11:51:24 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 11:51:24 [http-nio-8087-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@4a031868 
+23-03-21 11:51:29 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:51:29 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 11:51:29 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start
+23-03-21 11:56:39 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 11:56:45 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 11:56:45 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 11:56:45 [http-nio-8087-exec-3] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 1775146340.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@69ce9564]
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1775146340 to pool.
+23-03-21 11:56:46 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 11:56:46 [http-nio-8087-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3dbe8a79 
+23-03-21 11:56:49 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:56:49 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 11:56:49 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 11:58:51 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:58:51 [http-nio-8087-exec-5] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 11:58:51 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:58:51 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:58:51 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:58:51 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:59:02 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:59:08 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:59:41 [http-nio-8087-exec-4] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 11:59:48 [http-nio-8087-exec-5] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 2036482144.
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@79624060]
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 2036482144 to pool.
+23-03-21 11:59:49 [http-nio-8087-exec-5] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 11:59:49 [http-nio-8087-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@3dbe8a79 
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 2036482144 from pool.
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - %d : %s %n
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@79624060]
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 2036482144 to pool.
+23-03-21 11:59:52 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:01:09 [http-nio-8087-exec-10] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:01:09 [http-nio-8087-exec-10] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 12:01:09 [http-nio-8087-exec-10] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:09 [http-nio-8087-exec-10] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:09 [http-nio-8087-exec-10] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:09 [http-nio-8087-exec-10] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:50 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 1282013472.
+23-03-21 12:01:57 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 12:01:58 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 12:01:58 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 12:01:58 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 12:01:58 [http-nio-8087-exec-4] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:01:58 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:01:58 [http-nio-8087-exec-4] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 12:01:58 [http-nio-8087-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@787651f3 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : ./DATA/PostImage/img011.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : ./DATA/PostImage/img012.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : ./DATA/PostImage/img013.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : ./DATA/PostImage/img014.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : ./DATA/PostImage/img015.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : ./DATA/PostImage/img016.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : ./DATA/PostImage/img017.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : ./DATA/PostImage/img018.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : ./DATA/PostImage/img019.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : ./DATA/PostImage/img020.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : ./DATA/PostImage/img021.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : ./DATA/PostImage/img022.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : ./DATA/PostImage/img023.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : ./DATA/PostImage/img024.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : ./DATA/PostImage/img025.jpg 
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:02:01 [http-nio-8087-exec-6] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:10:45 [http-nio-8087-exec-1] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@787651f3 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : ./DATA/PostImage/img011.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : ./DATA/PostImage/img012.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : ./DATA/PostImage/img013.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : ./DATA/PostImage/img014.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : ./DATA/PostImage/img015.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : ./DATA/PostImage/img016.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : ./DATA/PostImage/img017.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : ./DATA/PostImage/img018.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : ./DATA/PostImage/img019.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : ./DATA/PostImage/img020.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : ./DATA/PostImage/img021.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : ./DATA/PostImage/img022.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : ./DATA/PostImage/img023.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : ./DATA/PostImage/img024.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : ./DATA/PostImage/img025.jpg 
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:10:48 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:14:38 [http-nio-8087-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@787651f3 
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:14:44 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:14:49 [http-nio-8087-exec-2] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:14:52 [http-nio-8087-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 12:16:11 [http-nio-8087-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:16:17 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 12:16:17 [http-nio-8087-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@1b233e95 
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:16:20 [http-nio-8087-exec-1] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:18:18 [http-nio-8087-exec-6] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@1b233e95 
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:18:20 [http-nio-8087-exec-7] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:21:11 [http-nio-8087-exec-10] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@1b233e95 
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:21:13 [http-nio-8087-exec-9] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:22:10 [http-nio-8087-exec-8] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@1b233e95 
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 1282013472 from pool.
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4c69f920]
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 1282013472 to pool.
+23-03-21 12:22:12 [http-nio-8087-exec-3] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
+23-03-21 12:34:48 [http-nio-8087-exec-2] DEBUG org.apache.jsp.main_jsp- session getAttribute user : null 
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.controller.LogInService-  LogInService service - start 
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.controller.LogInService-  email : aaa@aaa.aaa, pw : aaa
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.apache.ibatis.logging.LogFactory- Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- PooledDataSource forcefully closed/removed all connections.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO-  login email: aaa@aaa.aaa, pw:aaa 
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- Created connection 307536918.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==>  Preparing: select * from bmt_user where email = ? and pw = ?
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO.bmt_login- ==> Parameters: aaa@aaa.aaa(String), aaa(String)
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO.bmt_login- <==      Total: 1
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.model.BmtUserDAO-  login success email : aaa@aaa.aaa 
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1254a416]
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 307536918 to pool.
+23-03-21 12:34:56 [http-nio-8087-exec-4] DEBUG com.tscm.controller.LogInService-  return email : aaa@aaa.aaa 
+23-03-21 12:34:56 [http-nio-8087-exec-5] DEBUG org.apache.jsp.main_jsp- session getAttribute user : com.tscm.model.BmtUserDTO@6a401777 
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.controller.LogInService-  SelectMyPage service - start 
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.controller.LogInService-  email aaa@aaa.aaa  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage start email aaa@aaa.aaa
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Opening JDBC Connection
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Checked out connection 307536918 from pool.
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==>  Preparing: select * from bmt_post p where p.email = ? and p.boardid = 1
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- ==> Parameters: aaa@aaa.aaa(String)
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG c.t.m.BmtUserDAO.bmt_selectMyPage- <==      Total: 15
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 0 : 영상미 하나로 10점 아맥 3d로 보세요 꼭 이토록 눈이 즐거운 영화는 얼마만인가....  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 1 : 이영화 미쳤다! 13년 기다린 보람이 있습니다!  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 2 : 2만원에 외계 행성 여행이면 저렴하네요  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 3 : 평점 개판났네..최소 9.5점짜리입니다  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 4 : 영화본다고 생각하지말고 외계 아쿠아리움 구경한다고 생각하고 보세요  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 5 : 왜 자꾸 cg가 대단하다고 뻥치는지 모르겠다이건 그냥 판도라 행성 가서 찍은거잖아  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 6 : 영상미 하나만으로도 충분히 볼 가치가있다  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 7 : 스토리가 새로운 영화는 아닙니다. 하지만 아바타 세계관에 집중할 수 있도록 스토리를 만들었으며 보여지는 장면 하나하나가 너무 알차고 경이롭습니다.   새로운 재미보다 아바타 세상에 체험한다는 시점으로 영화를 관람하면...  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 8 : CG미쳤다 바다 물멍 잘하고 갑니다  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 9 : 자식들은 말 안듣고, 툴쿤이 제일 말 잘 듣네  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 10 : 3D 안경 착용하고 3시간 길이의 영화를 보는 건  버겁지만 바닷 속 시각적인 디테일과 환경 보존에 대한 메세지를 잘 전달한 영화.  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 11 : 영화관의 존재 이유를 상기시키는 영화. 영화가 관객에게 주는 가치와 즐거움이 다양할텐데, 아바타2는 영화관에서 즐길 수 있는 영화적 체험 측면에서 역대 최고라고 할 수 있음  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 12 : 역시 타노스가 옳았고 인간은 정도를 모른다  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 13 : 영상미 좋고 3시간이 별로 안지루함 13년기다린 보람이 있음  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.model.BmtUserDAO- selectMyPage - 14 : 마지막 전투에서 바다부족은 어디갔는지 보이지도 않고.. 대령은 왜 살려주는건지 이해도 안되고..영상미만 좋으면 뭐하나..  
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG o.a.i.t.jdbc.JdbcTransaction- Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1254a416]
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG o.a.i.d.pooled.PooledDataSource- Returned connection 307536918 to pool.
+23-03-21 12:35:01 [http-nio-8087-exec-6] DEBUG com.tscm.controller.LogInService- SelectMyPage - listDto size 15
