@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	1-1) SQL 문 안에 세미콜론 금지 
+	1-2) #{} 안에 공백금지, #{}는 getter method 를 사용함. 
+-->  
+  <!--
+  id : 쿼리문을 구분할 수 있는 식별자(메소드 명과 동일하게 사용)
+  parameterType : DAO에서부터 받아오는 매개변수의 자료형 지정
+  			(풀네임을 작성해야함 >> package 명까지 ) 
+  resultType : SQL 구문을 실행하고 나서 결과값을 java내부에서 어떤 자료형으로 받아올건지 지정
+  			(풀네임을 작성해야함 >> package 명까지 )
+  			*** select 구문 작성할 때 꼭 써주기!!! 
+   -->
+  
+<mapper namespace="com.tscm.model.BmtUserDAO">
+
+  <insert id="bmt_join" parameterType="com.tscm.model.BmtUserDTO">
+  
+	insert into bmt_user 
+		values (#{email}, #{pw}, #{u_name}, #{profileimg}, #{profiletext})
+  
+  </insert>
+  
+  
+  <select id="bmt_login" 
+  		parameterType="com.tscm.model.BmtUserDTO" 
+  		resultType="com.tscm.model.BmtUserDTO">
+  		
+	select * from bmt_user 
+		where email = #{email} and pw = #{pw}
+  
+  </select>
+
+  <update id="bmt_update" parameterType="com.tscm.model.BmtUserDTO">
+  
+	update bmt_user 
+		set pw = #{pw}
+			, u_name = #{u_name}
+			, profileimg = #{profileimg}
+			, profiletext = #{profiletext}
+	where email = #{email}
+  
+  </update>
+  
+
+</mapper>
