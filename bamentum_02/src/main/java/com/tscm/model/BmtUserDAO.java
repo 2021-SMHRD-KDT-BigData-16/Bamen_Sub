@@ -1,5 +1,7 @@
 package com.tscm.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
@@ -70,5 +72,32 @@ public class BmtUserDAO {
 		return iRet;
 	}	
 
+	public List<BmtPostDTO> selectMyPage(BmtUserDTO dtoGet) {
+		List<BmtPostDTO> listDto = null;
+
+		LOG.debug("selectMyPage start email {}", dtoGet.getEmail());
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			listDto = session.selectList("bmt_selectMyPage", dtoGet);
+			if (listDto != null) {
+				for(int i=0; i< listDto.size(); i++)
+				{
+					LOG.debug("selectMyPage - {} : {} ", 
+							i, listDto.get(i).getP_content());
+				}
+			} else {
+				LOG.debug("selectMyPage fail");
+			}
+			
+		} finally {
+			session.close();
+		}
+		
+		return listDto;
+	}	
+
+	
+	
 
 }

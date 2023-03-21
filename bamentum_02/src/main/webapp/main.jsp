@@ -41,6 +41,7 @@
 				</c:if>
 
 			 	<c:if test="${!empty user}">
+					<a href="SelectMyPage">개인페이지</a>
 					<a href="update.jsp">개인정보수정</a>
 					<a href="LogoutService">로그아웃</a>
 				</c:if>

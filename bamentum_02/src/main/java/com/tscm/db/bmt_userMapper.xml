@@ -46,6 +46,18 @@
 	where email = #{email}
   
   </update>
+
+  <select id="bmt_selectMyPage" 
+  		parameterType="com.tscm.model.BmtUserDTO" 
+  		resultType="com.tscm.model.BmtPostDTO">
+  		
+	select *
+	    from bmt_post p
+	where p.email = #{email}
+	    and p.boardid = 1
+  
+  </select>
+
   
 
 </mapper>

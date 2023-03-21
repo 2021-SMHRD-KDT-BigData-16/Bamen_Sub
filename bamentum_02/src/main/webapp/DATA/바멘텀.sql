@@ -24,8 +24,8 @@ CREATE TABLE Bmt_Post (
 	BoardId	NUMBER(10)		NOT NULL,
 	Email	VarChar2(50)		NOT NULL,
 	Title	VarChar2(100)		NULL,
-	P_Content	VARCHAR2(2000)		NULL,
-	ImgPath	VarChar2(500)		NULL
+	ImgPath	VarChar2(500)		NULL,
+	P_Content	VARCHAR2(2000)		NULL
 	
    ,foreign key (Email) references Bmt_User(Email)
    ,foreign key (BoardId) references Bmt_Board(BoardId)
@@ -168,3 +168,32 @@ select u.email, p.email, p.p_content, p.imgpath
     from bmt_user u, bmt_post p
 where u.email = p.email;
     
+commit;
+
+select *
+    from bmt_post p
+where p.email = #{email}
+    and p.boardid = 1;
+
+insert into Bmt_Reply values (100001, 0, 0,  002, '', 'bbb@bbb.bbb');
+
+    
+
+
+
+
+
+
+CREATE TABLE Bmt_Reply (
+	ReplyId	Number(10)		PRIMARY KEY,
+	ParentId	Number(10)		NOT NULL,
+	R_Depth	Number(5)		NULL,
+	PostId	NUMBER(10)		NOT NULL,
+	Reply	VarChar2(500)		NULL,
+	Email	VarChar2(50)		NOT NULL
+	
+   ,foreign key (Email) references Bmt_User(Email)
+   ,foreign key (PostId) references Bmt_Post(PostId)
+	
+);
+
