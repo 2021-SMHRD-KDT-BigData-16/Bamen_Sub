@@ -3,7 +3,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.tscm.model.BmtPostDTO"%>
-<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,7 +22,7 @@
 	<%
 		// request 에 있는 list 데이터 꺼내오기
 		
-		ArrayList<BmtPostDTO> listDto = (ArrayList)request.getAttribute("listMyPage");;
+		List<BmtPostDTO> listDto = (List)request.getAttribute("listPage");;
 		
 		if(listDto != null)
 		{
@@ -47,7 +47,7 @@
 				<!-- Menu -->
 					<nav id="Update">	
 						<table>
-							<caption><h2>개인페이지</h2></caption>
+							<caption><h2>공용페이지</h2></caption>
 							<tr>
 								<td>Email</td>
 								<td>image</td>

@@ -97,7 +97,30 @@ public class BmtUserDAO {
 		return listDto;
 	}	
 
-	
+	public List<BmtPostDTO> selectPublic() {
+		List<BmtPostDTO> listDto = null;
+
+		LOG.debug("selectPublic start ");
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			listDto = session.selectList("bmt_selectPublic");
+			if (listDto != null) {
+				for(int i=0; i< listDto.size(); i++)
+				{
+					LOG.debug("selectPublic - {} : {} ", 
+							i, listDto.get(i).getP_content());
+				}
+			} else {
+				LOG.debug("selectPublic fail");
+			}
+			
+		} finally {
+			session.close();
+		}
+		
+		return listDto;
+	}
 	
 
 }

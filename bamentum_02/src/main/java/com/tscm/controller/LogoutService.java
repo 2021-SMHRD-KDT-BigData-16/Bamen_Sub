@@ -1,31 +1,30 @@
 package com.tscm.controller;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/LogoutService")
-public class LogoutService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class LogoutService implements Command {
+	private static final Logger LOG = LoggerFactory.getLogger(LogoutService.class); 
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		LOG.debug(" {} service - start ", "LogOutService");
+		String moveURL = null;
 		
-		// 로그아웃 요청시 session에 저장된 데이터 삭제!
-		// 1. session 영역 생성
-		// 2. session 에 들어 있는 "user" 정보 삭제!
-		// 		- remove()
-		//		- invalidate()
-		// 3. redirect 로 main.jsp 이동
-		System.out.println("LogoutService - service - start");
-		request.setCharacterEncoding("UTF-8");
-		HttpSession session = request.getSession();
-		session.invalidate();
-		response.sendRedirect("main.jsp");
-		
+		try {
+			request.setCharacterEncoding("UTF-8");
+			HttpSession session = request.getSession();
+			session.invalidate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			LOG.debug(" Exception {}  ", e);
+		}
+		moveURL =  "main.jsp"; 
+		return moveURL;
 	}
 
 }

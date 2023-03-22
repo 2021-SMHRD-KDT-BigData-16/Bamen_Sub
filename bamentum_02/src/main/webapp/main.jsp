@@ -41,9 +41,10 @@
 				</c:if>
 
 			 	<c:if test="${!empty user}">
-					<a href="SelectMyPage">개인페이지</a>
+					<a href="MyPage.do">개인페이지</a>
+					<a href="PublicPage.do">공용페이지</a>
 					<a href="update.jsp">개인정보수정</a>
-					<a href="LogoutService">로그아웃</a>
+					<a href="Logout.do">로그아웃</a>
 				</c:if>
 				
 			</nav> 
@@ -53,7 +54,7 @@
 		<nav id="menu">
 		<ul class="links">
 			<li><h5>로그인</h5></li>
-				<form action="LogInService" method="post" >
+				<form action="LogIn.do" method="post" >
 					<li><input type="text" name="email" placeholder="Email을 입력하세요"></li>
 					<li><input type="password" name="pw" placeholder="PW를 입력하세요"></li>
 					<li><input type="submit" value="LogIn" class="button fit"></li>
@@ -61,7 +62,7 @@
 		</ul>
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
-			<form action = "JoinService" method = "post">
+			<form action = "Join.do" method = "post">
 				<li><input type="text" name = "email" placeholder="Email을 입력하세요"></li>
 				<li><input type="password" name = "pw" placeholder="PW를 입력하세요"></li>
 				<li><input type="text" name = "u_name" placeholder="이름을 입력하세요"></li>

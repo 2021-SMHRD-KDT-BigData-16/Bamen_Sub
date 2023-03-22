@@ -58,6 +58,13 @@
   
   </select>
 
+
+  <select id="bmt_selectPublic" 
+  		resultType="com.tscm.model.BmtPostDTO">
+  		
+	select *
+	    from bmt_post p
   
+  </select>
 
 </mapper>

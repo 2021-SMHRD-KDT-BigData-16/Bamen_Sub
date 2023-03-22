@@ -8,50 +8,58 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.tscm.model.MemberDAO;
-import com.tscm.model.MemberDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@WebServlet("/UpdateService")
-public class UpdateService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import com.tscm.model.BmtUserDTO;
+import com.tscm.model.BmtUserDAO;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("UpdateService - service - start");
+public class UpdateService implements Command {
+	private static final Logger LOG = LoggerFactory.getLogger(UpdateService.class);
+	
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		LOG.debug(" {} service - start ", "UpdateService");
+		String moveURL = null;
 		
-		// 1. 인코딩 작업
-		// 2. 수정하고자 넘겨준 데이터 꺼내오기
-		// 		+) 수정하고자 하는 회원의 email 필요!
-		// 3. 데이터 MemberDTO 형태로 묶어주기
-		// 4. DAO로 접근할수 있는 메소드 사용 (DAO -> update())
-		// 5. main.jsp로 이동.
-		
-		request.setCharacterEncoding("UTF-8");
-		
-		HttpSession session = request.getSession();
-		MemberDTO retDto = (MemberDTO)session.getAttribute("user");
-		String email = retDto.getEmail();
-		
-		String pw = request.getParameter("pw");
-		String tel = request.getParameter("tel");
-		String address = request.getParameter("address");
-		System.out.printf("email : %s, pw : %s, tel : %s, add : %s %n", email, pw, tel, address);
-		
-		MemberDTO dto = new MemberDTO(email, pw, tel, address);
-		MemberDAO dao = new MemberDAO();
-		int iRet = dao.update(dto);
-		if(iRet > 0) {
-			System.out.printf("update success iRet : %d %n", iRet);
-			retDto = dao.login(dto);
-			if(retDto != null) {
-				System.out.printf("ret email : %s %n", retDto.getEmail());
-				session.setAttribute("user", retDto);
-			}			
+		try {
+			request.setCharacterEncoding("UTF-8");
 			
-		} else {
-			System.out.printf("update fail iRet : %d %n", iRet);
+			HttpSession session = request.getSession();
+			BmtUserDTO retDto = (BmtUserDTO)session.getAttribute("user");
+			String email = retDto.getEmail();
+			
+			String pw = request.getParameter("pw");
+			String u_name = request.getParameter("u_name");
+			String profileimg = request.getParameter("profileimg");
+			String profiletext = request.getParameter("profiletext");
+			
+			LOG.debug(" email : {}, pw : {}, u_name : {}, pf_img : {} pf_text : {} ", email, pw, u_name, profileimg, profiletext);
+			
+			BmtUserDTO dto = new BmtUserDTO(email, pw, u_name, profileimg, profiletext);
+			BmtUserDAO dao = new BmtUserDAO();
+			int iRet = dao.update(dto);
+			if(iRet > 0) {
+				LOG.debug("update success iRet : {}", iRet);
+				retDto = dao.login(dto);
+				if(retDto != null) {
+					System.out.printf("ret email : %s %n", retDto.getEmail());
+					LOG.debug("ret email : {}", retDto.getEmail());
+					session.setAttribute("user", retDto);
+				}			
+				
+			} else {
+				LOG.debug(" update Fail iRet: {} ", iRet);
+			}
+
+			moveURL = "main.jsp";
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			LOG.debug(" exception : {} ", e);
 		}
-		
-		response.sendRedirect("main.jsp");
+		return moveURL;
 	}
+
 
 }
