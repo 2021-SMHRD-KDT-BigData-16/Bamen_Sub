@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 1) mapper 태그 안쪽에 SQL 쿼리문들을 작성 -->  
+<!-- namespace : 식별자(mapper 파일이 여러개일때 중복되지 않게 작성) -->  
+<mapper namespace="com.tscm.model.MemberDAO">
+
+<insert id="join" parameterType="com.tscm.model.MemberDTO">
+  
+<!-- 
+	1-1) SQL 문 안에 세미콜론 금지 
+	1-2) #{} 안에 공백금지, #{}는 getter method 를 사용함. 
+-->  
+	insert into WEB_MEMBER 
+		values (#{email}, #{pw}, #{tel}, #{address})
+  
+  </insert>
+  
+  <!--
+  id : 쿼리문을 구분할 수 있는 식별자(메소드 명과 동일하게 사용)
+  parameterType : DAO에서부터 받아오는 매개변수의 자료형 지정
+  			(풀네임을 작성해야함 >> package 명까지 ) 
+  resultType : SQL 구문을 실행하고 나서 결과값을 java내부에서 어떤 자료형으로 받아올건지 지정
+  			(풀네임을 작성해야함 >> package 명까지 )
+  			*** select 구문 작성할 때 꼭 써주기!!! 
+   -->
+  
+  <select id="login" 
+  		parameterType="com.tscm.model.MemberDTO" 
+  		resultType="com.tscm.model.MemberDTO">
+<!-- 
+	1-1) SQL 문 안에 세미콜론 금지 
+	1-2) #{} 안에 공백금지, #{}는 getter method 를 사용함. 
+-->  
+	select * from WEB_MEMBER 
+		where email = #{email} and pw = #{pw}
+  
+  </select>
+
+  <update id="update" parameterType="com.tscm.model.MemberDTO">
+  
+<!-- 
+	1-1) SQL 문 안에 세미콜론 금지 
+	1-2) #{} 안에 공백금지, #{}는 getter method 를 사용함. 
+-->  
+	update WEB_MEMBER 
+		set pw = #{pw}
+			, tel = #{tel}
+			, address = #{address}
+	where email = #{email}
+  
+  </update>
+  
+
+</mapper>
