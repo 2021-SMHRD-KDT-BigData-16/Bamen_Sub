@@ -14,16 +14,25 @@
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>
-			C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum.log
-			<!-- TestBatis.log -->
+		
+			<!--
+				C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum.log 
+				D:/Git/WebProject/bamentum_02/logs/bamentum.log
+			-->
+				C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum.log 
+			
 		</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover. Make sure the path matches the one in the file element 
 				or else the rollover logs are placed in the working directory. -->
 			<fileNamePattern>
-				C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
-				<!-- TestBatis_%d{yyyy-MM-dd}.%i.log -->
+				<!-- 
+					C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
+					D:/Git/WebProject/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
+				 -->
+					C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
+				
 			</fileNamePattern>
 
 			<timeBasedFileNamingAndTriggeringPolicy

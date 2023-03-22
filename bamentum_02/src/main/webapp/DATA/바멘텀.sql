@@ -65,9 +65,9 @@ CREATE TABLE Bmt_Friend (
 	
 );
 
-delete from Bmt_Post;
-delete from Bmt_Board;
-delete from Bmt_User;
+-- delete from Bmt_Post;
+-- delete from Bmt_Board;
+-- delete from Bmt_User;
 
 
 insert into Bmt_User values ('aaa@aaa.aaa', 'aaa', 'aaa', './DATA/PostImage/img001.jpg', 'CG에 돈 많이 썼다는건 개구라임. 다만 직접 판도라가서 수중촬영하긴 빡쎘을거 같음. 나비족 섭외에도 돈 많이 썼겠드만... ');
@@ -175,14 +175,8 @@ select *
 where p.email = #{email}
     and p.boardid = 1;
 
+/*
 insert into Bmt_Reply values (100001, 0, 0,  002, '', 'bbb@bbb.bbb');
-
-    
-
-
-
-
-
 
 CREATE TABLE Bmt_Reply (
 	ReplyId	Number(10)		PRIMARY KEY,
@@ -197,3 +191,4 @@ CREATE TABLE Bmt_Reply (
 	
 );
 
+*/
