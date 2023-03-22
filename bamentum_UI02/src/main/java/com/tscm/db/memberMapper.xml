@@ -8,7 +8,7 @@
 <!-- namespace : 식별자(mapper 파일이 여러개일때 중복되지 않게 작성) -->  
 <mapper namespace="com.tscm.model.MemberDAO">
 
-<insert id="join" parameterType="com.tscm.model.MemberDTO">
+  <insert id="join" parameterType="com.tscm.model.MemberDTO">
   
 <!-- 
 	1-1) SQL 문 안에 세미콜론 금지 

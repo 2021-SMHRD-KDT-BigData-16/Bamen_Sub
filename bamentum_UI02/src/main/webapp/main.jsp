@@ -1,5 +1,10 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored = "false" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="org.slf4j.Logger"%>
+<%@ page import="org.slf4j.LoggerFactory"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +68,7 @@
 					<div class="main-menu h-100">
 						<nav class="navbar h-100 navbar-expand-lg">
 							<!-- Logo Area  -->
-							<a class="navbar-brand" href="index.html"><img
+							<a class="navbar-brand" href="main.jsp"><img
 								src="img/core-img/bamentum.png" alt="Logo" width="100px"></a>
 
 							<button class="navbar-toggler" type="button"
@@ -77,28 +82,33 @@
 								<!-- Menu Area Start  -->
 								<ul class="navbar-nav ml-auto">
 									<li class="nav-item active"><a class="nav-link"
-										href="index.html">메인홈<span class="sr-only">(current)</span></a>
-									</li>
+										href="main.jsp">메인홈<span class="sr-only">(current)</span></a>
+									</li>											
+									
+									<c:if test="${!empty user}">
+									<li class="nav-item"><a class="nav-link"
+										href="login_success.jsp">내피드보기</a></li>
 									<li class="nav-item dropdown"><a
 										class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 										role="button" data-toggle="dropdown" aria-haspopup="true"
 										aria-expanded="false">게시판</a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-											<a class="dropdown-item" href="index.html">자유게시판</a> <a
-												class="dropdown-item" href="about-me.html">분실신고</a> <a
-												class="dropdown-item" href="portfolio.html">추천명소</a> <a
-												class="dropdown-item" href="blog.html">대리점정보</a> <a
-												class="dropdown-item" href="contact.html">수리예약</a> <a
-												class="dropdown-item" href="elements.html">이러쿵저러쿵</a>
+											<a class="dropdown-item" href="PublicPage.do">자유게시판</a> <a
+												class="dropdown-item" href="lostandfound.jsp">분실신고</a> <a
+												class="dropdown-item" href="hotspot.jsp">추천명소</a> <a
+												class="dropdown-item" href="blog.html">대리점정보</a>												
 										</div></li>
-									<li class="nav-item"><a class="nav-link"
-										href="about-me.html">위치조회</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="portfolio.html">내피드보기</a></li>
-									<li class="nav-item"><a class="nav-link" href="blog.html">차대번호등록</a>
-									</li>
-									<li class="nav-item"><a class="nav-link"
-										href="contact.html">회원정보</a></li>
+										<li class="nav-item dropdown"><a
+										class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">내정보</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											<a class="dropdown-item" href="PublicPage.do">내 자전거 등록하기</a> <a
+												class="dropdown-item" href="lostandfound.jsp">회원정보 변경</a> <a
+												class="dropdown-item" href="hotspot.jsp">추천명소</a>
+												
+										</div></li>							
+									</c:if>
 								</ul>
 								<!-- Search Form -->
 								<div class="header-search-form ml-auto">
@@ -149,7 +159,7 @@
 					<li>
 						<h5>로그인</h5>
 					</li>
-					<form action="LogInService" method="post">
+					<form action="LogIn.do" method="post">
 						<li><input type="text" name="email" placeholder="Id를 입력하세요"></li>
 						<li><input type="password" name="pw" placeholder="pw를 입력하세요"></li>
 						<li><input type="submit" value="login" class="button fit"></li>
@@ -160,7 +170,7 @@
 					<li>
 						<h5>회원가입</h5>
 					</li>
-					<form action="JoinService" method="post">
+					<form action="Join.do" method="post">
 						<li><input type="text" name="email" placeholder="id를 입력하세요"></li>
 						<li><input type="password" name="pw" placeholder="PW를 입력하세요"></li>
 						<li><input type="text" name="binum" placeholder="차대번호를 입력하세요"></li>
