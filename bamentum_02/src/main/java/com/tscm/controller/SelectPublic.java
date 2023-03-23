@@ -16,7 +16,7 @@ public class SelectPublic implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		LOG.debug(" {} service - start ", "SelectPublic");
+		LOG.debug(" {} start ", "SelectPublic");
 		String moveURL = null;
 		try {
 			request.setCharacterEncoding("UTF-8");
