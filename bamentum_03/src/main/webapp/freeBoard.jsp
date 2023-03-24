@@ -64,7 +64,6 @@
 	        
 	            
 			<%
-	//		for(int i=0; i<3; i++) {
 				for(int i=0; i< listDto.size(); i++) {
 			%>
 	            <div class="alert alert-success container<%=Integer.toString(i+1)%>">
@@ -76,7 +75,7 @@
 					<p> <img alt="이미지가 없네요" src= < %= listDto.get(i).getImgPath() %> > </p>
 				 -->
 	            </div>
-	  			<% 	
+	  		<% 	
 				}
 			%>
 	        
