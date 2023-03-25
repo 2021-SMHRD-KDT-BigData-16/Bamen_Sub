@@ -122,5 +122,23 @@ public class BmtUserDAO {
 		return listDto;
 	}
 	
+	public BmtPostDTO selectOrigin(BmtPostDTO dtoget) {
+		BmtPostDTO dto =null;
+		
+		LOG.debug("selectOrigin start {}", dtoget.getPostId() );
+		SqlSession session = factory.openSession(true);
+		try {
+			dto=session.selectOne("bmt_selectOrigin", dtoget);
+			if(dto!=null) {
+				LOG.debug("selectOrigin - {} : {} ", dto.getPostId(),dto.getBoardId());
+				
+			}else {
+				LOG.debug("selectOrigin fail");
+			}			
+		}finally {
+			session.close();
+		}
+		return dto;
+	}
 
 }

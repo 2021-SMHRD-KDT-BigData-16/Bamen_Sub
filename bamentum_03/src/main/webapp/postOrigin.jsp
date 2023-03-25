@@ -1,3 +1,14 @@
+<%@page import="com.tscm.model.BmtPostDTO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="com.tscm.model.BmtPtDetailDTO"%>
+<%@ page import="java.util.List"%>
+<%@ page import="org.slf4j.Logger"%>
+<%@ page import="org.slf4j.LoggerFactory"%>
+
 !<!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +25,12 @@
 </head>
 
 <body>
+		<%
+			request.setCharacterEncoding("UTF-8");
+			BmtPostDTO retDto =(BmtPostDTO)session.getAttribute("post");
+		%>
+
+
     <!--스크립트와 부트스트랩 src 불러오는 영역-->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -60,40 +77,34 @@
 
 
     <!--포스트들이 들어가있는 영역-->
-    <section class="post">
+ <section class="post">
         <!--포스트1-->
-        <div class="postbox" id="post1">
-            <a class="postbox_head" href="#">🍟</a>김연우
-            <p class="postbox_neck">"저는 감자튀김에 밀크쉐이크를 찍어먹지 않는 맛알못입니다"</p>
+        <div class="postbox postbox<%=retDto.getPostId()%>" id="<%=retDto.getPostId()%>">
+            <a class="postbox_head" href="#">🍟</a><%=retDto.getEmail()%>
+            <p class="postbox_neck"><%=retDto.getTitle()%></p>
             <hr>
 
-            <p class="postbox_body">낄낄ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ낄낄ㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                낄낄ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎ낄ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ낄낄ㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                낄낄ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎ낄ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ낄ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ낄낄ㅎㅎㅎㅎㅎㅎ
-                ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
-                낄낄ㅎㅎㅎㅎ
-                낄ㅎㅎdfdf</p>
+            <p class="postbox_body"><%=retDto.getP_content()%></p>
             <!--버튼영역-->
             <button class="post_like"><a href="#">좋아요</a></button>
-            <button class="post_origin"><a href="#">원문보기</a></button>            
+                      
             </div>
 
             <!--공간나누는영역-->
             <div id="space"></div>
 
-            <!--댓글남기기-->            
-            <div id="space"></div>
-        <!--댓글 쓰는 영역-->
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            <!--댓글남기기-->        
+            
        
         <body>
             <div id="form-commentInfo">

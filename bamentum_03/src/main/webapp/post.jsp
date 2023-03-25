@@ -1,13 +1,12 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.tscm.model.BmtPtDetailDTO"%>
 <%@ page import="java.util.List"%>
-<%@ page import="org.slf4j.Logger"%>
 <%@ page import="org.slf4j.LoggerFactory"%>
 
+<%@ page import="org.slf4j.Logger"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,31 +30,27 @@
 
 	<%
 		Logger LOG = LoggerFactory.getLogger(getClass());
-		LOG.debug(" page Start : {} ", "freeBoard2.jsp");
+		LOG.debug(" page Start : {} ", "post.jsp");
 		
-		List<BmtPtDetailDTO> listDto = (List)request.getAttribute("listPage");;
+		List<BmtPtDetailDTO> listDto = (List)request.getAttribute("listPage");
 		
 		if(listDto != null)
 		{
-			LOG.debug("freeBoard2.jsp - listDto size {} ", listDto.size());
+			LOG.debug("post.jsp - listDto size {} ", listDto.size());
 			for(int i=0; i< listDto.size(); i++)
 			{
-				LOG.debug("freeBoard2.jsp - {} : {} ", 
+				LOG.debug("post.jsp - {} : {} ", 
 						i, listDto.get(i).getP_content());
 			}
 			
 		}
 		else {
-			LOG.debug("freeBoard2.jsp - listDto null ");
+			LOG.debug("post.jsp - listDto null ");
 		}
 	
 	%>
 
 
-	<script src="script.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-	</script>
 
 	<header class="p-3 mb-3 border-bottom">
 		<div class="container">
@@ -131,7 +126,8 @@
 					<a href="#">좋아요</a>
 				</button>
 				<button class="post_origin">
-					<a href="#">원문보기</a>
+				<%=listDto.get(i).getPostId()%>
+					<a href = "javascript:postOrigin('<%=listDto.get(i).getPostId()%>')">원문보기</a>
 				</button>
 				<input type="checkbox" class="more_button">
 			</div>
@@ -142,34 +138,44 @@
 	<% 	
 		}
 	%>
-
-
 	</section>
+	
+	
+	<!-- 스크립트 시간입니다 -->
+	<script src="script.js"></script>
+	<script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+	</script>
+	
+	<!-- 페이지 이동 자바스크립트 -->
 
-	<script>
+ 	<script type="text/javascript">
+ 		function postOrigin(postid){
+ 			console.log(postid);
+ 		
+ 			let f= document.createElement('form');
+ 			
+ 			let obj;
+ 			obj = document.createElement('input');
+ 			obj.setAttribute('type','hidden');
+ 			obj.setAttribute('name','postid');
+ 			obj.setAttribute('value',postid);
+ 			
+ 			f.appendChild(obj);
+ 			f.setAttribute('method','post');
+ 			f.setAttribute('action','selectOrigin.do');
+ 			document.body.appendChild(f);
+ 			f.submit();
+ 		}
+ 	
+ 	</script>
+
+
 	
-	<%
-		LOG.debug(" page Script : {} ", "freeBoard2.jsp");
-		
-//		listDto = (List)request.getAttribute("listPage");;
-		
-		if(listDto != null)
-		{
-			LOG.debug("Script - listDto size {} ", listDto.size());
-			for(int i=0; i< listDto.size(); i++)
-			{
-				LOG.debug("Script - {} : {} ", 
-						i, listDto.get(i).getP_content());
-			}
-			
-		}
-		else {
-			LOG.debug("Script - listDto null ");
-		}
 	
-	%>
+	<!-- 무한스크롤 자바스크립트 -->	
 	
-	//자바스크립트 배열변수 선언
+	<script>	
+	// 자바스크립트 배열변수 선언
 	let post_list = [];
 	let post = {};
 
@@ -183,12 +189,9 @@
 	<%
 		}
 	%>
-	
-		
+			
 	console.log(`post_list len = ` + post_list.length);
-	console.log(post_list);
-	
-	
+	console.log(post_list);	
 	
     let count = 3;
 	window.onscroll = function() {scrollInfinite()};
@@ -228,10 +231,11 @@
         let addContent2 = document.createElement("div");
         addContent2.classList.add(`space`);
         document.querySelector('section').appendChild(addContent2);
-	}
-	
-    // 스크롤 script끝 
+	}	
+   
 
     </script>
+    
+    
 </body>
 </html>

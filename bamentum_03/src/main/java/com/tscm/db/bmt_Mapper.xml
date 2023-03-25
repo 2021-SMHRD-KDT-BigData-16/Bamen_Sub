@@ -24,6 +24,14 @@
   
   </select>
   
+  <select id="bmt_selectOrigin" parameterType = "com.tscm.model.BmtPtDetailDTO" resultType="com.tscm.model.BmtPostDTO">
+  
+  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgPath
+	    from bmt_post p, bmt_user u
+	where u.email = p.email and p.postid=#{postid}
+  
+  </select>
+  
   
   
 

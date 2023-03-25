@@ -33,7 +33,7 @@ public class SelectPublic implements Command {
 			}
 			
 //			moveURL = "freeBoard.jsp";
-			moveURL = "freeBoard2.jsp";
+			moveURL = "post.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
 			LOG.debug(" exception : {} ", e);

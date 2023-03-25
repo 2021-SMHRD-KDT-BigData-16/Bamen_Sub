@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ import com.tscm.controller.LogoutService;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPublic;
 import com.tscm.controller.UpdateService;
+import com.tscm.controller.selectOrigin;
+import com.tscm.model.BmtPostDTO;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -49,6 +52,16 @@ public class FrontController extends HttpServlet {
 			moveURL = SelectPublic.execute(request, response);
 			LOG.debug("SelectPublic moveURL {} ", moveURL);
 		
+		} else if(strUriDo.equals("selectOrigin.do")) {
+			String strPostid = request.getParameter("postid");
+			
+			selectOrigin selectOrigin = new selectOrigin();
+		
+			moveURL = selectOrigin.execute(request, response);
+			HttpSession session = request.getSession();
+			BmtPostDTO retDto = (BmtPostDTO)session.getAttribute("post");
+						
+						
 		} else if (strUriDo.equals("Logout.do")) {
 
 			LOG.debug("LogOutService start ");
