@@ -3,8 +3,9 @@
     background-color: #1BBC98 !important;
 }
 .nav li{
-    font-size: 15px;
-    font-weight: 100;        
+    font-size: 17px;
+    font-weight: 100;  
+    
 }
 /*FOOTER영역 CSS*/
 div#foot{
@@ -12,7 +13,6 @@ div#foot{
     position : static;
     left: 0;
     bottom : 0;
-
 }
 /*글쓰기영역 CSS*/
 .do_write{
@@ -29,7 +29,7 @@ div#foot{
 /*포스트 상자영역*/
 .postbox{                  
     position: static;
-    background-color: #c5faee ;          
+    background-color: #c5faf0 ;          
     width: 800px;             
     font-size: 20px;  
     display:inline-block; 
@@ -38,11 +38,11 @@ div#foot{
     text-overflow:ellipsis;
     height: auto ;  
     padding: 15px 25px; 
-    border-radius: 20px;
+    border-radius: 15px;
     color: #02271f;
     font-size: 18px;
 }
-/*포스트 제목부분*/
+/*포스트 제목*/
 p.postbox_neck{
     width:700px;
     padding:0 5px;
@@ -51,16 +51,16 @@ p.postbox_neck{
   white-space:nowrap;  
   
 }  
-/*포스트 내용부분*/ 
+/*포스트 내용*/ 
+/*7줄이상 넘어가면 ...나오기*/
 p.postbox_body{
     overflow: hidden;
     text-overflow: ellipsis;    
-    /*7줄이상 넘어가면 ...나오기*/
     display: -webkit-box;
     -webkit-line-clamp: 7; 
     -webkit-box-orient: vertical;
     line-height: 1.2em;
-    height: 8.4em; 
+    max-height: 8.4em; 
     
 }
 /*더보기 버튼>> 지금 수정안되는 중!!!*/
@@ -85,6 +85,7 @@ p.postbox_body{
 .content_hidden:has(+ .more_button:checked){
     -webkit-line-clamp:unset
 }
+
 /*버튼영역*/
 button.post_origin .post_like{
     
@@ -104,7 +105,7 @@ button.post_origin .post_like{
     height: 35px;
     background-color: white;
     position: static;
-    display:inline-block; 
+    display:block; 
 }
 
 /*ASIDE영역 CSS*/

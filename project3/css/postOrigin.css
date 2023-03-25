@@ -28,15 +28,14 @@ div#foot{
 /*포스트 상자영역*/
 .postbox{                  
     position: static;
-    background-color: #c5faee ;          
+    background-color: #c5faf0;          
     width: 800px;             
     font-size: 20px;  
     display:inline-block; 
-    /*text넘칠 때 ... 나오는*/  
-   
+    /*text넘칠 때 ... 나오는*/     
     height: auto ;  
     padding: 15px 25px; 
-    border-radius: 20px;
+    border-radius: 15px;
     color: #02271f;
     font-size: 18px;
 }
@@ -153,6 +152,7 @@ button.post_origin .post_like{
 .eachComment .deleteComment{
     background-color: rgb(137, 230, 220);
     color: aliceblue;
+    font-size: 20px;
 }
 
 /*ASIDE영역 CSS*/
