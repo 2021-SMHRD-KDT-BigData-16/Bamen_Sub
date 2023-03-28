@@ -36,7 +36,7 @@
 	Logger LOG = LoggerFactory.getLogger(getClass());
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
-	ArrayList<BmtOnePostDTO> listDto = (ArrayList) request.getAttribute("postlist");
+	ArrayList<BmtOnePostDTO> listDto = (ArrayList) session.getAttribute("postlist");
 
 	if (listDto != null) {
 		LOG.debug("post.jsp - listDto size {} ", listDto.size());
@@ -113,23 +113,30 @@
 		for(int i=0; i< listDto.size(); i++) {
 		%>
 
+
 		<div class="postbox postbox<%=Integer.toString(i + 1)%>"
 			id="post<%=Integer.toString(i + 1)%>">
 			<a class="postbox_head" href="#"> <%=listDto.get(i).getU_nick()%>
 			</a>
 			<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
+            <p>  : <%=listDto.get(i).getP_date()%> 
+            <p>  : <%=listDto.get(i).getRn()%> 
+                 : <%=listDto.get(i).getP_idx()%> </p>
 			<hr>
+            
+
+			<a href = "javascript:PostView('<%=listDto.get(i).getP_idx()%>')">
+				<img alt="이미지가 없네요" height = 100px src= <%= listDto.get(i).getP_file() %> >
+			</a>
+			
+			
 			<p class="postbox_body"><%=listDto.get(i).getP_content()%></p>
 
 			<button class="post_like">
 				<a href="#">좋아요</a>
 			</button>
 			<button class="post_origin">
-				<%=listDto.get(i).getP_idx()%>
-<!-- 				
 				<a href="javascript:postOrigin('< %=listDto.get(i).getP_idx()%>')">원문보기</a>
-				
- -->				
 			</button>
 			<input type="checkbox" class="more_button">
 		</div>
