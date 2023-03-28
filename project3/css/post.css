@@ -8,11 +8,10 @@
     
 }
 /*FOOTER영역 CSS*/
-div#foot{
+#foot{
     width:100%;        
     position : static;
-    left: 0;
-    bottom : 0;
+  
 }
 /*글쓰기영역 CSS*/
 .do_write{

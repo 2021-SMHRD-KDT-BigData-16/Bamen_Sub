@@ -129,81 +129,61 @@
         </div>
         <!--공간나누는영역-->
         <div class="space"></div>
+        <script>
 
+            // 한무스크롤 script시작
+            var count = 4;
+                   window.onscroll = function (e) {
+                       if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight*0.8)) {
+                           setTimeout(function () {
+                               var addContent1 = document.createElement("div");
+                               addContent1.classList.add(`postbox`);
+                               addContent1.classList.add(`postbox${count}`)
+                               addContent1.innerHTML += `<a class="postbox_head" href="#">🍟</a>김연우
+                       <p class="postbox_neck">"저는 감자튀김에 밀크쉐이크를 찍어먹지 않는 맛알못입니다"</p>
+                       <hr>`
+                               
+                               addContent1.innerHTML += `<p class="postbox_body">Whenever you ne <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br> <br> <br>
+                           <br> <br> <br>ed to, be sure to use margin utilities to keep things nice and tidy.</p>
+                       <!--버튼영역-->
+                       <button class="post_like"><a href="#">좋아요</a></button>
+                       <button class="post_origin"><a href="#">원문보기</a></button>
+                       <input type="checkbox" class="more_button">`
+                               document.querySelector('section').appendChild(addContent1);
+                               count = count+1;
+                               var addContent2 = document.createElement("div");
+                               addContent2.classList.add('space');
+                               document.querySelector('section').appendChild(addContent2);
+           
+           
+                               var addContent3 = document.createElement("div");
+                               addContent3.classList.add(`postbox`);
+                               addContent3.classList.add(`postbox${count}`)
+                               addContent3.innerHTML += `  <a class="postbox_head" href="#">🍔</a>안미연
+                       <p class="postbox_neck">"연우랑 상재가 너무 밥을 안먹어서 걱정이에요"</p>
+                       <hr>
+                       <p class="postbox_body">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                       </p>
+                       <!--버튼영역-->
+                       <button class="post_like"><a href="#">좋아요</a></button>
+                       <button class="post_origin"><a href="#">원문보기</a></button>
+                       <input type="checkbox" class="more_button">`
+                               document.querySelector('section').appendChild(addContent3);
+                               count = count+1;
+                               var addContent4 = document.createElement("div");
+                               addContent4.classList.add('space');
+                               document.querySelector('section').appendChild(addContent4);    
+                           }, 100)
+                       }
+                   }
+                  
+               // 한무스크롤 script끝 
+           
+               </script>
     </section>
     <!--섹션 끝-->
 
-    <script>
-
-
-    </script>
-
-
-</body>
-<!--바디끝-->
-
-
-<script>
-
- // 한무스크롤 script시작
- var count = 4;
-        window.onscroll = function (e) {
-            if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight*0.8)) {
-                setTimeout(function () {
-                    var addContent1 = document.createElement("div");
-                    addContent1.classList.add(`postbox`);
-                    addContent1.classList.add(`postbox${count}`)
-                    addContent1.innerHTML += `<a class="postbox_head" href="#">🍟</a>김연우
-            <p class="postbox_neck">"저는 감자튀김에 밀크쉐이크를 찍어먹지 않는 맛알못입니다"</p>
-            <hr>`
-                    
-                    addContent1.innerHTML += `<p class="postbox_body">Whenever you ne <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br> <br> <br>
-                <br> <br> <br>ed to, be sure to use margin utilities to keep things nice and tidy.</p>
-            <!--버튼영역-->
-            <button class="post_like"><a href="#">좋아요</a></button>
-            <button class="post_origin"><a href="#">원문보기</a></button>
-            <input type="checkbox" class="more_button">`
-                    document.querySelector('section').appendChild(addContent1);
-                    count = count+1;
-                    var addContent2 = document.createElement("div");
-                    addContent2.classList.add('space');
-                    document.querySelector('section').appendChild(addContent2);
-
-
-                    var addContent3 = document.createElement("div");
-                    addContent3.classList.add(`postbox`);
-                    addContent3.classList.add(`postbox${count}`)
-                    addContent3.innerHTML += `  <a class="postbox_head" href="#">🍔</a>안미연
-            <p class="postbox_neck">"연우랑 상재가 너무 밥을 안먹어서 걱정이에요"</p>
-            <hr>
-            <p class="postbox_body">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-            </p>
-            <!--버튼영역-->
-            <button class="post_like"><a href="#">좋아요</a></button>
-            <button class="post_origin"><a href="#">원문보기</a></button>
-            <input type="checkbox" class="more_button">`
-                    document.querySelector('section').appendChild(addContent3);
-                    count = count+1;
-                    var addContent4 = document.createElement("div");
-                    addContent4.classList.add('space');
-                    document.querySelector('section').appendChild(addContent4);    
-                }, 100)
-            }
-        }
-       
-    // 한무스크롤 script끝 
-
-    </script>
-
-
-
-
-
-
-
-
-
-
+  
 <!--푸터영역-->
 <div id="foot" class="container">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -229,6 +209,17 @@
         </ul>
     </footer>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 <!--푸터영역끝-->
 
 
