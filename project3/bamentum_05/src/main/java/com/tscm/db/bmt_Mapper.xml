@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="com.tscm.model.BmtUserDAO">
+
+  <select id="bmt_selectPublic" 
+  		resultType="com.tscm.model.BmtPostDTO">
+  		
+	select *
+	    from bmt_post
+  
+  </select>
+  
+  <select id="bmt_selectAllPost" 
+  		resultType="com.tscm.model.BmtOnePostDTO">
+  		
+	select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgPath
+	    from bmt_post p, bmt_user u
+	where u.email = p.email
+  
+  </select>
+  
+  <select id="bmt_selectOrigin" parameterType = "com.tscm.model.BmtOnePostDTO" resultType="com.tscm.model.BmtOnePostDTO">
+  
+  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgpath
+	    from bmt_post p, bmt_user u
+	where u.email = p.email and p.postid=#{postId}
+  
+  </select>
+  
+  <select id="bmt_selectPost" 
+  		parameterType = "com.tscm.model.BmtPostDTO" 
+  		resultType="com.tscm.model.BmtPostDTO">
+  
+  select postid, boardid, email, title, imgpath, p_content
+	    from bmt_post
+	where postid=#{postId}
+  
+  </select>  
+  
+  <select id="bmt_selectOnePost" 
+  		parameterType = "com.tscm.model.BmtOnePostDTO" 
+  		resultType="com.tscm.model.BmtOnePostDTO">
+
+  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgpath
+	    from bmt_post p, bmt_user u
+	where u.email = p.email and p.postid=#{postId}
+  
+  </select>
+  
+  <insert id="cmtInsert" parameterType="com.tscm.model.BmtCmtDTO">
+  	insert into bmt_comment values(c_index.nextval, #{postId}, #{content}, sysdate, #{contentName})
+  </insert>
+  
+  
+  
+
+</mapper>

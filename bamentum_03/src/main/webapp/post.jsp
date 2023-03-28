@@ -3,7 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page import="com.tscm.model.BmtPtDetailDTO"%>
 <%@ page import="java.util.List"%>
 <%@ page import="org.slf4j.LoggerFactory"%>
 <%@ page import="org.slf4j.Logger"%>
@@ -34,19 +33,19 @@
 
 	<%
 	Logger LOG = LoggerFactory.getLogger(getClass());
-	LOG.debug(" page Start : {} ", "post.jsp");
+		LOG.debug(" page Start : {} ", "post.jsp");
 
-	List<BmtPtDetailDTO> listDto = (List) request.getAttribute("listPage");
+		List<BmtPtDetailDTO> listDto = (List) request.getAttribute("listPage");
 
-	if (listDto != null) {
-		LOG.debug("post.jsp - listDto size {} ", listDto.size());
-		for (int i = 0; i < listDto.size(); i++) {
-			LOG.debug("post.jsp - {} : {} ", i, listDto.get(i).getP_content());
+		if (listDto != null) {
+			LOG.debug("post.jsp - listDto size {} ", listDto.size());
+			for (int i = 0; i < listDto.size(); i++) {
+		LOG.debug("post.jsp - {} : {} ", i, listDto.get(i).getP_content());
+			}
+
+		} else {
+			LOG.debug("post.jsp - listDto null ");
 		}
-
-	} else {
-		LOG.debug("post.jsp - listDto null ");
-	}
 	%>
 
 

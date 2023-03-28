@@ -32,7 +32,6 @@ public class SelectPublic implements Command {
 				LOG.debug("PublicPage - listDto null");
 			}
 			
-//			moveURL = "freeBoard.jsp";
 			moveURL = "post.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -29,8 +29,8 @@
 
 <body>
 	<%
-	request.setCharacterEncoding("UTF-8");
-	BmtPtDetailDTO retDto = (BmtPtDetailDTO) session.getAttribute("post");
+		request.setCharacterEncoding("UTF-8");
+		BmtPtDetailDTO retDto = (BmtPtDetailDTO) session.getAttribute("post");
 	%>
 
 
