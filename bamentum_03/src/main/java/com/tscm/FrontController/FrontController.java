@@ -19,8 +19,10 @@ import com.tscm.controller.LogoutService;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPublic;
 import com.tscm.controller.UpdateService;
+import com.tscm.controller.cmtService;
 import com.tscm.controller.selectOrigin;
 import com.tscm.model.BmtPostDTO;
+import com.tscm.model.BmtPtDetailDTO;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -53,13 +55,11 @@ public class FrontController extends HttpServlet {
 			LOG.debug("SelectPublic moveURL {} ", moveURL);
 		
 		} else if(strUriDo.equals("selectOrigin.do")) {
-			String strPostid = request.getParameter("postid");
-			
-			selectOrigin selectOrigin = new selectOrigin();
 		
+			selectOrigin selectOrigin = new selectOrigin();		
 			moveURL = selectOrigin.execute(request, response);
 			HttpSession session = request.getSession();
-			BmtPostDTO retDto = (BmtPostDTO)session.getAttribute("post");
+			BmtPtDetailDTO retDto = (BmtPtDetailDTO)session.getAttribute("post");
 						
 						
 		} else if (strUriDo.equals("Logout.do")) {
@@ -85,6 +85,11 @@ public class FrontController extends HttpServlet {
 			moveURL = update.execute(request, response);
 			LOG.debug("UpdateService moveURL {} ", moveURL);
 
+		} else if(strUriDo.equals("cmtInput.do")) {
+			cmtService cmtinput= new cmtService();
+			moveURL = cmtinput.execute(request, response);
+			LOG.debug("cmtService moveURL {} ", moveURL);
+			
 		} else {
 			LOG.debug("FrontController : {}", "잘못된 요청값");
 		}

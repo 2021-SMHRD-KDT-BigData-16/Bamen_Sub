@@ -1,5 +1,6 @@
 package com.tscm.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -28,6 +29,8 @@ public class BmtUserDAO {
 		
 		return cnt;
 	}
+
+	
 	
 	public BmtUserDTO login(BmtUserDTO dto) {
 		BmtUserDTO retDto = null;
@@ -122,15 +125,20 @@ public class BmtUserDAO {
 		return listDto;
 	}
 	
-	public BmtPostDTO selectOrigin(BmtPostDTO dtoget) {
-		BmtPostDTO dto =null;
+	public BmtPtDetailDTO selectOrigin(BmtPtDetailDTO dtoget) {
+		BmtPtDetailDTO dto =null;
 		
-		LOG.debug("selectOrigin start {}", dtoget.getPostId() );
+		LOG.debug("selectOrigin start {}", dtoget.getPostId());
 		SqlSession session = factory.openSession(true);
+		LOG.debug("selectOrigin start1 {}", dtoget.getPostId());
 		try {
+			LOG.debug("selectOrigin start2 {}", dtoget.getPostId());
+			
 			dto=session.selectOne("bmt_selectOrigin", dtoget);
+			LOG.debug("selectOrigin start3 {}", dtoget.getPostId());
+			
 			if(dto!=null) {
-				LOG.debug("selectOrigin - {} : {} ", dto.getPostId(),dto.getBoardId());
+				LOG.debug("selectOrigin - {} : {} ", dto.getPostId());
 				
 			}else {
 				LOG.debug("selectOrigin fail");
@@ -140,5 +148,56 @@ public class BmtUserDAO {
 		}
 		return dto;
 	}
+	
+	public BmtPostDTO selectPost(BmtPostDTO dtoget) {
+		BmtPostDTO dto =null;
+		
+		LOG.debug("selectPost start {}", dtoget.getPostId());
+		SqlSession session = factory.openSession(true);
+		LOG.debug("selectPost start1 {}", dtoget.getPostId());
+		try {
+			LOG.debug("selectPost start2 {}", dtoget.getPostId());
+			
+			dto=session.selectOne("bmt_selectPost", dtoget);
+			LOG.debug("selectPost start3 {}", dtoget.getPostId());
+			
+			if(dto!=null) {
+				LOG.debug("selectPost - {} : {} ", dto.getPostId());
+				
+			}else {
+				LOG.debug("selectPost fail");
+			}			
+		}finally {
+			session.close();
+		}
+		return dto;
+	}
+	
+	public BmtPtDetailDTO selectPostDetail(BmtPtDetailDTO dtoget) {
+		BmtPtDetailDTO dto =null;
+		
+		LOG.debug("selectPostDetail start {}", dtoget.getPostId());
+		SqlSession session = factory.openSession(true);
+		LOG.debug("selectPostDetail start1 {}", dtoget.getPostId());
+		try {
+			LOG.debug("selectPostDetail start2 {}", dtoget.getPostId());
+			
+			dto=session.selectOne("bmt_selectPostDetail", dtoget);
+			LOG.debug("selectPostDetail start3 {}", dtoget.getPostId());
+			
+			if(dto!=null) {
+				LOG.debug("selectPostDetail - {} ", dto.getPostId());
+				
+			}else {
+				LOG.debug("selectPostDetail fail");
+			}			
+		}finally {
+			session.close();
+		}
+		return dto;
+	}
+	
+
+	
 
 }

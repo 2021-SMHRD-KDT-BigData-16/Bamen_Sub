@@ -24,7 +24,6 @@ function generateTime(){
 
     const time = year+'-'+month+'-'+wDate+' '+hour+':'+min+':'+sec;
     return time;
-
 }
 
 //유저이름 발생기

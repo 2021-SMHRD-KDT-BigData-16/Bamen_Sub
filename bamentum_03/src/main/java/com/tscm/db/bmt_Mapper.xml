@@ -24,13 +24,38 @@
   
   </select>
   
-  <select id="bmt_selectOrigin" parameterType = "com.tscm.model.BmtPtDetailDTO" resultType="com.tscm.model.BmtPostDTO">
+  <select id="bmt_selectOrigin" parameterType = "com.tscm.model.BmtPtDetailDTO" resultType="com.tscm.model.BmtPtDetailDTO">
   
-  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgPath
+  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgpath
 	    from bmt_post p, bmt_user u
-	where u.email = p.email and p.postid=#{postid}
+	where u.email = p.email and p.postid=#{postId}
   
   </select>
+  
+  <select id="bmt_selectPost" 
+  		parameterType = "com.tscm.model.BmtPostDTO" 
+  		resultType="com.tscm.model.BmtPostDTO">
+  
+  select postid, boardid, email, title, imgpath, p_content
+	    from bmt_post
+	where postid=#{postId}
+  
+  </select>
+  
+  
+  <select id="bmt_selectPostDetail" 
+  		parameterType = "com.tscm.model.BmtPtDetailDTO" 
+  		resultType="com.tscm.model.BmtPtDetailDTO">
+
+  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgpath
+	    from bmt_post p, bmt_user u
+	where u.email = p.email and p.postid=#{postId}
+  
+  </select>
+  
+  <insert id="cmtInsert" parameterType="com.tscm.model.BmtCmtDTO">
+  	insert into bmt_comment values(c_index.nextval, #{postId}, #{content}, sysdate, #{contentName})
+  </insert>
   
   
   

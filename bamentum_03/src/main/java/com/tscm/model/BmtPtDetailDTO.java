@@ -9,9 +9,21 @@ public class BmtPtDetailDTO {
 	private String p_content;
 	private String imgPath;
 	
+	public BmtPtDetailDTO(long postId, String email, String u_name, String title, String p_content, String imgPath) {
+		this.postId = postId;
+		this.email = email;
+		this.u_name = u_name;
+		this.title = title;
+		this.p_content = p_content;
+		this.imgPath = imgPath;
+		
+	}
+	
+	
 	public BmtPtDetailDTO() {
 		
 	}
+
 
 	public long getPostId() {
 		return postId;

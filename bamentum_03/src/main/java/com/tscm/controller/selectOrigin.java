@@ -11,28 +11,29 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.logging.Log;
 
 import com.tscm.model.BmtPostDTO;
+import com.tscm.model.BmtPtDetailDTO;
 import com.tscm.model.BmtUserDAO;
 
 
 public class selectOrigin implements Command {
 	
-	String moveURL=null;
-
+	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String moveURL=null;
 		
 		try {
 			request.setCharacterEncoding("UTF-8");
 			long postid = Long.parseLong(request.getParameter("postid"));
-			BmtPostDTO dto = new BmtPostDTO(postid, 0, "", "", "", "");
+			BmtPtDetailDTO dto = new BmtPtDetailDTO(postid, "","","","","");
 			BmtUserDAO dao = new BmtUserDAO();
-			BmtPostDTO retDto = dao.selectOrigin(dto);
+			BmtPtDetailDTO retDto = dao.selectPostDetail(dto);
 			
 			if(retDto != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("post", retDto);
 				moveURL="postOrigin.jsp";
 			}
-			
 		}		
 		
 	catch(Exception e) {
@@ -40,5 +41,6 @@ public class selectOrigin implements Command {
 		
 	}
 	return moveURL;
+		
 }
 }
