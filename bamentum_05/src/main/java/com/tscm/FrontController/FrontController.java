@@ -27,7 +27,7 @@ import com.tscm.model.BmtOnePostDTO;
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOG = LoggerFactory.getLogger(JoinService.class);
+	private static final Logger LOG = LoggerFactory.getLogger(FrontController.class);
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

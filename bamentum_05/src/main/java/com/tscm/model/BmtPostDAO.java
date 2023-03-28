@@ -1,6 +1,6 @@
 package com.tscm.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,25 +10,25 @@ import org.slf4j.LoggerFactory;
 import com.tscm.db.SqlSessionManager;
 
 public class BmtPostDAO {
-	private static final Logger LOG = LoggerFactory.getLogger(BmtUserDAO.class); 
+	private static final Logger LOG = LoggerFactory.getLogger(BmtPostDAO.class); 
 	private SqlSessionFactory factory =  SqlSessionManager.getFactory();
 	
-	public List<BmtOnePostDTO> selectAllPost() {
-		List<BmtOnePostDTO> listDto = null;
+	public ArrayList<BmtOnePostDTO> SelectPagePost(int iPage) {
+		ArrayList<BmtOnePostDTO> listDto = null;
 
-		LOG.debug("selectAllPost start ");
+		LOG.debug("{} start ", "SelectPagePost" );
 		
 		SqlSession session = factory.openSession(true);
 		try {
-			listDto = session.selectList("bmt_selectAllPost");
+			listDto = (ArrayList)session.selectList("bmt_selectPagePost", iPage);
 			if (listDto != null) {
 				for(int i=0; i< listDto.size(); i++)
 				{
 					LOG.debug("bmt_selectAllPost - {} : {} - {} ", 
-							i, listDto.get(i).getU_name(), listDto.get(i).getP_content() );
+							i, listDto.get(i).getU_nick(), listDto.get(i).getP_content() );
 				}
 			} else {
-				LOG.debug("selectPublic fail");
+				LOG.debug("{} Fail ", "SelectPagePost" );
 			}
 			
 		} finally {

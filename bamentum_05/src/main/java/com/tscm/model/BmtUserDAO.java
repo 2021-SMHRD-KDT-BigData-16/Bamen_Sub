@@ -35,7 +35,7 @@ public class BmtUserDAO {
 	public BmtUserDTO login(BmtUserDTO dto) {
 		BmtUserDTO retDto = null;
 
-		LOG.debug(" login email: {}, pw:{} ", dto.getEmail(), dto.getPw());
+		LOG.debug(" login email: {}, pw:{} ", dto.getU_email(), dto.getU_pw());
 		
 		SqlSession session = factory.openSession(true);
 		try {
@@ -43,7 +43,7 @@ public class BmtUserDAO {
 			if (retDto == null) {
 				LOG.debug(" login fail : {} ", retDto);
 			} else {
-				LOG.debug(" login success email : {} ", retDto.getEmail());
+				LOG.debug(" login success email : {} ", retDto.getU_email());
 			}
 			
 		} finally {
@@ -53,7 +53,7 @@ public class BmtUserDAO {
 		return retDto;
 	}	
 
-
+/*
 	public int update(BmtUserDTO dto) {
 		int iRet = 0;
 
@@ -196,7 +196,7 @@ public class BmtUserDAO {
 		}
 		return dto;
 	}
-	
+*/	
 
 	
 
