@@ -152,7 +152,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
+<<<<<<< HEAD
       <Context docBase="bamentum_05" path="/bamentum_05" reloadable="true" source="org.eclipse.jst.jee.server:bamentum_05"/><Context docBase="bamentum_03" path="/bamentum_03" reloadable="true" source="org.eclipse.jst.jee.server:bamentum_03"/></Host>
+=======
+      <Context docBase="bametum_01" path="/bametum_01" reloadable="true" source="org.eclipse.jst.j2ee.server:bametum_01"/><Context docBase="bamentum_UI02" path="/bamentum_UI02" reloadable="true" source="org.eclipse.jst.jee.server:bamentum_UI02"/><Context docBase="bamentum_05" path="/bamentum_05" reloadable="true" source="org.eclipse.jst.jee.server:bamentum_05"/><Context docBase="bamentum_02" path="/bamentum_02" reloadable="true" source="org.eclipse.jst.jee.server:bamentum_02"/><Context docBase="bamentum_03" path="/bamentum_03" reloadable="true" source="org.eclipse.jst.jee.server:bamentum_03"/></Host>
+>>>>>>> 76d11863a694310eab3519b0f1b509a0ee724e37
     </Engine>
   </Service>
 </Server>
