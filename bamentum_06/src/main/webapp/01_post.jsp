@@ -20,6 +20,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>바멘텀 자유게시판</title>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"> </script>
+
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 <style>
@@ -147,7 +150,113 @@
 		<%
 		}
 		%>
+		
+	<div id = "post_more"></div>
+		
+		
 	</section>
+	
+	<button id="btn_post_more"> 페이지 더보기 </button>
+	
+	<!-- 무한 스크롤 자바스크립트 -->
+	<script type="text/javascript">
+		let loading = false;
+		let page_cnt = 1;
+		let post_send = { "page_cnt" : page_cnt };
+		
+		window.onscroll = function() {scrollInfinite()};
+		
+		function scrollInfinite()
+		{
+		    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight*0.8)) {
+	            console.log(`scrollInfinite : ` + page_cnt);
+		    	
+		    	if(!loading) {
+		    		loading = true;
+		            console.log(`scrollInfinite loading : ` + loading);
+		            
+			        setTimeout( function() { next_load() }, 100);
+	    		}
+		    	
+		    }
+			
+		}
+		
+		
+		$('#btn_post_more').click(function(){
+			console.log("btnPost function");
+			next_load();
+			
+		});
+		
+	    const next_load = function(){
+			console.log("next_load function");
+			
+			$.ajax({
+				type : "post",
+				url : "more_page.do",
+				data : post_send,
+				async : false,
+				dataType:"json",
+				
+				success : function(receive_data) {
+					ajax_more_page_suc(receive_data)	},
+				error : function(errorMsg) {
+					console.log('error');
+					console.log(errorMsg);
+					
+				}
+			});
+	    };
+	    
+	    
+	    const ajax_more_page_suc = function(receive_data){
+            console.log(`ajax_more_page_suc page_cnt : ` + page_cnt);
+			console.log(receive_data);
+			loading = true;
+			
+			let json = receive_data;
+			console.log(json);
+			
+			let resultHTML = '';
+			
+	        for(let i = 0; i < json.length; i++){
+	        	
+				resultHTML += `
+			        <div class = "post_div" class="container-sm">
+		            
+		            <h4 > ` + json[i].u_nick  + ` : ` + json[i].p_idx + ` </h4>
+		            <hr>
+		            <p>   ` + json[i].p_title + ` </p>
+		            <p>   ` + json[i].p_date  + ` </p>
+					<a href = "javascript:PostView(' ` + json[i].p_idx  + ` ')">
+		            
+				    <p><img alt="이미지가 없네요" height = 100px src= ` + json[i].p_file + ` ></p>
+					</a>
+		            
+		            <p >  ` + json[i].p_content + ` </p>
+		            <button type="button" class="btn btn-outline-secondary">원문보기</button>
+		            <button type="button" class="btn btn-outline-secondary">댓글달기</button>
+		        </div>
+		        
+				`
+	            
+	            console.log(json[i]);
+	            // console.log(resultHTML);
+	            	            
+	        };
+	        
+	        
+	        $('#post_more').after(resultHTML);
+			
+			page_cnt = page_cnt + 1;
+            console.log(`page_cnt : ` + page_cnt);
+			
+			loading = false;
+		};
+		
+	
+	</script>
 
 
 	<!-- 스크립트 시간입니다 -->
@@ -156,8 +265,9 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
 	</script>
 
-	<!-- 페이지 이동 자바스크립트 -->
 
+	
+	<!-- 페이지 이동 자바스크립트 -->
 	<script type="text/javascript">
 	function onePost(postid){
 		console.log(postid);		

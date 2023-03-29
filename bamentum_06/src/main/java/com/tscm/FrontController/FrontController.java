@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import com.tscm.controller.JoinService;
 import com.tscm.controller.LogInService;
 import com.tscm.controller.LogoutService;
+import com.tscm.controller.MorePageService;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
 import com.tscm.controller.UpdateService;
@@ -61,6 +62,11 @@ public class FrontController extends HttpServlet {
 			HttpSession session = request.getSession();
 			BmtOnePostDTO retDto = (BmtOnePostDTO)session.getAttribute("post");		
 						
+		} else if (strUriDo.equals("more_page.do")) {
+
+			MorePageService more_page = new MorePageService();
+			moveURL = more_page.execute(request, response);
+			LOG.debug("MorePageService moveURL {} ", moveURL);
 						
 		} else if (strUriDo.equals("Logout.do")) {
 
