@@ -39,7 +39,7 @@ public class FrontController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String path = request.getContextPath();
 
-		// 3. 1~2번을 활용하여 필요한 요청 이름 확인!
+		// 3. 1~2踰덉쓣 �솢�슜�븯�뿬 �븘�슂�븳 �슂泥� �씠由� �솗�씤!
 		String strUriDo = uri.substring(path.length() + 1);
 
 		LOG.debug("uri {}, path {}, substr : {}", uri, path, strUriDo);
@@ -54,12 +54,12 @@ public class FrontController extends HttpServlet {
 			moveURL = SelectPublic.execute(request, response);
 			LOG.debug("SelectPublic moveURL {} ", moveURL);
 		
-		} else if(strUriDo.equals("selectOrigin.do")) {
-		
-			SelectPostOne selectOrigin = new SelectPostOne();		
-			moveURL = selectOrigin.execute(request, response);
+		} else if(strUriDo.equals("onePost.do")) {	
+			LOG.debug("**** onePost moveURL {} ", moveURL);
+			SelectPostOne selectpostone= new SelectPostOne();		
+			moveURL = selectpostone.execute(request, response);
 			HttpSession session = request.getSession();
-			BmtOnePostDTO retDto = (BmtOnePostDTO)session.getAttribute("post");
+			BmtOnePostDTO retDto = (BmtOnePostDTO)session.getAttribute("post");		
 						
 						
 		} else if (strUriDo.equals("Logout.do")) {
@@ -91,7 +91,7 @@ public class FrontController extends HttpServlet {
 			LOG.debug("cmtService moveURL {} ", moveURL);
 			
 		} else {
-			LOG.debug("FrontController : {}", "잘못된 요청값");
+			LOG.debug("FrontController : {}", "�옒紐삳맂 �슂泥�媛�");
 		}
 
 		RequestDispatcher rd =  request.getRequestDispatcher(moveURL);

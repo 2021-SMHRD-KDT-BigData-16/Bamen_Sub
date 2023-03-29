@@ -10,15 +10,7 @@ public class BmtCmtDTO {
 	BmtCmtDTO() {
 		super();
 	}
-
-	public BmtCmtDTO(long c_idx, long p_idx, String c_content, String c_date, String u_email) {
-		super();
-		this.c_idx = c_idx;
-		this.p_idx = p_idx;
-		this.c_content = c_content;
-		this.c_date = c_date;
-		this.u_email = u_email;
-	}
+	
 
 	public long getC_idx() {
 		return c_idx;

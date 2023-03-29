@@ -1,3 +1,5 @@
+<%@page import="com.tscm.model.BmtCmtDtDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.tscm.model.BmtCmtDTO"%>
 <%@page import="com.tscm.model.BmtPostDTO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -31,6 +33,22 @@
 	<%
 		request.setCharacterEncoding("UTF-8");
 		BmtOnePostDTO retDto = (BmtOnePostDTO)session.getAttribute("post");
+	%>
+	<%
+	Logger LOG = LoggerFactory.getLogger(getClass());
+	LOG.debug(" page Start : {} ", "01_post.jsp");
+
+	ArrayList<BmtCmtDtDTO> clist = (ArrayList) session.getAttribute("cmtlist");
+
+	if (clist != null) {
+		LOG.debug("onePost.jsp - listDto size {} ", clist.size());
+		for (int i = 0; i < clist.size(); i++) {
+			LOG.debug("onePost.jsp - {} : {} ", i, clist.get(i).getC_content());
+		}
+
+	} else {
+		LOG.debug("onePost.jsp - clDto null ");
+	}
 	%>
 
 
@@ -90,12 +108,12 @@
 	<!--포스트들이 들어가있는 영역-->
 	<section class="post">
 		<!--포스트1-->
-		<div class="postbox postbox<%=retDto.getPostId()%>"
-			id="<%=retDto.getPostId()%>">
-			<a class="postbox_head" href="#">🍟</a><%=retDto.getEmail()%>
-			<p class="postbox_neck"><%=retDto.getTitle()%></p>
+		<div class="postbox postbox<%=retDto.getP_idx()%>"
+			id="<%=retDto.getP_idx()%>">
+			<a class="postbox_head" href="#">🍟</a><%=retDto.getU_nick()%>
+			<p class="postbox_neck"><%=retDto.getP_title()%></p>
 			<hr>
-
+			<%=retDto.getP_date() %>
 			<p class="postbox_body"><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
 			<button class="post_like">
@@ -120,23 +138,41 @@
 				댓글 <span id="count">0</span>
 			</div>
 			<input id="comment-input" placeholder="댓글을 입력해 주세요.">
-			<button id="submit" onclick="addComment()">등록</button>
-		<div id=comments>작성자: ${retDto.u_name} postId: ${retDto.postId}
-		</div>
-
-		</form>
-		<!--    <script src="./script/comment.js"></script> -->
-		<script
-			src="./jquery-3.6.4.min.js"></script>
-			
-			
-			
-		<script>	
+			<button id="submit" onclick=>등록</button>
+		<!-- 댓글 나오는 목록 -->	
+		<div id=comments>
+		<table border="1">
+			<caption>
+				<h2></h2>
+			</caption>
+			<tr>
+				<td>작성자</td>
+				<td>내용</td>
+			</tr>
+			<%for(BmtCmtDtDTO s:clist){ %>
+			<tr>
+				<td><%=s.getU_nick() %></td>
+				<td><%=s.getC_content() %></td>		
+			</tr>
+			<%} %>	
 		
-           $('#submit').click(function(){      	   
+		</table>
+		
+		</div>
+	
+		</form>
+		
+		
+		<!--    <script src="./script/comment.js"></script> -->
+		<script src="./jquery-3.6.4.min.js"></script>
+			
+			
+			
+		<script>			
+           $('#submit').click(function(){    	   
    				
         	   $.ajax({
-        		   url: "/cmtInput.do",
+        		   url: "/cmtCreate.do",
         		   type: "POST",
         		   data:{
         			   postId: ,
@@ -148,13 +184,10 @@
         			   location.reload();
         		   }	
 					
-				});        	   
-                      
+				});   
+           })          
            
-           })
-           
-           
-           </script>
+        </script>
 
 
 

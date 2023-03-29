@@ -136,7 +136,7 @@
 				<a href="#">좋아요</a>
 			</button>
 			<button class="post_origin">
-				<a href="javascript:postOrigin('< %=listDto.get(i).getP_idx()%>')">원문보기</a>
+				<a href="javascript:onePost('<%=listDto.get(i).getP_idx()%>')">원문보기</a>
 			</button>
 			<input type="checkbox" class="more_button">
 		</div>
@@ -159,7 +159,7 @@
 	<!-- 페이지 이동 자바스크립트 -->
 
 	<script type="text/javascript">
-	function postOrigin(postid){
+	function onePost(postid){
 		console.log(postid);		
 	    let f = document.createElement('form');
 	    
@@ -171,7 +171,7 @@
 	    
 	    f.appendChild(obj);
 	    f.setAttribute('method', 'post');
-	    f.setAttribute('action', 'selectOrigin.do');
+	    f.setAttribute('action', 'onePost.do');
 	    document.body.appendChild(f);
 	    f.submit();
 	}	

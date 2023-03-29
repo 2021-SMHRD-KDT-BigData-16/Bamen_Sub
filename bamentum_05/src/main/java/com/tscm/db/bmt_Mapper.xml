@@ -95,11 +95,22 @@
   		parameterType = "com.tscm.model.BmtOnePostDTO" 
   		resultType="com.tscm.model.BmtOnePostDTO">
 
-  select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgpath
+ select p.p_idx, u.u_email, u.u_nick, p.p_title, p.p_content, p.p_file, p.p_date
 	    from bmt_post p, bmt_user u
-	where u.email = p.email and p.postid=#{postId}
+	where u.u_email = p.u_email and p.p_idx=#{p_idx}
   
   </select>
+  
+  <select id="bmt_selectComment" 
+  		parameterType = "com.tscm.model.BmtOnePostDTO" 
+  		resultType="com.tscm.model.BmtCmtDtDTO">
+
+ select c.c_idx, c.p_idx, c.c_content, c.c_date, c.u_email, u.u_nick
+	    from bmt_comment c, bmt_user u
+	where u.u_email = c.u_email and c.p_idx=#{p_idx}
+  
+  </select>
+  
   
   <insert id="cmtInsert" parameterType="com.tscm.model.BmtCmtDTO">
   	insert into bmt_comment values(c_index.nextval, #{postId}, #{content}, sysdate, #{contentName})
