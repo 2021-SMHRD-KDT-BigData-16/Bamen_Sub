@@ -1,0 +1,75 @@
+package com.tscm.controller;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.tscm.model.BmtOnePostDTO;
+import com.tscm.model.BmtPostDAO;
+import com.tscm.model.BmtUserDAO;
+import com.tscm.model.BmtUserDTO;
+
+public class LogInService implements Command {
+	private static final Logger LOG = LoggerFactory.getLogger(LogInService.class); 
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		LOG.debug(" {} service - start ", "LogInService");
+		String moveURL = null;
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+			String email = request.getParameter("email");
+			String pw = request.getParameter("pw");
+			LOG.debug(" email : {}, pw : {}", email, pw);
+			
+			BmtUserDTO dtoUser = new BmtUserDTO();
+			dtoUser.setU_email(email);
+			dtoUser.setU_pw(pw);
+			
+			BmtUserDAO daoUser = new BmtUserDAO();
+			
+			// select * from web_member where email = ? and pw = ?
+			BmtUserDTO retDto = daoUser.login(dtoUser);
+			
+			if(retDto != null) {
+				LOG.debug(" ***  log in Success email : {} ", retDto.getU_email());
+				HttpSession session = request.getSession();
+				session.setAttribute("user", retDto);
+				moveURL = "01_post.jsp";
+				
+				BmtPostDAO daoPost = new BmtPostDAO();
+				int iPage = 0;
+				ArrayList<BmtOnePostDTO> listDto = daoPost.SelectPagePost(iPage);
+				for(int i=0; i< listDto.size(); i++) {
+					LOG.debug(" post {} - {} ", i, listDto.get(i).getP_content());
+				}
+				
+				iPage++;
+				
+				session.setAttribute("post_page", iPage);
+				session.setAttribute("postlist", listDto);
+				
+				iPage = (int)session.getAttribute("post_page");
+				LOG.debug(" iPage : {}", iPage);
+				
+				
+			}else {
+				LOG.debug(" *** log in Fail retDto : {} ", retDto);
+				moveURL = "00_login.jsp";
+			}
+			LOG.debug(" moveURL : {} ", moveURL);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			LOG.debug(" exception : {} ", e);
+		}
+		
+		return moveURL;
+	}
+
+}
