@@ -3,8 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.lang.Integer"%>
+
 <%@ page import="com.tscm.model.BmtOnePostDTO"%>
-<%@ page import="java.util.List"%>
 <%@ page import="org.slf4j.LoggerFactory"%>
 <%@ page import="org.slf4j.Logger"%>
 <%@ page import="com.tscm.model.BmtPostDTO"%>
@@ -33,9 +34,9 @@
 
 	<%
 	Logger LOG = LoggerFactory.getLogger(getClass());
-	LOG.debug(" page Start : {} ", "post.jsp");
+	LOG.debug(" page Start : {} ", "01_post.jsp");
 
-	List<BmtOnePostDTO> listDto = (List) request.getAttribute("listPage");
+	ArrayList<BmtOnePostDTO> listDto = (ArrayList) session.getAttribute("postlist");
 
 	if (listDto != null) {
 		LOG.debug("post.jsp - listDto size {} ", listDto.size());
@@ -109,25 +110,33 @@
 
 
 		<%
-		int iFirstSize = 3;
-		//		for(int i=0; i< listDto.size(); i++) {
-		for (int i = 0; i < iFirstSize; i++) {
+		for(int i=0; i< listDto.size(); i++) {
 		%>
+
 
 		<div class="postbox postbox<%=Integer.toString(i + 1)%>"
 			id="post<%=Integer.toString(i + 1)%>">
-			<a class="postbox_head" href="#"> <%=listDto.get(i).getU_name()%>
+			<a class="postbox_head" href="#"> <%=listDto.get(i).getU_nick()%>
 			</a>
-			<p class="postbox_neck"><%=listDto.get(i).getTitle()%></p>
+			<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
+            <p>  : <%=listDto.get(i).getP_date()%> 
+            <p>  : <%=listDto.get(i).getRn()%> 
+                 : <%=listDto.get(i).getP_idx()%> </p>
 			<hr>
+            
+
+			<a href = "javascript:PostView('<%=listDto.get(i).getP_idx()%>')">
+				<img alt="이미지가 없네요" height = 100px src= <%= listDto.get(i).getP_file() %> >
+			</a>
+			
+			
 			<p class="postbox_body"><%=listDto.get(i).getP_content()%></p>
 
 			<button class="post_like">
 				<a href="#">좋아요</a>
 			</button>
 			<button class="post_origin">
-				<%=listDto.get(i).getPostId()%>
-				<a href="javascript:postOrigin('<%=listDto.get(i).getPostId()%>')">원문보기</a>
+				<a href="javascript:postOrigin('< %=listDto.get(i).getP_idx()%>')">원문보기</a>
 			</button>
 			<input type="checkbox" class="more_button">
 		</div>
@@ -177,69 +186,6 @@
 
 	<script>	
 	// 자바스크립트 배열변수 선언
-	 let post_title = [];
-  	 let post_email = [];
-  	 let post_list = [];
-  	 let post_img = [];
-   	let post = {};
-   
-
-   <%for (int i = 0; i < listDto.size(); i++) {%>
-         post_list.push('<%=listDto.get(i).getP_content()%>'); 
-         post_email.push('<%=listDto.get(i).getU_name()%>');
-         post_title.push('<%=listDto.get(i).getTitle()%>');
-         post_img.push('<%=listDto.get(i).getImgPath()%>');
-         
-   
-   <%}%>
-   
-      
-   console.log(`post_list len = ` + post_list.length);
-   console.log(post_list);
-   
-   
-   
-    let count = 3;
-   window.onscroll = function() {scrollInfinite()};
-   
-   function scrollInfinite()
-   {
-       if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight*0.8)) {
-          
-           setTimeout( function() { timeoutAddHTML() }, 100);
-       }
-      
-   }
-   
-   function timeoutAddHTML() {
-      console.log(`timeoutAddHTML count = `+count);
-
-      let addContent1 = document.createElement("div");
-      addContent1.classList.add(`postbox`);
-      addContent1.classList.add(`postbox${count}`);
-      addContent1.innerHTML += ` 
-         <a class="postbox_head" href="#">🍟`+post_email[count]+`</a> 
-        
-          <p class="postbox_neck">`+post_title[count]+`</p>
-          <hr>
-          `;
-                  
-      addContent1.innerHTML += `
-         <p class="postbox_body"> `+ post_list[count] +` </p>
-          <button class="post_like"><a href="#">좋아요</a></button>
-          <button class="post_origin"><a href="#">원문보기</a></button>
-          <img alt="이미지가 없네요" src= `+post_img[count]+`>
-          <input type="checkbox" class="more_button">
-          `;
-          
-        document.querySelector('section').appendChild(addContent1);
-        count = count+1;
-        
-        
-        let addContent2 = document.createElement("div");
-        addContent2.classList.add(`space`);
-        document.querySelector('section').appendChild(addContent2);
-   }
    
     </script>
 

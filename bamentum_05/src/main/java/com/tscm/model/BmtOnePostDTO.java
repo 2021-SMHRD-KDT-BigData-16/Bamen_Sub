@@ -1,79 +1,67 @@
 package com.tscm.model;
 
+import java.util.Date;
+
 public class BmtOnePostDTO {
-	
-	private long postId;
-	private String email;
-	private String u_name;
-	private String title;
+	private String u_nick;
+	private String p_title;
 	private String p_content;
-	private String imgPath;
-	
-	public BmtOnePostDTO(long postId, String email, String u_name, String title, String p_content, String imgPath) {
-		this.postId = postId;
-		this.email = email;
-		this.u_name = u_name;
-		this.title = title;
-		this.p_content = p_content;
-		this.imgPath = imgPath;
-		
-	}
-	
+	private String p_file;
+	private Date p_date;
+	private long p_view;
+	private long p_idx;
+	private int rn;
 	
 	public BmtOnePostDTO() {
 		
 	}
-
-
-	public long getPostId() {
-		return postId;
+	
+	public String getU_nick() {
+		return u_nick;
 	}
-
-	public void setPostId(long postId) {
-		this.postId = postId;
+	public void setU_nick(String u_nick) {
+		this.u_nick = u_nick;
 	}
-
-	public String getEmail() {
-		return email;
+	public String getP_title() {
+		return p_title;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setP_title(String p_title) {
+		this.p_title = p_title;
 	}
-
-	public String getU_name() {
-		return u_name;
-	}
-
-	public void setU_name(String u_name) {
-		this.u_name = u_name;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 	public String getP_content() {
 		return p_content;
 	}
-
 	public void setP_content(String p_content) {
 		this.p_content = p_content;
 	}
-
-	public String getImgPath() {
-		return imgPath;
+	public String getP_file() {
+		return p_file;
 	}
-
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
+	public void setP_file(String p_file) {
+		this.p_file = p_file;
 	}
-	
-	
-	
-
+	public Date getP_date() {
+		return p_date;
+	}
+	public void setP_date(Date p_date) {
+		this.p_date = p_date;
+	}
+	public long getP_view() {
+		return p_view;
+	}
+	public void setP_view(long p_view) {
+		this.p_view = p_view;
+	}
+	public long getP_idx() {
+		return p_idx;
+	}
+	public void setP_idx(long p_idx) {
+		this.p_idx = p_idx;
+	}
+	public int getRn() {
+		return rn;
+	}
+	public void setRn(int rn) {
+		this.rn = rn;
+	}
 }
