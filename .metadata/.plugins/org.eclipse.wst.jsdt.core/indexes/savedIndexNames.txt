@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+C:\teamGit\Bamen_Sub\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+475003434.index
+2236001168.index
+2806685353.index
+1638068096.index
+666781438.index
+1063141425.index
+894970092.index
+3709674786.index
+1023576977.index
+2390651429.index
+2162361362.index
