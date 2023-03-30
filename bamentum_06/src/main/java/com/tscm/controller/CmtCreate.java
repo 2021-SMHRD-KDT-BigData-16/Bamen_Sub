@@ -1,40 +1,46 @@
 package com.tscm.controller;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.google.gson.Gson;
 import com.tscm.model.BmtCmtDAO;
 import com.tscm.model.BmtCmtDTO;
 
 
 public class CmtCreate implements Command {
-	
-	
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		String moveURL = null;
-		try {			
-			request.setCharacterEncoding("UTF-8");				
-			
-			Long p_idx = (long)Integer.parseInt(request.getParameter("postId"));
-			String c_content = request.getParameter("content");			
-			String u_email = request.getParameter("contentName");			
-			BmtCmtDTO dto = new BmtCmtDTO();			
-			BmtCmtDAO dao = new BmtCmtDAO();			
-			int cnt = dao.cmtInsert(dto);
-			if(cnt>0) {
-				request.setAttribute("c_content",c_content);
-				
-			}
-			
-		}		
-		
-	catch(Exception e) {
-		e.printStackTrace();
-		
-	}
-	return moveURL;
-	}
+	private static final Logger LOG = LoggerFactory.getLogger(MorePageService.class);
 
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		LOG.debug(" {} service - start ", "CmtCreate");
+		String moveURL = null;
+		
+		
+		try {			
+			HttpSession session = request.getSession();
+			int p_idx=(int)session.getAttribute("postid");
+			
+			String post_comment= request.getParameter("post_comment");
+			LOG.debug(" **** MorePageService before - post_comment {} ", post_comment);
+			
+			BmtCmtDTO dtoCmt = new BmtCmtDTO();
+			dtoCmt.setC_content(post_comment);			
+			
+			BmtCmtDAO daoCmt= new BmtCmtDAO();
+			daoCmt.cmtInsert(dtoCmt);
+			
+			moveURL="onePost.jsp";					
+			
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			LOG.debug(" exception : {} ",e);
+		}
+		return moveURL;
+	}
 }

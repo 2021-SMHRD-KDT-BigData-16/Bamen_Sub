@@ -112,8 +112,9 @@
   </select>
   
   
-  <insert id="cmtInsert" parameterType="com.tscm.model.BmtCmtDTO">
-  	insert into bmt_comment values(c_index.nextval, #{postId}, #{content}, sysdate, #{contentName})
+  <insert id="cmt_insert" 
+  		parameterType="com.tscm.model.BmtCmtDTO">
+  	insert into bmt_comment values(c_index.nextval, #{p_idx}, #{c_content}, sysdate, #{u_email})
   </insert>
   
   

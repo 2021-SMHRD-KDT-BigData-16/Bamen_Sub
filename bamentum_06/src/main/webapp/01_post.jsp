@@ -39,8 +39,9 @@
 	Logger LOG = LoggerFactory.getLogger(getClass());
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
-	ArrayList<BmtOnePostDTO> listDto = (ArrayList) session.getAttribute("postlist");
-
+	ArrayList<BmtOnePostDTO> listDto = (ArrayList)session.getAttribute("postlist");
+	
+	
 	if (listDto != null) {
 		LOG.debug("post.jsp - listDto size {} ", listDto.size());
 		for (int i = 0; i < listDto.size(); i++) {
@@ -164,24 +165,7 @@
 		let page_cnt = 1;
 		let post_send = { "page_cnt" : page_cnt };
 		
-		window.onscroll = function() {scrollInfinite()};
-		
-		function scrollInfinite()
-		{
-		    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight*0.8)) {
-	            console.log(`scrollInfinite : ` + page_cnt);
-		    	
-		    	if(!loading) {
-		    		loading = true;
-		            console.log(`scrollInfinite loading : ` + loading);
-		            
-			        setTimeout( function() { next_load() }, 100);
-	    		}
-		    	
-		    }
-			
-		}
-		
+		// 무한스크롤 들어갈 자리
 		
 		$('#btn_post_more').click(function(){
 			console.log("btnPost function");
@@ -220,25 +204,31 @@
 			
 			let resultHTML = '';
 			
+			
+		
+			
 	        for(let i = 0; i < json.length; i++){
 	        	
 				resultHTML += `
-			        <div class = "post_div" class="container-sm">
+				
+			        <div class = "postbox">
 		            
-		            <h4 > ` + json[i].u_nick  + ` : ` + json[i].p_idx + ` </h4>
+					<a class="postbox_head" href="#"><h4 > ` + json[i].u_nick  + ` : ` + json[i].p_idx + ` </h4></a>
+		            
+		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
+		            <p class="postbox_neck">   ` + json[i].p_date  + ` </p>
 		            <hr>
-		            <p>   ` + json[i].p_title + ` </p>
-		            <p>   ` + json[i].p_date  + ` </p>
 					<a href = "javascript:PostView(' ` + json[i].p_idx  + ` ')">
 		            
 				    <p><img alt="이미지가 없네요" height = 100px src= ` + json[i].p_file + ` ></p>
 					</a>
 		            
-		            <p >  ` + json[i].p_content + ` </p>
-		            <button type="button" class="btn btn-outline-secondary">원문보기</button>
+					<p class="postbox_body">  ` + json[i].p_content + ` </p>
+		            <button type="button" class="btn btn-outline-secondary">
+		            <a href="javascript:onePost('`+ json[i].p_idx+`')">원문보기</a></button>
 		            <button type="button" class="btn btn-outline-secondary">댓글달기</button>
 		        </div>
-		        
+		    	<div id="space"></div>
 				`
 	            
 	            console.log(json[i]);

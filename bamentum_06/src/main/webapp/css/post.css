@@ -100,10 +100,10 @@ button.post_origin .post_like{
     
 }
 /*중간에 공간 주기*/
-.space{
+#space{
     height: 35px;
     background-color: white;
-    position: static;
+    
     display:inline-block; 
 }
 

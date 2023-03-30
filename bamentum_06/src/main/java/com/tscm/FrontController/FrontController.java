@@ -91,7 +91,7 @@ public class FrontController extends HttpServlet {
 			moveURL = update.execute(request, response);
 			LOG.debug("UpdateService moveURL {} ", moveURL);
 
-		} else if(strUriDo.equals("cmtInput.do")) {
+		} else if(strUriDo.equals("CmtInput.do")) {
 			CmtCreate cmtinput= new CmtCreate();
 			moveURL = cmtinput.execute(request, response);
 			LOG.debug("cmtService moveURL {} ", moveURL);

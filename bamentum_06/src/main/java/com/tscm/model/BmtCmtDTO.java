@@ -7,10 +7,11 @@ public class BmtCmtDTO {
 	private String c_date;
 	private String u_email;
 	
-	BmtCmtDTO() {
-		super();
-	}
 	
+	public BmtCmtDTO() {
+		super();		
+	}
+
 
 	public long getC_idx() {
 		return c_idx;

@@ -9,10 +9,9 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tscm.controller.Command;
+import com.google.gson.Gson;
 import com.tscm.model.BmtOnePostDTO;
 import com.tscm.model.BmtPostDAO;
-import com.google.gson.Gson;
 
 
 public class MorePageService implements Command {

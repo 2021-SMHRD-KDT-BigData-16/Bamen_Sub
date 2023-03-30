@@ -12,7 +12,7 @@
 <%@ page import="org.slf4j.Logger"%>
 <%@ page import="org.slf4j.LoggerFactory"%>
 
-!
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +31,8 @@
 
 <body>
 	<%
-		request.setCharacterEncoding("UTF-8");
-		BmtOnePostDTO retDto = (BmtOnePostDTO)session.getAttribute("post");
+	request.setCharacterEncoding("UTF-8");
+	BmtOnePostDTO retDto = (BmtOnePostDTO) session.getAttribute("post");
 	%>
 	<%
 	Logger LOG = LoggerFactory.getLogger(getClass());
@@ -113,7 +113,7 @@
 			<a class="postbox_head" href="#">🍟</a><%=retDto.getU_nick()%>
 			<p class="postbox_neck"><%=retDto.getP_title()%></p>
 			<hr>
-			<%=retDto.getP_date() %>
+			<%=retDto.getP_date()%>
 			<p class="postbox_body"><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
 			<button class="post_like">
@@ -133,61 +133,86 @@
 
 
 		<!-- <c:if test="${sessionScope.sessionID!=null}"></c:if> -->
-		<form id="form-commentInfo">
 			<div id="comment-count">
 				댓글 <span id="count">0</span>
 			</div>
-			<input id="comment-input" placeholder="댓글을 입력해 주세요.">
-			<button id="submit" onclick=>등록</button>
-		<!-- 댓글 나오는 목록 -->	
-		<div id=comments>
-		<table border="1">
-			<caption>
-				<h2></h2>
-			</caption>
-			<tr>
-				<td>작성자</td>
-				<td>내용</td>
-			</tr>
-			<%for(BmtCmtDtDTO s:clist){ %>
-			<tr>
-				<td><%=s.getU_nick() %></td>
-				<td><%=s.getC_content() %></td>		
-			</tr>
-			<%} %>	
-		
-		</table>
-		
-		</div>
-	
+		<form id="form-commentInfo">
+			<input type="text" id="comment_input" placeholder="댓글을 입력해 주세요.">
+			<button id="comment_submit">등록</button>
 		</form>
+
+
+			<!-- 댓글 나오는 목록 -->
+			<div id=comments>
+				<table border="1">
+					<caption>
+						<h2></h2>
+					</caption>
+					<tr>
+						<td>작성자</td>
+						<td>내용</td>
+					</tr>
+					<%
+					for (BmtCmtDtDTO s : clist) {
+					%>
+					<tr>
+						<td><%=s.getU_nick()%></td>
+						<td><%=s.getC_content()%></td>
+					</tr>
+					<%
+					}
+					%>
+
+				</table>
+
+			</div>
+
+
+
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"> </script>
+
+
+
+		<script type="text/javascript">
+		//지금 comment_input 안들어가는데 뭐가 문제인지 
 		
+			let post_comment=$("comment_input").val();
 		
-		<!--    <script src="./script/comment.js"></script> -->
-		<script src="./jquery-3.6.4.min.js"></script>
+			$('#comment_submit').click(function() {
+				console.log("comment function")
+				cmt_create();
+			});
+			
+			const cmt_create = function(){
+				console.log("cmt_create function");
+
+				$.ajax({
+					type : "post",
+					url : "CmtInput.do",
+					data : {"post_comment":post_comment},
+					dataType : "json",
+
+					success : function(receive_data) {
+						ajax_comment_suc(receive_data) },
+						
+					error : function(erreMsg) {
+						console.log('error');
+						console.log(errorMsg);
+					}
+				});
+
+			};
+			
+			const ajax_comment_suc = function(receive_data){
+				console.log('내가 쓴 글: '+post_comment);
+				console.log(receive_data);
+				
+				let json=receive_data;
+				console.log(json);
+			};
 			
 			
-			
-		<script>			
-           $('#submit').click(function(){    	   
-   				
-        	   $.ajax({
-        		   url: "/cmtCreate.do",
-        		   type: "POST",
-        		   data:{
-        			   postId: ,
-        			   contentName: ,     		   
-        			   content: $("#comment-input").val()
-        		   },
-        		   success: funtion (){
-        			   alert("댓글 등록 완료");
-        			   location.reload();
-        		   }	
-					
-				});   
-           })          
-           
-        </script>
+		</script>
 
 
 
@@ -231,9 +256,8 @@
 	<!--섹션 끝-->
 
 	<script>
-
-
-    </script>
+		
+	</script>
 
 
 </body>

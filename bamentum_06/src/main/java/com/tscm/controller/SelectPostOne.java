@@ -48,7 +48,8 @@ public class SelectPostOne implements Command {
 				HttpSession session = request.getSession();
 				session.setAttribute("post", postDto);				
 				session.setAttribute("cmtlist", clDto);
-				
+				//포스트 아이디 가져오기
+				session.setAttribute("postid", postid);
 				moveURL="03_onePost.jsp";
 			}
 			
