@@ -55,18 +55,20 @@
     </div>
 
     <div class="modal-bg" onClick="javascript:popClose();"></div>
-    <div class="join-form">
+<!--  문경수 : 2023.03.30 Login 기능 시작 -->    
+    
+    <form class="join-form" action="Join.do" method="post" >
         <a href="00_login.jsp"><img class="join_back"
                 src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/x-lg.svg"></a>
         <h2 class="join_H">회원가입</h2>
         <h3 class="join_intro">"당신의 자전거와 함께하는 모든 순간을 즐겨보세요!"</h3>
         <h6 style="font-size : 20px; margin-bottom : 5px; margin-left : 10px;">이름</h6>
-        <input type="text" class="text-field" placeholder="  이름 입력">
+        <input type="text" class="text-field" name = "u_nick" placeholder="  이름 입력">
         <h6 class="join_elements" style="font-size : 20px; margin-top : 20px; margin-bottom : 5px; margin-left : 10px;">
             이메일</h6>
-        <input type="text" class="text-field" placeholder="  example@smhrd.co.kr">
+        <input type="text" class="text-field" name = "u_email" placeholder="  example@smhrd.co.kr">
         <h6 style="font-size : 20px; margin-top : 20px; margin-bottom : 5px; margin-left : 10px;">비밀번호</h6>
-        <input type="password" class="text-field" placeholder="  비밀번호 입력">
+        <input type="password" class="text-field" name = "u_pw" placeholder="  비밀번호 입력">
 
         <!-- 개인정보 처리방침 / 서비스 이용약관 동의 -->
         <div class="checkbox_group" style="margin-left: 10px; margin-top: 50px;">
@@ -90,6 +92,8 @@
     <!-- !!!!!!!!!!!!!!!!테스트용 접속 기능 -->
         <a href="00_login.jsp" class="admin" style="font-weight: 600; margin-left : 220px;">관리자 접속</a>
     </form>
+    
+<!--  문경수 : 2023.03.30 Login 기능 시작 -->    
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"> </script>
