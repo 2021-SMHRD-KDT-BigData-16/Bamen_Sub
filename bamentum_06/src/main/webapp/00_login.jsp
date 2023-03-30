@@ -18,15 +18,13 @@
 </head>
 <body>
 	
-	<div class="introducing">
+  <div class="introducing">
         <span>당신</span><span style="color : #ffffff">과</span> <span>자전거,</span>
         <br><span style="color : #ffffff">그렇게</span> <span>바멘텀.</span>
-        <img src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/bicycle.svg" class="login_bic">
+        <img src="/img/bicycle.svg" class="login_bic">
         <hr class="title-line" style="border : 1px solid #ffffff; width : 1100px;">
-
-
-
     </div>
+
 
 
     <!-- 메인 소개문구 우측 부가설명 문구 -->
@@ -58,7 +56,7 @@
 
     <div class="modal-bg" onClick="javascript:popClose();"></div>
     <div class="join-form">
-        <a href="/Bamen_Sub/bamentum_UI02/src/main/webapp/Login.html"><img class="join_back"
+        <a href="00_login.jsp"><img class="join_back"
                 src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/x-lg.svg"></a>
         <h2 class="join_H">회원가입</h2>
         <h3 class="join_intro">"당신의 자전거와 함께하는 모든 순간을 즐겨보세요!"</h3>
@@ -87,11 +85,15 @@
 
         <input type="submit" class="join_submit" value="회원가입">
         <p style="margin : 90px; margin-top : 30px;">이미 회원이신가요? <a
-                href="/Bamen_Sub/bamentum_UI02/src/main/webapp/Login.html" style="font-weight: 600;">로그인하기</a></p>
-    </div>
+                href="00_login.jsp" style="font-weight: 600;">로그인하기</a></p>
+   
+    <!-- !!!!!!!!!!!!!!!!테스트용 접속 기능 -->
+        <a href="00_login.jsp" class="admin" style="font-weight: 600; margin-left : 220px;">관리자 접속</a>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"> </script>
+           
     <script>
         function popOpen() {
 
