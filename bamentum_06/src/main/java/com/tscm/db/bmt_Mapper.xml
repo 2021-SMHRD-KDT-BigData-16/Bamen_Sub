@@ -107,17 +107,20 @@
 
  select c.c_idx, c.p_idx, c.c_content, c.c_date, c.u_email, u.u_nick
 	    from bmt_comment c, bmt_user u
-	where u.u_email = c.u_email and c.p_idx=#{p_idx}
+	where u.u_email = c.u_email and c.p_idx=#{p_idx} order by c.c_idx desc
   
   </select>
   
   
   <insert id="cmt_insert" 
   		parameterType="com.tscm.model.BmtCmtDTO">
-  	insert into bmt_comment values(c_index.nextval, #{p_idx}, #{c_content}, sysdate, #{u_email})
+  	insert into bmt_comment values (BMT_COMMENT_SEQ.nextval, #{p_idx},
+    #{c_content}, sysdate, #{u_email})  	
   </insert>
   
-  
+  <delete id="cmt_delete" parameterType="com.tscm.model.BmtCmtDTO">
+   delete from bmt_comment where c_idx=#{c_idx}
+  </delete>
   
 
 </mapper>

@@ -1,3 +1,5 @@
+<%@page
+	import="ch.qos.logback.core.recovery.ResilientSyslogOutputStream"%>
 <%@page import="com.tscm.model.BmtCmtDtDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.tscm.model.BmtCmtDTO"%>
@@ -33,6 +35,8 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	BmtOnePostDTO retDto = (BmtOnePostDTO) session.getAttribute("post");
+
+	System.out.print("03_onePost.jsp - p_idx: " + session.getAttribute("p_idx"));
 	%>
 	<%
 	Logger LOG = LoggerFactory.getLogger(getClass());
@@ -72,7 +76,7 @@
 
 				<ul
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="#" class="nav-link px-2 link-dark">피드보기</a></li>
+					<li><a href="01_post.jsp" class="nav-link px-2 link-dark">피드보기</a></li>
 					<li><a href="#" class="nav-link px-2 link-dark">프로필보기</a></li>
 					<li><a href="#" class="nav-link px-2 link-dark">바멘텀</a></li>
 				</ul>
@@ -133,85 +137,154 @@
 
 
 		<!-- <c:if test="${sessionScope.sessionID!=null}"></c:if> -->
-			<div id="comment-count">
-				댓글 <span id="count">0</span>
-			</div>
+		<div id="comment-count">
+			댓글 <span id="count"><%=clist.size()%></span>
+		</div>
 		<form id="form-commentInfo">
 			<input type="text" id="comment_input" placeholder="댓글을 입력해 주세요.">
-			<button id="comment_submit">등록</button>
+			<button type="button" id="comment_submit">등록</button>
+
+
+			<!-- <input type="button" value="등록"/>  -->
 		</form>
 
 
-			<!-- 댓글 나오는 목록 -->
-			<div id=comments>
-				<table border="1">
-					<caption>
-						<h2></h2>
-					</caption>
-					<tr>
-						<td>작성자</td>
-						<td>내용</td>
-					</tr>
-					<%
-					for (BmtCmtDtDTO s : clist) {
-					%>
-					<tr>
-						<td><%=s.getU_nick()%></td>
-						<td><%=s.getC_content()%></td>
-					</tr>
-					<%
-					}
-					%>
+		<!-- 댓글 나오는 목록 -->
+		<div id=comments>
+			<table border="1">
+				<caption>
+					<h2></h2>
+				</caption>
+				<tr>
+					<td>작성자</td>
+					<td>내용</td>
+				</tr>
+				<%
+				for (BmtCmtDtDTO s : clist) {
+				%>
+			</table>
+			<div>
+				<span><%=s.getU_nick()%></span> 
+				<span><%=s.getC_date()%></span> 
+				<span
+					id="cmtList"><%=s.getC_content()%></span>
+				<%
+				//ArrayList<Long> idxList = new ArrayList<Long>();
+				//idxList.add(s.getC_idx());
+				Long c_idx = s.getC_idx();
 
-				</table>
+				System.out.print("댓글확인!!!!!!!!!!!" + c_idx);
+				%>
+				<span id="cList"></span>
+				<button type="button" id="comment_delete">삭제하기</button>
+				<span id="delete"><%=c_idx%></span>
 
 			</div>
+			<%
+			}
+			%>
+
+
+		</div>
 
 
 
-		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"> </script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+			integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+			crossorigin="anonymous">
+			
+		</script>
 
 
 
 		<script type="text/javascript">
-		//지금 comment_input 안들어가는데 뭐가 문제인지 
-		
-			let post_comment=$("comment_input").val();
-		
+			//댓글 넣기!!!
+
+			let post_comment;
+
+			//댓글을 넣은 후 등록 버튼을 눌렀을 때 댓글정보를 가져와서 변수에 저장
 			$('#comment_submit').click(function() {
 				console.log("comment function")
+				//input 가져오는 것을 위에 하면 아무것도 안가져오게 됨
+				post_comment = $("#comment_input").val();
 				cmt_create();
 			});
-			
-			const cmt_create = function(){
+
+			const cmt_create = function() {
 				console.log("cmt_create function");
+				console.log("입력한 댓글", post_comment);
 
 				$.ajax({
 					type : "post",
 					url : "CmtInput.do",
-					data : {"post_comment":post_comment},
+					data : {
+						"post_comment" : post_comment
+					},
 					dataType : "json",
-
 					success : function(receive_data) {
-						ajax_comment_suc(receive_data) },
-						
+						console.log(receive_data);
+						//ajax_comment_suc(receive_data) 
+
+						//댓글이 잘 저장되었을 때 페이지 reload
+						if (receive_data.resCode === 1) {
+							location.reload();
+						}
+
+					},
 					error : function(erreMsg) {
 						console.log('error');
-						console.log(errorMsg);
+						console.log(erreMsg);
+						alert("서버가 원활하지 않습니다..");
 					}
 				});
 
 			};
-			
-			const ajax_comment_suc = function(receive_data){
-				console.log('내가 쓴 글: '+post_comment);
+
+			const ajax_comment_suc = function(receive_data) {
+				console.log('내가 쓴 글: ' + post_comment);
 				console.log(receive_data);
-				
-				let json=receive_data;
+
+				let json = receive_data;
 				console.log(json);
 			};
-			
-			
+
+			// 댓글 삭제하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!
+			let c_idx;
+			let idxList = [];
+			idxList.push();
+
+			$('#comment_delete').click(function() {
+				c_idx = $("#delete").text();
+				idxList = $("#cmtList").text();
+				console.log("댓글번호!!!!", c_idx);
+				console.log(idxList);
+				cmt_delete();
+
+			})
+
+			const cmt_delete = function() {
+				console.log("cmt_delete function");
+				console.log("삭제할 댓글 번호", c_idx);
+
+				$.ajax({
+					type : "post",
+					url : "CmtDelete.do",
+					data : {
+						"c_idx" : c_idx
+					},
+					dataType : "json",
+					//댓글이 잘 삭제되었을 때 페이지 reload
+					success : function(data) {
+						location.reload();
+
+					},
+					error : function(erreMsg) {
+						console.log('error');
+						console.log(erreMsg);
+						alert("서버가 원활하지 않습니다..");
+					}
+				})
+			};
 		</script>
 
 

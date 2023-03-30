@@ -40,6 +40,7 @@ public class LogInService implements Command {
 				LOG.debug(" ***  log in Success email : {} ", retDto.getU_email());
 				HttpSession session = request.getSession();
 				session.setAttribute("user", retDto);
+				session.setAttribute("email", email);
 				moveURL = "01_post.jsp";
 				
 				BmtPostDAO daoPost = new BmtPostDAO();

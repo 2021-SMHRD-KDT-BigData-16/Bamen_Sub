@@ -1,5 +1,7 @@
 package com.tscm.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,30 +19,40 @@ public class CmtCreate implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		LOG.debug(" {} service - start ", "CmtCreate");
-		String moveURL = null;
-		
+	
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter out = null;
 		
 		try {			
+			out =response.getWriter();
+			
 			HttpSession session = request.getSession();
-			int p_idx=(int)session.getAttribute("postid");
-			
+			long p_idx=(Long)session.getAttribute("p_idx");			
+			String u_email=(String) session.getAttribute("email");
 			String post_comment= request.getParameter("post_comment");
-			LOG.debug(" **** MorePageService before - post_comment {} ", post_comment);
 			
+			LOG.debug(" **** MorePageService before - u_email {} ", u_email);
+			LOG.debug(" **** MorePageService before - p_idx {} ", session.getAttribute("p_idx"));
+			LOG.debug(" **** MorePageService before - p_idx {} ", p_idx);
+			LOG.debug(" **** MorePageService before - post_comment {} ", post_comment);
+
 			BmtCmtDTO dtoCmt = new BmtCmtDTO();
-			dtoCmt.setC_content(post_comment);			
+			dtoCmt.setC_content(post_comment);	
+			dtoCmt.setP_idx(p_idx);
+			dtoCmt.setU_email(u_email);
+			
+			System.out.println("DB에 저장할 내용: "+dtoCmt);
 			
 			BmtCmtDAO daoCmt= new BmtCmtDAO();
-			daoCmt.cmtInsert(dtoCmt);
-			
-			moveURL="onePost.jsp";					
-			
+			daoCmt.cmtInsert(dtoCmt);			
+			out.print("{\"resCode\":1}");
 			
 			
 		}catch (Exception e) {
 			e.printStackTrace();
 			LOG.debug(" exception : {} ",e);
+			out.print("{\"resCode\":0}");
 		}
-		return moveURL;
+		return null;
 	}
 }

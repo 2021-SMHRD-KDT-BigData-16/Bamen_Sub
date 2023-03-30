@@ -42,14 +42,15 @@ public class SelectPostOne implements Command {
 			LOG.debug("*********error1");
 			ArrayList<BmtCmtDtDTO> clDto = dao.selectComment(dto);
 			
-		
-			
+					
 			if(postDto != null && clDto != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("post", postDto);				
 				session.setAttribute("cmtlist", clDto);
 				//포스트 아이디 가져오기
-				session.setAttribute("postid", postid);
+				session.setAttribute("p_idx", postid);
+				
+				System.out.println("선택한 게시글 번호: "+postid);
 				moveURL="03_onePost.jsp";
 			}
 			

@@ -53,5 +53,9 @@ public class BmtCmtDTO {
 		this.u_email = u_email;
 	}
 	
+	@Override
+	public String toString() {
+		return "[p_idx:"+p_idx+", u_email:"+u_email+", c_content:"+c_content+"]";
+	}
 	
 }

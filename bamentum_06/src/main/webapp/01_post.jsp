@@ -69,7 +69,7 @@
 
 				<ul
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="#" class="nav-link px-2 link-dark">피드보기</a></li>
+					<li><a href="01_post.jsp" class="nav-link px-2 link-dark">피드보기</a></li>
 					<li><a href="#" class="nav-link px-2 link-dark">프로필보기</a></li>
 					<li><a href="#" class="nav-link px-2 link-dark">바멘텀</a></li>
 
@@ -105,7 +105,7 @@
 
 	<!--글쓰는 회색박스 영역-->
 	<div class="alert alert-light do_write" role="alert">
-		<a href="postCreate.html"><img src="img/icon/pencil-square.svg"></a>
+		<a href="02_postCreate.jsp"><img src="img/icon/pencil-square.svg"></a>
 		글을 써보세요!
 	</div>
 

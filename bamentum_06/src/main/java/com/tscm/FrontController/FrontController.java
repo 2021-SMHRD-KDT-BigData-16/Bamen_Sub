@@ -21,6 +21,7 @@ import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
 import com.tscm.controller.UpdateService;
 import com.tscm.controller.CmtCreate;
+import com.tscm.controller.CmtDelete;
 import com.tscm.controller.SelectPostOne;
 import com.tscm.model.BmtPostDTO;
 import com.tscm.model.BmtOnePostDTO;
@@ -96,12 +97,19 @@ public class FrontController extends HttpServlet {
 			moveURL = cmtinput.execute(request, response);
 			LOG.debug("cmtService moveURL {} ", moveURL);
 			
-		} else {
+		} else if(strUriDo.equals("CmtDelete.do")) {
+			CmtDelete cmtdelete= new CmtDelete();
+			moveURL = cmtdelete.execute(request, response);
+			LOG.debug("cmtService moveURL {} ", moveURL);
+			
+		}else {
 			LOG.debug("FrontController : {}", "�옒紐삳맂 �슂泥�媛�");
 		}
 
-		RequestDispatcher rd =  request.getRequestDispatcher(moveURL);
-		rd.forward(request, response);
+		if(moveURL != null) {
+			RequestDispatcher rd =  request.getRequestDispatcher(moveURL);
+			rd.forward(request, response);
+		}
 		
 	}
 
