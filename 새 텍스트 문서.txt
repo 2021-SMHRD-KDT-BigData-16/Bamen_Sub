@@ -1,0 +1,8 @@
+Project 6 : 아침 5 + following
+Project 5 : 오후 압축
+
+
+
+post 번호
+					<%=listDto.get(i).getRn()%>					
+					<%=listDto.get(i).getP_idx()%>

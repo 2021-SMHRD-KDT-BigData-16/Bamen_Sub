@@ -19,8 +19,8 @@ body {
     border-radius: 5px;
     background-color: #EEEFF1;
     padding: 20px;
-    
     border: 1px solid gray;
+    box-shadow: 10px 10px 30px 10px rgb(61, 61, 61);
 }
 
 .login_title {
@@ -129,6 +129,7 @@ body {
     background-color: #EEEFF1;
     background: #fff;
     z-index: 1000;
+    box-shadow: 10px 10px 30px black;
 }
 
 .join_H {

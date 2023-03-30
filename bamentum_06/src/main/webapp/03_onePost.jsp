@@ -23,10 +23,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
 <style>
-@import url("./css/postOrigin.css");
+@import url("./css/onepost.css");
 </style>
 
 </head>
@@ -62,230 +61,206 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 	<!--헤더부분: 바멘텀 로고 등등-->
-	<header class="p-3 mb-3 border-bottom">
-		<div class="container">
-			<div
-				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-				<a href="/"
-					class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-					<svg class="bi me-2" width="40" height="32" role="img"
-						aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-				</a>
+	<div class="page">
+		<header>
+			<img src="./img/로고_투명_흰색.png" class="Logo">
+			<nav>
+				<ul>
+					<li><a href="#" class="menuLink"
+						style="width: 50px; align: center;">바멘텀</a></li>
+					<li><a href="#" class="menuLink"
+						style="width: 60px; align: center;">내 프로필</a></li>
+					<li><a href="#" class="menuLink" style="width: 60px;">여긴
+							뭐야</a></li>
+					<li><a href="#" class="menuLink" style="width: 90px;">내
+							자전거 등록</a></li>
 
-				<ul
-					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="01_post.jsp" class="nav-link px-2 link-dark">피드보기</a></li>
-					<li><a href="#" class="nav-link px-2 link-dark">프로필보기</a></li>
-					<li><a href="#" class="nav-link px-2 link-dark">바멘텀</a></li>
 				</ul>
 
-				<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-					<input type="search" class="form-control" placeholder="Search..."
-						aria-label="Search">
-				</form>
+				<div class="search-box">
+					<button class="btn-search">
+						<i class="fas fa-search"><img src="./img/search_white(2).png"
+							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
+					</button>
 
-				<div class="dropdown text-end">
-					<a href="#"
-						class="d-block link-dark text-decoration-none dropdown-toggle"
-						data-bs-toggle="dropdown" aria-expanded="false"> <img
-						src="./img/icon/bicycle.svg" alt="mdo" width="32" height="32"
-						class="rounded-circle">
-					</a>
-					<ul class="dropdown-menu text-small">
-						<li><a class="dropdown-item" href="#">회원정보변경</a></li>
-						<li><a class="dropdown-item" href="#">설정변경</a></li>
-						<li><a class="dropdown-item" href="#">내프로필보기</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="#">로그아웃</a></li>
-					</ul>
+					<input type="text" class="input-search" placeholder="검색어를 입력하세요!">
 				</div>
-			</div>
-		</div>
-	</header>
+
+				<img src="./img/person-circle.svg" class="profile_circle">
+
+			</nav>
+		</header>
+	</div>
 
 
 
 	<!--포스트들이 들어가있는 영역-->
 	<section class="post">
 		<!--포스트1-->
-		<div class="postbox postbox<%=retDto.getP_idx()%>"
-			id="<%=retDto.getP_idx()%>">
-			<a class="postbox_head" href="#">🍟</a><%=retDto.getU_nick()%>
+		<div class="postbox">
+			<a class="postbox_head" href="#" style="text-decoration: none;">🍟</a><span
+				class="writer"><%=retDto.getU_nick()%></span>
 			<p class="postbox_neck"><%=retDto.getP_title()%></p>
 			<hr>
 			<%=retDto.getP_date()%>
 			<p class="postbox_body"><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
 			<button class="post_like">
-				<a href="#">좋아요</a>
+				<a href="#" class="Like">좋아요</a>
 			</button>
 
 		</div>
 
 		<!--공간나누는영역-->
-		<div id="space"></div>
+		<div class="space"></div>
 
 
 
 		<!--로그인 했을 때만댓글남기기-->
-
-
-
-
 		<!-- <c:if test="${sessionScope.sessionID!=null}"></c:if> -->
-		<div id="comment-count">
-			댓글 <span id="count"><%=clist.size()%></span>
-		</div>
-		<form id="form-commentInfo">
-			<input type="text" id="comment_input" placeholder="댓글을 입력해 주세요.">
-			<button type="button" id="comment_submit">등록</button>
 
+		<div class="allaboutcomment">
 
-			<!-- <input type="button" value="등록"/>  -->
-		</form>
+				<div class="comment-count">
+					총 댓글수 <span id="count"><%=clist.size()%></span>
+				</div>
+				<button type="button" id="comment_submit">댓글등록🤍</button>
 
+			<div id="comment">
+				<label for="itemname"><span>❤ </span>댓글쓰기</label> <input
+					type="text" id="comment_input" placeholder="어디입력해보시지">
+			</div>
+			<div class="space"></div>
 
-		<!-- 댓글 나오는 목록 -->
-		<div id=comments>
-			<table border="1">
-				<caption>
-					<h2></h2>
-				</caption>
-				<tr>
-					<td>작성자</td>
-					<td>내용</td>
-				</tr>
+			<!-- 댓글 나오는 목록 -->
+			<div id="cmtbox">
+
 				<%
 				for (BmtCmtDtDTO s : clist) {
 				%>
-			</table>
-			<div>
-				<span><%=s.getU_nick()%></span> 
-				<span><%=s.getC_date()%></span> 
-				<span
-					id="cmtList"><%=s.getC_content()%></span>
-				<%
-				//ArrayList<Long> idxList = new ArrayList<Long>();
-				//idxList.add(s.getC_idx());
-				Long c_idx = s.getC_idx();
 
-				System.out.print("댓글확인!!!!!!!!!!!" + c_idx);
+				<div>
+					<span id="cmtNick"><%=s.getU_nick()%></span>
+					<span id="cmtList"><%=s.getC_content()%></span>
+					<%
+					//ArrayList<Long> idxList = new ArrayList<Long>();
+					//idxList.add(s.getC_idx());
+					Long c_idx = s.getC_idx();
+
+					System.out.print("댓글확인!!!!!!!!!!!" + c_idx);
+					%>
+					
+					<button type="button" id="comment_delete">삭제</button>
+					<span id="delete"><%=c_idx%></span>
+					<span id="cmtTime"><%=s.getC_date()%></span>
+
+					<hr>
+				</div>
+				<%
+				}
 				%>
-				<span id="cList"></span>
-				<button type="button" id="comment_delete">삭제하기</button>
-				<span id="delete"><%=c_idx%></span>
+
 
 			</div>
-			<%
-			}
-			%>
+	</section>
 
-
-		</div>
-
-
-
-		<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-			integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-			crossorigin="anonymous">
-			
-		</script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+		crossorigin="anonymous">
+		
+	</script>
 
 
 
-		<script type="text/javascript">
-			//댓글 넣기!!!
+	<script type="text/javascript">
+		//댓글 넣기!!!
 
-			let post_comment;
+		let post_comment;
 
-			//댓글을 넣은 후 등록 버튼을 눌렀을 때 댓글정보를 가져와서 변수에 저장
-			$('#comment_submit').click(function() {
-				console.log("comment function")
-				//input 가져오는 것을 위에 하면 아무것도 안가져오게 됨
-				post_comment = $("#comment_input").val();
-				cmt_create();
+		//댓글을 넣은 후 등록 버튼을 눌렀을 때 댓글정보를 가져와서 변수에 저장
+		$('#comment_submit').click(function() {
+			console.log("comment function")
+			//input 가져오는 것을 위에 하면 아무것도 안가져오게 됨
+			post_comment = $("#comment_input").val();
+			cmt_create();
+		});
+
+		const cmt_create = function() {
+			console.log("cmt_create function");
+			console.log("입력한 댓글", post_comment);
+
+			$.ajax({
+				type : "post",
+				url : "CmtInput.do",
+				data : {
+					"post_comment" : post_comment
+				},
+				dataType : "json",
+				success : function(receive_data) {
+					console.log(receive_data);
+					//ajax_comment_suc(receive_data) 
+
+					//댓글이 잘 저장되었을 때 페이지 reload
+					if (receive_data.resCode === 1) {
+						location.reload();
+					}
+
+				},
+				error : function(erreMsg) {
+					console.log('error');
+					console.log(erreMsg);
+					alert("서버가 원활하지 않습니다..");
+				}
 			});
 
-			const cmt_create = function() {
-				console.log("cmt_create function");
-				console.log("입력한 댓글", post_comment);
+		};
 
-				$.ajax({
-					type : "post",
-					url : "CmtInput.do",
-					data : {
-						"post_comment" : post_comment
-					},
-					dataType : "json",
-					success : function(receive_data) {
-						console.log(receive_data);
-						//ajax_comment_suc(receive_data) 
+		const ajax_comment_suc = function(receive_data) {
+			console.log('내가 쓴 글: ' + post_comment);
+			console.log(receive_data);
 
-						//댓글이 잘 저장되었을 때 페이지 reload
-						if (receive_data.resCode === 1) {
-							location.reload();
-						}
+			let json = receive_data;
+			console.log(json);
+		};
 
-					},
-					error : function(erreMsg) {
-						console.log('error');
-						console.log(erreMsg);
-						alert("서버가 원활하지 않습니다..");
-					}
-				});
+		// 댓글 삭제하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!
+		let c_idx;
+		let idxList = [];
+		idxList.push();
 
-			};
+		$('#comment_delete').click(function() {
+			c_idx = $("#delete").text();
+			idxList = $("#cmtList").text();
+			console.log("댓글번호!!!!", c_idx);
+			console.log(idxList);
+			cmt_delete();
 
-			const ajax_comment_suc = function(receive_data) {
-				console.log('내가 쓴 글: ' + post_comment);
-				console.log(receive_data);
+		})
 
-				let json = receive_data;
-				console.log(json);
-			};
+		const cmt_delete = function() {
+			console.log("cmt_delete function");
+			console.log("삭제할 댓글 번호", c_idx);
 
-			// 댓글 삭제하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-			let c_idx;
-			let idxList = [];
-			idxList.push();
+			$.ajax({
+				type : "post",
+				url : "CmtDelete.do",
+				data : {
+					"c_idx" : c_idx
+				},
+				dataType : "json",
+				//댓글이 잘 삭제되었을 때 페이지 reload
+				success : function(data) {
+					location.reload();
 
-			$('#comment_delete').click(function() {
-				c_idx = $("#delete").text();
-				idxList = $("#cmtList").text();
-				console.log("댓글번호!!!!", c_idx);
-				console.log(idxList);
-				cmt_delete();
-
+				},
+				error : function(erreMsg) {
+					console.log('error');
+					console.log(erreMsg);
+					alert("서버가 원활하지 않습니다..");
+				}
 			})
-
-			const cmt_delete = function() {
-				console.log("cmt_delete function");
-				console.log("삭제할 댓글 번호", c_idx);
-
-				$.ajax({
-					type : "post",
-					url : "CmtDelete.do",
-					data : {
-						"c_idx" : c_idx
-					},
-					dataType : "json",
-					//댓글이 잘 삭제되었을 때 페이지 reload
-					success : function(data) {
-						location.reload();
-
-					},
-					error : function(erreMsg) {
-						console.log('error');
-						console.log(erreMsg);
-						alert("서버가 원활하지 않습니다..");
-					}
-				})
-			};
-		</script>
+		};
+	</script>
 
 
 
