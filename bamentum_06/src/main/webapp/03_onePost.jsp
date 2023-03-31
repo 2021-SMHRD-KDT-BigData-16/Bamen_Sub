@@ -34,8 +34,10 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	BmtOnePostDTO retDto = (BmtOnePostDTO) session.getAttribute("post");
-
-	System.out.print("03_onePost.jsp - p_idx: " + session.getAttribute("p_idx"));
+	
+	Long p_idx=(Long)session.getAttribute("p_idx");
+	System.out.println("03_onePost.jsp - p_idx: " + p_idx);
+	
 	%>
 	<%
 	Logger LOG = LoggerFactory.getLogger(getClass());
@@ -52,6 +54,8 @@
 	} else {
 		LOG.debug("onePost.jsp - clDto null ");
 	}
+	
+	
 	%>
 
 
@@ -66,7 +70,7 @@
 			<img src="./img/로고_투명_흰색.png" class="Logo">
 			<nav>
 				<ul>
-					<li><a href="#" class="menuLink"
+					<li><a href="01_post.jsp" class="menuLink"
 						style="width: 50px; align: center;">바멘텀</a></li>
 					<li><a href="#" class="menuLink"
 						style="width: 60px; align: center;">내 프로필</a></li>
@@ -93,17 +97,25 @@
 	</div>
 
 
+		<!--0331 영민 포스트 삭제하기-->
+		
+		<button id="post_delete" onclick="delPost('<%=p_idx%>')">삭제</button>
+		<!--  <form action="postDelete.do">
+			<input type="submit" value="삭제하기">		
+		
+		</form>-->
 
 	<!--포스트들이 들어가있는 영역-->
 	<section class="post">
-		<!--포스트1-->
 		<div class="postbox">
 			<a class="postbox_head" href="#" style="text-decoration: none;">🍟</a><span
 				class="writer"><%=retDto.getU_nick()%></span>
 			<p class="postbox_neck"><%=retDto.getP_title()%></p>
 			<hr>
 			<%=retDto.getP_date()%>
-			<p class="postbox_body"><%=retDto.getP_content()%></p>
+			
+			<p class="postbox_body"><img alt="이미지" height=100px
+					src=<%=retDto.getP_file()%>><br><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
 			<button class="post_like">
 				<a href="#" class="Like">좋아요</a>
@@ -141,18 +153,10 @@
 
 				<div>
 					<span id="cmtNick"><%=s.getU_nick()%></span>
-					<span id="cmtList"><%=s.getC_content()%></span>
-					<%
-					//ArrayList<Long> idxList = new ArrayList<Long>();
-					//idxList.add(s.getC_idx());
-					Long c_idx = s.getC_idx();
-
-					System.out.print("댓글확인!!!!!!!!!!!" + c_idx);
-					%>
+					<span id="cmtList"><%=s.getC_content()%></span>					
 					
-					<button type="button" id="comment_delete">삭제</button>
-					<span id="delete"><%=c_idx%></span>
-					<span id="cmtTime"><%=s.getC_date()%></span>
+					<button id="comment_delete" onclick="delCmt('<%=s.getC_idx()%>')">삭제</button>					
+					<br><span id="cmtTime"><%=s.getC_date()%></span>
 
 					<hr>
 				</div>
@@ -224,42 +228,30 @@
 		};
 
 		// 댓글 삭제하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-		let c_idx;
-		let idxList = [];
-		idxList.push();
-
-		$('#comment_delete').click(function() {
-			c_idx = $("#delete").text();
-			idxList = $("#cmtList").text();
-			console.log("댓글번호!!!!", c_idx);
-			console.log(idxList);
-			cmt_delete();
-
-		})
-
-		const cmt_delete = function() {
-			console.log("cmt_delete function");
-			console.log("삭제할 댓글 번호", c_idx);
-
+		function delCmt(c_idx){
+			console.log(c_idx);
 			$.ajax({
 				type : "post",
 				url : "CmtDelete.do",
-				data : {
-					"c_idx" : c_idx
-				},
-				dataType : "json",
-				//댓글이 잘 삭제되었을 때 페이지 reload
-				success : function(data) {
+				data: {"c_idx":c_idx},
+				success: function(data){
 					location.reload();
-
-				},
-				error : function(erreMsg) {
-					console.log('error');
-					console.log(erreMsg);
-					alert("서버가 원활하지 않습니다..");
 				}
 			})
-		};
+		}
+		
+		function delPost(p_idx){
+			$.ajax({
+				type :"post",
+				url : "PostDelete.do",
+				data: {"p_idx":p_idx},				
+				success: function(data){
+					location.replace("01_post.jsp");
+				}
+			})
+		}
+		
+		
 	</script>
 
 

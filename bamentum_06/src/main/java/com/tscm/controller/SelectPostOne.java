@@ -30,7 +30,7 @@ public class SelectPostOne implements Command {
 	
 		try {
 			request.setCharacterEncoding("UTF-8");
-			
+			//01_post.jsp에서 받아온 postid
 			long postid = Long.parseLong(request.getParameter("postid"));
 			
 			BmtOnePostDTO dto = new BmtOnePostDTO();
@@ -38,18 +38,18 @@ public class SelectPostOne implements Command {
 			BmtUserDAO dao = new BmtUserDAO();
 			BmtOnePostDTO postDto = dao.selectOnePost(dto);
 			
-			//comment
+			//comment 
 			LOG.debug("*********error1");
 			ArrayList<BmtCmtDtDTO> clDto = dao.selectComment(dto);
 			
 					
 			if(postDto != null && clDto != null) {
 				HttpSession session = request.getSession();
+				//커멘트리스트
 				session.setAttribute("post", postDto);				
 				session.setAttribute("cmtlist", clDto);
-				//포스트 아이디 가져오기
-				session.setAttribute("p_idx", postid);
-				
+				//포스트 아이디 세션에서 저장하기
+				session.setAttribute("p_idx", postid);				
 				System.out.println("선택한 게시글 번호: "+postid);
 				moveURL="03_onePost.jsp";
 			}

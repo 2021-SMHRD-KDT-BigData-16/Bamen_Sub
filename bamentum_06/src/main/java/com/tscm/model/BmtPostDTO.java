@@ -1,75 +1,109 @@
 package com.tscm.model;
 
 public class BmtPostDTO {
-	private long postId;
-	private long boardId;
-	private String email;
-	private String title;
+//	private long postId;
+//	private long boardId;
+//	private String email;
+//	private String title;
+//	private String p_content;
+//	private String imgPath;
+
+	private long p_idx;
+	private char p_type;
+	private String p_title;
 	private String p_content;
-	private String imgPath;
+	private String p_file;
+	private String p_date;
+	private String u_email;
+	private long p_view;
+	
 	
 	public BmtPostDTO() {
 		super();
-	}
-	
-	public BmtPostDTO(long postId, long boardId, String email, String title, String p_content, String imgPath) {
-		super();
-		this.postId = postId;
-		this.boardId = boardId;
-		this.email = email;
-		this.title = title;
-		this.p_content = p_content;
-		this.imgPath = imgPath;
+		
 	}
 
-	public long getPostId() {
-		return postId;
+
+	public long getP_idx() {
+		return p_idx;
 	}
 
-	public void setPostId(long postId) {
-		this.postId = postId;
+
+	public void setP_idx(long p_idx) {
+		this.p_idx = p_idx;
 	}
 
-	public long getBoardId() {
-		return boardId;
+
+	public char getP_type() {
+		return p_type;
 	}
 
-	public void setBoardId(long boardId) {
-		this.boardId = boardId;
+
+	public void setP_type(char p_type) {
+		this.p_type = p_type;
 	}
 
-	public String getEmail() {
-		return email;
+
+	public String getP_title() {
+		return p_title;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setP_title(String p_title) {
+		this.p_title = p_title;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
 
 	public String getP_content() {
 		return p_content;
 	}
 
+
 	public void setP_content(String p_content) {
 		this.p_content = p_content;
 	}
 
-	public String getImgPath() {
-		return imgPath;
+
+	public String getP_file() {
+		return p_file;
 	}
 
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
+
+	public void setP_file(String p_file) {
+		this.p_file = p_file;
 	}
 
+
+	public String getP_date() {
+		return p_date;
+	}
+
+
+	public void setP_date(String p_date) {
+		this.p_date = p_date;
+	}
+
+
+	public String getU_email() {
+		return u_email;
+	}
+
+
+	public void setU_email(String u_email) {
+		this.u_email = u_email;
+	}
+
+
+	public long getP_view() {
+		return p_view;
+	}
+
+
+	public void setP_view(long p_view) {
+		this.p_view = p_view;
+	}
+	
+	
 	
 	
 	

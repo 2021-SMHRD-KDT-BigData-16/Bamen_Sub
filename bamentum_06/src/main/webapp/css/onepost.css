@@ -282,7 +282,12 @@ input::placeholder {
 	display: inline-block;
 }
 
-
+/*img{
+	width: 800px;
+	height: 450px;
+	object-fit: cover;
+	
+}*/
 
 .post {
 	margin-top: 50px;
@@ -380,12 +385,13 @@ p.postbox_neck {
 	
 }
 #cmtList{	
-	width: 450px;
+	width: 500px;
 	display: inline-block;
 	
 }
 #cmtTime{
 	font-size:12px;
+	
 	
 }
 

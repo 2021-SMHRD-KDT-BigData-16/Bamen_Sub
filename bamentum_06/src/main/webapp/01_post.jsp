@@ -40,7 +40,7 @@
 	Logger LOG = LoggerFactory.getLogger(getClass());
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
-	ArrayList<BmtOnePostDTO> listDto = (ArrayList) session.getAttribute("postlist");
+	ArrayList<BmtOnePostDTO> listDto = (ArrayList)session.getAttribute("postlist");
 
 	if (listDto != null) {
 		LOG.debug("post.jsp - listDto size {} ", listDto.size());
@@ -61,7 +61,7 @@
 			<img src="./img/로고_투명_흰색.png" class="Logo">
 			<nav>
 				<ul>
-					<li><a href="#" class="menuLink"
+					<li><a href="01_post.jsp" class="menuLink"
 						style="width: 50px; align: center;">바멘텀</a></li>
 					<li><a href="#" class="menuLink"
 						style="width: 60px; align: center;">내 프로필</a></li>
@@ -119,7 +119,8 @@
 			<div class="postbox">
 
 
-				<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer"> <%=listDto.get(i).getU_nick()%></span>
+				<a class="postbox_head" href="#" style="text-decoration: none;">
+					<span class="writer"> <%=listDto.get(i).getU_nick()%></span>
 				</a>
 				<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
 				<p>
@@ -148,17 +149,18 @@
 				</button>
 
 				<button class="post_origin">
+<!-- postid 보내기작업(to selectpostone.java) -->
 					<a href="javascript:onePost('<%=listDto.get(i).getP_idx()%>')"
 						class="Origin">원문보기</a>
 				</button>
 				<!--공간나누는영역-->
 			</div>
-				<div class="space"></div>
+			<div class="space"></div>
 
 			<%
-				}
-				%>
-				<div id="post_more"></div>
+			}
+			%>
+			<div id="post_more"></div>
 		</section>
 
 		<button id="btn_post_more">페이지 더보기</button>
@@ -170,7 +172,7 @@
 		let post_send = { "page_cnt" : page_cnt };
 		
 		// 무한스크롤 들어갈 자리
-		
+	
 		$('#btn_post_more').click(function(){
 			console.log("btnPost function");
 			next_load();
@@ -217,7 +219,7 @@
 				
 			        <div class = "postbox">
 		            
-					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer">` + json[i].u_nick  + ` : ` + json[i].p_idx + ` </span></a>
+					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer">` + json[i].u_nick  + ` </span></a>
 		            
 		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
 		            <p class="postbox_neck">   ` + json[i].p_date  + ` </p>
@@ -264,6 +266,7 @@
 
 		<!-- 페이지 이동 자바스크립트 -->
 		<script type="text/javascript">
+		
 	function onePost(postid){
 		console.log(postid);		
 	    let f = document.createElement('form');

@@ -95,7 +95,7 @@
   
   select postid, boardid, email, title, imgpath, p_content
 	    from bmt_post
-	where postid=#{postId}
+	where postid=#{postId} order by p_date
   
   </select>  
   
@@ -129,6 +129,20 @@
   <delete id="cmt_delete" parameterType="com.tscm.model.BmtCmtDTO">
    delete from bmt_comment where c_idx=#{c_idx}
   </delete>
+  
+  <insert id="post_insert" parameterType="com.tscm.model.BmtPostDTO">
+  	insert into bmt_post values(BMT_POST_SEQ.nextval,#{p_type}, #{p_title}, #{p_content}, #{p_file}, sysdate, #{u_email}, #{p_view})
+  </insert>
+  
+  <delete id="post_delete" parameterType="com.tscm.model.BmtPostDTO">
+  delete from bmt_post where p_idx=#{p_idx}
+  </delete>
+  
+  
+  
+  
+  
+  
   
 
 </mapper>

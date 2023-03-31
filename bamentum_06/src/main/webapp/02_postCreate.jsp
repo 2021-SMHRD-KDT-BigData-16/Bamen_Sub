@@ -1,66 +1,99 @@
+<%@page import="com.tscm.model.BmtPostDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>바멘텀 | 글 작성"</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바멘텀 | 글 작성"</title>
 
-    
-    <link rel="stylesheet" href="./css/postCreate.css">
+
+<link rel="stylesheet" href="./css/postCreate.css">
 
 
 </head>
 
 <body>
-    <!-- Header -->
-    <div>
+	<!-- Header -->
+	<div>
 
-        <body>
-            <div class="page">
-                <header>
-                    <img src=".img/로고_투명_흰색.png" class="Logo">
-                    <nav>
-                        <ul>
-                            <li><a href="#" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
-                            <li><a href="#" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
-                            <li><a href="#" class="menuLink">Game</a></li>
-                            <li><a href="#" class="menuLink">Dream</a></li>
+		<body>
+			<div class="page">
+				<header>
+					<img src=".img/로고_투명_흰색.png" class="Logo">
+					<nav>
+						<ul>
+							<li><a href="01_post.jsp" class="menuLink"
+								style="width: 50px; align: center;">바멘텀</a></li>
+							<li><a href="#" class="menuLink"
+								style="width: 60px; align: center;">내 프로필</a></li>
+							<li><a href="#" class="menuLink">Game</a></li>
+							<li><a href="#" class="menuLink">Dream</a></li>
 
-                        </ul>
+						</ul>
 
-                        <div class="search-box">
-                            <button class="btn-search"><i class="fas fa-search"><img
-                                        src="/Bamen_Sub/project5/img/search_white(2).png" class="search_icon"
-                                        style="width : 40px; margin-top : 8px;"></i></button>
+						<div class="search-box">
+							<button class="btn-search">
+								<i class="fas fa-search"><img
+									src="/Bamen_Sub/project5/img/search_white(2).png"
+									class="search_icon" style="width: 40px; margin-top: 8px;"></i>
+							</button>
 
-                            <input type="text" class="input-search" placeholder="검색어를 입력하세요!">
-                        </div>
+							<input type="text" class="input-search" placeholder="검색어를 입력하세요!">
+						</div>
 
-                        <img src=".img/person-circle.svg" class="profile_circle">
+						<img src=".img/person-circle.svg" class="profile_circle">
 
-                    </nav>
-                </header>
-            </div>
-        </body>
-    </div>
+					</nav>
+				</header>
+			</div>
+		</body>
+	</div>
+	<%
 
-<section class = "writing_section">
+	%>
 
-    <div class = "div_write">
-        <input type="text" class = "input_title" placeholder="제목을 입력하세요!">
-        
-        <input type="text" class = "input_content" placeholder="당신의 생각을 적어주세요">
-    </div>
+	
+			
+		<form action="PostCreate.do" method="post">
+			<input type="text" name="p_title" class="input_title" placeholder="제목을 입력하세요!"> 
+			<input type="text" name="p_content" class="input_content" placeholder="당신의 생각을 적어주세요">
+			<input type="submit" value="글올리기" class="p_create">
+		</form>
+			
 
-</section>
 
 
 
 
 </body>
+
+<!-- 페이지 이동 자바스크립트 -->
+<script type="text/javascript">
+	function PostCreate(postid) {
+		console.log(postid);
+		let f = document.createElement('form');
+
+		let obj;
+		obj = document.createElement('input');
+		obj.setAttribute('type', 'hidden');
+		obj.setAttribute('name', 'postid');
+		obj.setAttribute('value', postid);
+
+		f.appendChild(obj);
+		f.setAttribute('method', 'post');
+		f.setAttribute('action', 'onePost.do');
+		document.body.appendChild(f);
+		f.submit();
+	}
+</script>
+
+
+
+
 
 </html>

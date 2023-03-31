@@ -17,6 +17,8 @@ import com.tscm.controller.JoinService;
 import com.tscm.controller.LogInService;
 import com.tscm.controller.LogoutService;
 import com.tscm.controller.MorePageService;
+import com.tscm.controller.PostCreate;
+import com.tscm.controller.PostDelete;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
 import com.tscm.controller.UpdateService;
@@ -79,8 +81,7 @@ public class FrontController extends HttpServlet {
 			
 			JoinService join = new JoinService();
 			moveURL = join.execute(request, response);
-			LOG.debug("JoinService moveURL {} ", moveURL);
-			
+			LOG.debug("JoinService moveURL {} ", moveURL);			
 			response.sendRedirect(moveURL);
 			return;
 
@@ -94,7 +95,17 @@ public class FrontController extends HttpServlet {
 			moveURL = update.execute(request, response);
 			LOG.debug("UpdateService moveURL {} ", moveURL);
 
-		} else if(strUriDo.equals("CmtInput.do")) {
+		} else if(strUriDo.equals("PostCreate.do")) {
+			PostCreate postwrite= new PostCreate();
+			moveURL = postwrite.execute(request, response);
+			LOG.debug("PostCreate moveURL {} ", moveURL);
+			
+		}else if(strUriDo.equals("PostDelete.do")) {
+			PostDelete postdelete= new PostDelete();
+			moveURL = postdelete.execute(request, response);
+			LOG.debug("PostCreate moveURL {} ", moveURL);
+			
+		}else if(strUriDo.equals("CmtInput.do")) {
 			CmtCreate cmtinput= new CmtCreate();
 			moveURL = cmtinput.execute(request, response);
 			LOG.debug("cmtService moveURL {} ", moveURL);

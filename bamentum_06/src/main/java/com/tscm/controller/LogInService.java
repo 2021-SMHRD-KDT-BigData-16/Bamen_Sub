@@ -39,6 +39,7 @@ public class LogInService implements Command {
 			if(retDto != null) {
 				LOG.debug(" ***  log in Success email : {} ", retDto.getU_email());
 				HttpSession session = request.getSession();
+				//session에 이메일 저장하기
 				session.setAttribute("user", retDto);
 				session.setAttribute("email", email);
 				moveURL = "01_post.jsp";
