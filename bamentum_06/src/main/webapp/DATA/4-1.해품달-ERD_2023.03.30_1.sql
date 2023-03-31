@@ -156,6 +156,8 @@ insert into bmt_user values ('zipgalle1116@bamentum.com',   'aaa', '최근호', './
 insert into bmt_user values ('SeongGyu0407@bamentum.com',   'aaa', '한성규', './DATA/ImgProfil/img019.jpg', '생명공학 바이오 회사 다니고 있는 한연구원입니다ㅇㅅㅇ', ' ' , TO_DATE('2023/03/20 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('Yeonwoo0806@bamentum.com',    'aaa', '김연우', './DATA/ImgProfil/img020.jpg', '앞질러보자,넘어서보자,가볍게,우월해지자! 나의 가오는 나만의 내자전거로! ', ' ' , TO_DATE('2023/03/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 
+insert into bmt_user values ('aaa@aaa.aaa',    'aaa', '관리자', './DATA/ImgProfil/img021.jpg', '앞질러보자,넘어서보자,가볍게,우월해지자! 나의 가오는 나만의 내자전거로! ', ' ' , TO_DATE('2023/03/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+
 commit;
 
 
