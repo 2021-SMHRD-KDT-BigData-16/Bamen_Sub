@@ -93,7 +93,7 @@ CREATE TABLE bmt_follow
 );
 
 ALTER TABLE bmt_follow ADD UNIQUE (follower, following);
-
+/*
 CREATE TABLE bmt_bic
 (
     b_num      VARCHAR2(40)     NOT NULL, 
@@ -104,6 +104,22 @@ CREATE TABLE bmt_bic
    ,foreign key (u_email) references bmt_user(u_email)
      
 );
+*/
+
+
+CREATE TABLE bmt_bic
+(
+    b_num      VARCHAR2(40)     NOT NULL, 
+    u_email    VARCHAR2(80)     NOT NULL, 
+    b_img      VARCHAR2(600)    NOT NULL, 
+    b_brand    VARCHAR2(80)    NOT NULL, 
+    b_model    VARCHAR2(80)    NOT NULL, 
+     PRIMARY KEY (b_num)
+     
+   ,foreign key (u_email) references bmt_user(u_email)
+     
+);
+
 
 CREATE TABLE bmt_post_likes
 (
@@ -232,29 +248,29 @@ commit;
 
 -- delete from bmt_bic;
 
-insert into bmt_bic values ('WSBC021015577T',        'Mi_yeon0602@bamentum.com',    './DATA/bic_num_img/bic_num/1-1.png');
-insert into bmt_bic values ('WTU189C0817T',          'Young_Min0531@bamentum.com',  './DATA/bic_num_img/bic_num/2-1.jpeg');
-insert into bmt_bic values ('WTU190C7684T',          'Kyungsoo0723@bamentum.com',   './DATA/bic_num_img/bic_num/3-1.jpg');
-insert into bmt_bic values ('WSBC001002294R',        'Sangjae0604@bamentum.com',    './DATA/bic_num_img/bic_num/4-1.jpg');
-insert into bmt_bic values ('STR23D25221070081T',    'Yeonwoo0806@bamentum.com',    './DATA/bic_num_img/bic_num/5-1.jpg');
+insert into bmt_bic values ('WSBC021015577T',        'Mi_yeon0602@bamentum.com',       './DATA/bic_num_img/bic_num/1-1.png');
+insert into bmt_bic values ('WTU189C0817T',          'Young_Min0531@bamentum.com',     './DATA/bic_num_img/bic_num/2-1.jpeg');
+insert into bmt_bic values ('WTU190C7684T',          'Kyungsoo0723@bamentum.com',      './DATA/bic_num_img/bic_num/3-1.jpg');
+insert into bmt_bic values ('WSBC001002294R',        'Sangjae0604@bamentum.com',       './DATA/bic_num_img/bic_num/4-1.jpg');
+insert into bmt_bic values ('STR23D25221070081T',    'Yeonwoo0806@bamentum.com',       './DATA/bic_num_img/bic_num/5-1.jpg');
 
 
 
-insert into bmt_bic values ('wto017ct0074m0207',    'Gyu_nam1211@bamentum.com',        './DATA/bic_num_img/bic_num/6-1.jpg');
-insert into bmt_bic values ('JG22120672',    'SeongGyu0407@bamentum.com',       './DATA/bic_num_img/bic_num/7-2.jpg');
-insert into bmt_bic values ('JMH220404156',    'Kwon_Min1102@bamentum.com',       './DATA/bic_num_img/bic_num/8-2.jpg');
-insert into bmt_bic values ('236325221900481',    'Sohyun0519@bamentum.com',         './DATA/bic_num_img/bic_num/9-1.jpeg');
-insert into bmt_bic values ('B1A114504S WBK946971S',    'KIHYUN0928@bamentum.com',         './DATA/bic_num_img/bic_num/10-1.jpg');
-insert into bmt_bic values ('XD2112APOO31C',    'Ha_Eun0103@bamentum.com',         './DATA/bic_num_img/bic_num/11-1.jpg');
-insert into bmt_bic values ('사진참조',    'Da-gyeong0711@bamentum.com',      './DATA/bic_num_img/bic_num/12-1.jpg');
-insert into bmt_bic values ('WTU256XC0146T',    'Hyeong_sun0331@bamentum.com',     './DATA/bic_num_img/bic_num/13-1.jpg');
-insert into bmt_bic values ('IBDFSD17KA1732',    'Jung_Hyun0421@bamentum.com',      './DATA/bic_num_img/bic_num/14-1.jpg');
-insert into bmt_bic values ('BM22100830',    'Semi1108@bamentum.com',           './DATA/bic_num_img/bic_num/15-1.jpg');
-insert into bmt_bic values ('JMH201203868',    'JiKang1010@bamentum.com',         './DATA/bic_num_img/bic_num/16-1.jpg');
-insert into bmt_bic values ('LK210330577',    'ESOO0710@bamentum.com',           './DATA/bic_num_img/bic_num/17-1.jpeg');
-insert into bmt_bic values ('AH20M 165918',    'Young-rae0618@bamentum.com',      './DATA/bic_num_img/bic_num/18-1.jpg');
-insert into bmt_bic values ('Y5C05217',    'JunYong0112@bamentum.com',        './DATA/bic_num_img/bic_num/19-1.jpg');
-insert into bmt_bic values ('P19CE9110084',    'zipgalle1116@bamentum.com',       './DATA/bic_num_img/bic_num/20-1.jpg');
+insert into bmt_bic values ('wto017ct0074m0207',     'Gyu_nam1211@bamentum.com',       './DATA/bic_num_img/bic_num/6-1.jpg');
+insert into bmt_bic values ('JG22120672',            'SeongGyu0407@bamentum.com',      './DATA/bic_num_img/bic_num/7-2.jpg');
+insert into bmt_bic values ('JMH220404156',          'Kwon_Min1102@bamentum.com',      './DATA/bic_num_img/bic_num/8-2.jpg');
+insert into bmt_bic values ('236325221900481',       'Sohyun0519@bamentum.com',        './DATA/bic_num_img/bic_num/9-1.jpeg');
+insert into bmt_bic values ('B1A114504S WBK946971S', 'KIHYUN0928@bamentum.com',        './DATA/bic_num_img/bic_num/10-1.jpg');
+insert into bmt_bic values ('XD2112APOO31C',         'Ha_Eun0103@bamentum.com',        './DATA/bic_num_img/bic_num/11-1.jpg');
+insert into bmt_bic values ('AAAAA',                 'Da-gyeong0711@bamentum.com',     './DATA/bic_num_img/bic_num/12-1.jpg');
+insert into bmt_bic values ('WTU256XC0146T',         'Hyeong_sun0331@bamentum.com',    './DATA/bic_num_img/bic_num/13-1.jpg');
+insert into bmt_bic values ('IBDFSD17KA1732',        'Jung_Hyun0421@bamentum.com',     './DATA/bic_num_img/bic_num/14-1.jpg');
+insert into bmt_bic values ('BM22100830',            'Semi1108@bamentum.com',          './DATA/bic_num_img/bic_num/15-1.jpg');
+insert into bmt_bic values ('JMH201203868',          'JiKang1010@bamentum.com',        './DATA/bic_num_img/bic_num/16-1.jpg');
+insert into bmt_bic values ('LK210330577',           'ESOO0710@bamentum.com',          './DATA/bic_num_img/bic_num/17-1.jpeg');
+insert into bmt_bic values ('AH20M 165918',          'Young-rae0618@bamentum.com',     './DATA/bic_num_img/bic_num/18-1.jpg');
+insert into bmt_bic values ('Y5C05217',              'JunYong0112@bamentum.com',       './DATA/bic_num_img/bic_num/19-1.jpg');
+insert into bmt_bic values ('P19CE9110084',          'zipgalle1116@bamentum.com',      './DATA/bic_num_img/bic_num/20-1.jpg');
 
 commit;
 

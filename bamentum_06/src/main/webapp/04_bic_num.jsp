@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet">
 
-    <!-- css 경로 -->
-    <link rel="stylesheet" href="/bamentum_06/src/main/webapp/css/bic_num.css">
-    <title>바멘텀 | 내 자전거 등록</title>
-</head>
+        <!-- css 경로 -->
+        <link rel="stylesheet" href="/bamentum_06/src/main/webapp/css/bic_num.css">
+        <title>바멘텀 | 내 자전거 등록</title>
+
+
+    </head>
 
 <body>
 
@@ -53,14 +56,14 @@
             있으며 <br> 분실 및 도난 사고에 대비할 수 있습니다.</h6>
     </div>
 
-    <div class="bic_num_sector">
+<div class="bic_num_sector" >
 
 
-
+<form action="BicInsert.do" method="post">
         <h4 style="width : 300px; font-size : 22px; margin-left : 20px;">브랜드를 선택해 주세요.</h4>
         <div class="selectBox_1" style="margin-left: 20px; margin-top : -20px;">
 
-            <select class="select">
+            <select class="select" name="b_brand" >
                 <option disabled selected>브랜드 선택</option>
                 <option>ALTON</option>
                 <option>APPALANCHIA</option>
@@ -187,7 +190,7 @@
         <h4 style="width : 300px; font-size : 22px; margin-left : 20px;">모델명을 입력해 주세요.</h4>
         <div class="selectBox_2" style="margin-left: 20px; margin-top : -20px;">
 
-            <input class="input_model">
+            <input class="input_model" name="b_model">
 
         </div>
 
@@ -205,7 +208,7 @@
         </h4>
         <div class="selectBox_2" style="margin-left: 20px; margin-top : -20px;">
 
-            <input class="input_model">
+            <input class="input_model"  name="b_num">
 
 
             <!-- <div style="margin-top : -100px; margin-left : -200px; border : 1px solid gray;" ">
@@ -217,7 +220,7 @@
 
 
 
-        </div>
+        
 
         <div class="modal-bg" onClick="javascript:popClose();"></div>
         <div class="num_info"
@@ -239,7 +242,7 @@
                             이곳을 클릭하여 사진을 선택해 주세요!
                         </label>
                     </div>
-                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                    <input type="file" id="chooseFile" name="b_img" accept="image/*" onchange="loadFile(this)">
                 </form>
 
                 <div class="fileContainer">
@@ -270,6 +273,7 @@
 
 
     </div>
+    </form>
     </div>
 </body>
 
