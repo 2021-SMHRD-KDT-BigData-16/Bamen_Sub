@@ -42,8 +42,16 @@
   </select>
 
   
+<!--   
+  insert into bmt_user values ('aaa@aaa.aaa', 'aaa', '문경수', './DATA/PostImage/img001.jpg', '사용자정보를 길게 써보장', '좋아하는 코스aaa' , TO_DATE('2023/03/01 11:00:00', 'YYYY/MM/DD HH:MI:SS'), 'u' ) ;
+ -->  
   
+  <insert id="bmt_join" parameterType="com.tscm.model.BmtUserDTO">
   
+	insert into bmt_user
+		values (#{u_email}, #{u_pw}, #{u_nick}, #{u_profile}, #{u_info}, #{u_course}, sysdate, #{u_type})
+		
+  </insert>
 
 
 

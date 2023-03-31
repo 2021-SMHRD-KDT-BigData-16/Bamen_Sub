@@ -12,6 +12,7 @@ public class BmtUserDTO {
 	private Date u_joindate;
 	private String u_type;
 	
+	
 	public BmtUserDTO() {
 		
 	}

@@ -55,6 +55,7 @@
     </div>
 
     <div class="modal-bg" onClick="javascript:popClose();"></div>
+    
 <!--  문경수 : 2023.03.30 Login 기능 시작 -->    
     
     <form class="join-form" action="Join.do" method="post" >

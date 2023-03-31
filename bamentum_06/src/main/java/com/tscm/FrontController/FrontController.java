@@ -41,7 +41,6 @@ public class FrontController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String path = request.getContextPath();
 
-		// 3. 1~2踰덉쓣 �솢�슜�븯�뿬 �븘�슂�븳 �슂泥� �씠由� �솗�씤!
 		String strUriDo = uri.substring(path.length() + 1);
 
 		LOG.debug("uri {}, path {}, substr : {}", uri, path, strUriDo);
@@ -81,6 +80,9 @@ public class FrontController extends HttpServlet {
 			JoinService join = new JoinService();
 			moveURL = join.execute(request, response);
 			LOG.debug("JoinService moveURL {} ", moveURL);
+			
+			response.sendRedirect(moveURL);
+			return;
 
 		} else if (strUriDo.equals("MyPage.do")) {
 			SelectMyPage mypage = new SelectMyPage();

@@ -19,31 +19,30 @@ public class JoinService implements Command {
 		String moveURL = null;
 		try {
 			request.setCharacterEncoding("UTF-8");
-			String email = request.getParameter("email");
-			String pw = request.getParameter("pw");
+			String u_email = request.getParameter("u_email");
+			String u_pw = request.getParameter("u_pw");
 			String u_nick = request.getParameter("u_nick");
-			String u_profile = request.getParameter("u_profile");
-			String u_info = request.getParameter("u_info");
-			LOG.debug("email : {}, pw : {}, u_name : {}, profileimg : {} profiletext : {}", email, pw, u_nick,
-					u_profile, u_info);
+			LOG.debug("u_email : {}, u_pw : {}, u_nick : {}", u_email, u_pw, u_nick);
 
 			BmtUserDTO dto = new BmtUserDTO();
-			dto.setU_email(email);
-			dto.setU_pw(pw);
+			dto.setU_email(u_email);
+			dto.setU_pw(u_pw);
 			dto.setU_nick(u_nick);
-			dto.setU_profile(u_profile);
-			dto.setU_info(u_info);
+			dto.setU_profile(" ");
+			dto.setU_info(" ");
+			dto.setU_course(" ");
+			dto.setU_type(" ");
 
 			BmtUserDAO dao = new BmtUserDAO();
 			int cnt = dao.join(dto);
 
 			LOG.debug("join return cnt : {} ", cnt);
 			if (cnt > 0) {
-				request.setAttribute("email", email);
-				moveURL = "join_success.jsp";
+				request.setAttribute("u_email", u_email);
+				moveURL = "00_login.jsp";
 
 			} else {
-				moveURL = "main.jsp";
+				moveURL = "00_login.jsp";
 			}
 
 		} catch (Exception e) {
