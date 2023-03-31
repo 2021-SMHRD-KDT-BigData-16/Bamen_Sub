@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.tscm.controller.JoinService;
+import com.tscm.controller.LikeService;
 import com.tscm.controller.LogInService;
 import com.tscm.controller.LogoutService;
 import com.tscm.controller.MorePageService;
@@ -70,7 +71,13 @@ public class FrontController extends HttpServlet {
 			moveURL = more_page.execute(request, response);
 			LOG.debug("MorePageService moveURL {} ", moveURL);
 						
-		} else if (strUriDo.equals("Logout.do")) {
+		} else if (strUriDo.equals("LikeService.do")) {
+
+			LikeService like = new LikeService();
+			moveURL = like.execute(request, response);
+			LOG.debug("MorePageService moveURL {} ", moveURL);
+						
+		}else if (strUriDo.equals("Logout.do")) {
 
 			LOG.debug("LogOutService start ");
 			LogoutService logout = new LogoutService();
