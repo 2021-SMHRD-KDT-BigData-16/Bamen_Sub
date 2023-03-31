@@ -19,7 +19,7 @@ public class BmtLikeDAO {
 		}return cnt;
 	} 
 	
-	public int like(BmtLikeDTO dto) {
+	public int likeInsert(BmtLikeDTO dto) {
 		int cnt=0;		
 		SqlSession session = factory.openSession(true);
 		try {

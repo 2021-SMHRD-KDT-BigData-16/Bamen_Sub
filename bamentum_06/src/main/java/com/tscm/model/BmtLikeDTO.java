@@ -3,7 +3,7 @@ package com.tscm.model;
 public class BmtLikeDTO {
 	Long like_idx;
 	Long p_idx;
-	Long u_email;
+	String u_email;
 	String like_date;
 	
 	public BmtLikeDTO() {
@@ -27,11 +27,11 @@ public class BmtLikeDTO {
 		this.p_idx = p_idx;
 	}
 
-	public Long getU_email() {
+	public String getU_email() {
 		return u_email;
 	}
 
-	public void setU_email(Long u_email) {
+	public void setU_email(String u_email) {
 		this.u_email = u_email;
 	}
 

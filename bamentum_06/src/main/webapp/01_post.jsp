@@ -40,8 +40,10 @@
 	Logger LOG = LoggerFactory.getLogger(getClass());
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
-	ArrayList<BmtOnePostDTO> listDto = (ArrayList)session.getAttribute("postlist");
-
+	ArrayList<BmtOnePostDTO> listDto = (ArrayList) session.getAttribute("postlist");
+	//int likeNum=(int)session.getAttribute("likeNum");
+	
+	
 	if (listDto != null) {
 		LOG.debug("post.jsp - listDto size {} ", listDto.size());
 		for (int i = 0; i < listDto.size(); i++) {
@@ -112,6 +114,7 @@
 
 		<!--포스트들이 들어가있는 영역-->
 		<section class="post">
+		
 
 			<%
 			for (int i = 0; i < listDto.size(); i++) {
@@ -145,11 +148,13 @@
 
 				<hr style="border: 1 solid gray;">
 				<button class="post_like">
-					<a href="#" class="Like">좋아요</a>
+					<a href="javascript:likePost('<%=listDto.get(i).getP_idx()%>')"
+						class="Like">좋아요</a>
 				</button>
-
+				
+				<span id="like">	좋아요  개	</span>
 				<button class="post_origin">
-<!-- postid 보내기작업(to selectpostone.java) -->
+					<!-- postid 보내기작업(to selectpostone.java) -->
 					<a href="javascript:onePost('<%=listDto.get(i).getP_idx()%>')"
 						class="Origin">원문보기</a>
 				</button>
@@ -263,8 +268,7 @@
 	</script>
 
 
-
-		<!-- 페이지 이동 자바스크립트 -->
+		<!-- 포스트 이동 자바스크립트 -->
 		<script type="text/javascript">
 		
 	function onePost(postid){
@@ -283,8 +287,45 @@
 	    document.body.appendChild(f);
 	    f.submit();
 	}	
+	
+		<!-- 포스트 좋아요 자바스크립트 -->
+	function likePost(postid){
+	
+		$.ajax({
+			type: "post",
+			url: "LikeService.do",
+			data :{
+				"p_idx":postid
+			},
+			dataType : "json",
+			success : function(receive_data){
+				console.log(receive_data);
+				if (receive_data.resCode === 1) {
+				alert("좋아요💚");			
+				ajax_love_suc(receive_data);
+				}else{
+				alert("이미 눌렀어요💚");					
+				}
 
- 	
+			},
+			error : function(erreMsg){
+				console.log(erreMsg);
+			}		
+			
+		});
+
+	};
+	
+	const ajax_love_suc = function(receive_data){
+		let json=receice_data;
+		console.log(json);
+		
+	};
+
+
+
+
+
  	</script>
 
 

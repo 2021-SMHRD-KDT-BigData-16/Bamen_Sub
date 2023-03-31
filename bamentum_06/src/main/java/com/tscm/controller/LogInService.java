@@ -52,7 +52,7 @@ public class LogInService implements Command {
 				}
 				
 				iPage++;
-				
+				//로그인 성공시 postlist들을 세션에 저장함
 				session.setAttribute("post_page", iPage);
 				session.setAttribute("postlist", listDto);
 				

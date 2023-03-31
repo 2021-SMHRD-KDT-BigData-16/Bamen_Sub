@@ -45,6 +45,8 @@
 
 	ArrayList<BmtCmtDtDTO> clist = (ArrayList) session.getAttribute("cmtlist");
 
+	
+	
 	if (clist != null) {
 		LOG.debug("onePost.jsp - listDto size {} ", clist.size());
 		for (int i = 0; i < clist.size(); i++) {
@@ -104,7 +106,7 @@
 			<input type="submit" value="삭제하기">		
 		
 		</form>-->
-
+<% %>
 	<!--포스트들이 들어가있는 영역-->
 	<section class="post">
 		<div class="postbox">
@@ -118,7 +120,8 @@
 					src=<%=retDto.getP_file()%>><br><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
 			<button class="post_like">
-				<a href="#" class="Like">좋아요</a>
+			
+				<a href="#" class="Like">좋아요 수 </a>
 			</button>
 
 		</div>

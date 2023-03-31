@@ -79,7 +79,7 @@
 		(BMT_POST_LIKES_SEQ.nextval,#{p_idx},#{u_email},sysdate)
 
 	</insert>
-
+	
 
 
 
@@ -96,7 +96,7 @@
 
 		select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgPath
 		from bmt_post p, bmt_user u
-		where u.email = p.email
+		where u.email = p.email  order by p_date
 
 	</select>
 
@@ -116,7 +116,7 @@
 
 		select postid, boardid, email, title, imgpath, p_content
 		from bmt_post
-		where postid=#{postId} order by p_date
+		where postid=#{postId}
 
 	</select>
 
