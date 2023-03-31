@@ -17,6 +17,7 @@ import com.tscm.controller.JoinService;
 import com.tscm.controller.LogInService;
 import com.tscm.controller.LogoutService;
 import com.tscm.controller.MorePageService;
+import com.tscm.controller.MyProfile;
 import com.tscm.controller.PostCreate;
 import com.tscm.controller.PostDelete;
 import com.tscm.controller.SelectMyPage;
@@ -120,7 +121,10 @@ public class FrontController extends HttpServlet {
 			BicNumIns bic_num_ins= new BicNumIns();
 			moveURL = bic_num_ins.execute(request, response);
 			LOG.debug("BicNumIns moveURL {} ", moveURL);
-			
+		} else if(strUriDo.equals("MyProfile.do")) {
+			MyProfile my_profile = new MyProfile();
+			moveURL = my_profile.execute(request, response);
+			LOG.debug("MyProfile moveURL {} ", moveURL);
 		}else {
 			LOG.debug("FrontController : {}", "Unknown page");
 		}

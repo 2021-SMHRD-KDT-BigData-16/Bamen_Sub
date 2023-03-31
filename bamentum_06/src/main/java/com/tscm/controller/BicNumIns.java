@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tscm.model.BmtBicDAO;
+import com.tscm.model.BmtMyPfDAO;
 import com.tscm.model.BmtBicDTO;
 
 public class BicNumIns implements Command {
@@ -39,7 +39,7 @@ public class BicNumIns implements Command {
 			dto.setU_email(u_email);
 			dto.setB_img(b_img);
 
-			BmtBicDAO dao = new BmtBicDAO();
+			BmtMyPfDAO dao = new BmtMyPfDAO();
 			int cnt = dao.bic_insert(dto);
 
 			LOG.debug(" bic_num ins return cnt : {} ", cnt);

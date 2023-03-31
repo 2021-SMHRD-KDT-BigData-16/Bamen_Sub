@@ -134,7 +134,7 @@ CREATE TABLE bmt_post_likes
      
 );
 
-ALTER TABLE bmt_follow ADD UNIQUE (p_idx, u_email);
+ALTER TABLE bmt_post_likes ADD UNIQUE (p_idx, u_email);
 
 
 
@@ -279,3 +279,9 @@ commit;
 
 
 -- insert into bmt_follow values (bmt_fw_seq.NEXTVAL, 'ddd@ddd.ddd', 'ccc@ccc.ccc', TO_DATE('2023/03/05 11:05:00', 'YYYY/MM/DD HH24:MI:SS'));
+/*
+select u.u_email, u.u_nick, u.u_profile, u.u_info, u.u_joindate, b.b_num, b.b_img, b.b_brand, b.b_model 
+from bmt_user u, bmt_bic b 
+where u.u_email = b.u_email ;
+
+*/

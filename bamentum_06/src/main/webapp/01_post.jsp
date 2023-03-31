@@ -63,7 +63,7 @@
 				<ul>
 					<li><a href="01_post.jsp" class="menuLink"
 						style="width: 50px; align: center;">바멘텀</a></li>
-					<li><a href="05_myprofile.jsp" class="menuLink"
+					<li><a href="MyProfile.do" class="menuLink"
 						style="width: 60px; align: center;">내 프로필</a></li>
 					<li><a href="#" class="menuLink" style="width: 60px;">여긴
 							뭐야</a></li>
