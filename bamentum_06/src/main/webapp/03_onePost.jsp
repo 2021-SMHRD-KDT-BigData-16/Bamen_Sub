@@ -34,9 +34,9 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	BmtOnePostDTO retDto = (BmtOnePostDTO) session.getAttribute("post");
-	
+
 	Long p_idx=(Long)session.getAttribute("p_idx");
-	System.out.println("03_onePost.jsp - p_idx: " + p_idx);
+	System.out.println("03_onePost.jsp - p_idx: " + p_idx );
 	
 	%>
 	<%
@@ -44,7 +44,7 @@
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
 	ArrayList<BmtCmtDtDTO> clist = (ArrayList) session.getAttribute("cmtlist");
-
+	int likeNum = (int)session.getAttribute("likeNum");
 	
 	
 	if (clist != null) {
@@ -119,10 +119,7 @@
 			<p class="postbox_body"><img alt="이미지" height=100px
 					src=<%=retDto.getP_file()%>><br><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
-			<button class="post_like">
 			
-				<a href="#" class="Like">좋아요 수 </a>
-			</button>
 
 		</div>
 
@@ -138,6 +135,9 @@
 
 				<div class="comment-count">
 					총 댓글수 <span id="count"><%=clist.size()%></span>
+				</div>
+				<div class="comment-count">
+					❤좋아요 수 <span id="count"><%=likeNum%></span>
 				</div>
 				<button type="button" id="comment_submit">댓글등록🤍</button>
 

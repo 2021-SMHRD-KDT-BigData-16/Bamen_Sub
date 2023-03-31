@@ -11,8 +11,7 @@ public class BmtLikeDAO {
 		int cnt=0;
 		SqlSession session = factory.openSession(true);
 		try {
-			cnt=session.selectOne("show_like",dto);
-			
+			cnt=session.selectOne("show_like",dto);			
 		} finally {
 			session.close();
 			

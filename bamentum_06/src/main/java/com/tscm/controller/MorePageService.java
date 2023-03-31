@@ -45,6 +45,7 @@ public class MorePageService implements Command {
 			
 			LOG.debug(" **** MorePageService after - post_page {} ", post_page);
 			
+			//json 타입으로 반환?
 			String gson = new Gson().toJson(listDto);
 			
 			response.setCharacterEncoding("UTF-8");

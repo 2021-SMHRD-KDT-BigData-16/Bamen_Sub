@@ -41,9 +41,7 @@
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
 	ArrayList<BmtOnePostDTO> listDto = (ArrayList) session.getAttribute("postlist");
-	//int likeNum=(int)session.getAttribute("likeNum");
-	
-	
+
 	if (listDto != null) {
 		LOG.debug("post.jsp - listDto size {} ", listDto.size());
 		for (int i = 0; i < listDto.size(); i++) {
@@ -69,8 +67,8 @@
 						style="width: 60px; align: center;">내 프로필</a></li>
 					<li><a href="#" class="menuLink" style="width: 60px;">여긴
 							뭐야</a></li>
-					<li><a href="04_bic_num.jsp" class="menuLink" style="width: 90px;">내
-							자전거 등록</a></li>
+					<li><a href="04_bic_num.jsp" class="menuLink"
+						style="width: 90px;">내 자전거 등록</a></li>
 
 				</ul>
 
@@ -114,7 +112,7 @@
 
 		<!--포스트들이 들어가있는 영역-->
 		<section class="post">
-		
+
 
 			<%
 			for (int i = 0; i < listDto.size(); i++) {
@@ -147,12 +145,14 @@
 				</div>
 
 				<hr style="border: 1 solid gray;">
-				<button class="post_like">
+
+
+				<button id="post_like">
 					<a href="javascript:likePost('<%=listDto.get(i).getP_idx()%>')"
 						class="Like">좋아요</a>
 				</button>
-				
-				<span id="like">	좋아요  개	</span>
+
+				<span id="likeNum">♥</span>
 				<button class="post_origin">
 					<!-- postid 보내기작업(to selectpostone.java) -->
 					<a href="javascript:onePost('<%=listDto.get(i).getP_idx()%>')"
@@ -170,8 +170,22 @@
 
 		<button id="btn_post_more">페이지 더보기</button>
 
+
 		<!-- 무한 스크롤 자바스크립트 -->
 		<script type="text/javascript">
+		let buttonList=document.getElementById('post_like');
+		let likeList = document.getElementById('likeNum');
+		
+		for (var i = 0; i < buttonList.length; i++) {
+			
+			buttonList[i].addEventListener('click',function(){			
+			likeList[i].style.color='red';
+		})
+		
+		};
+		
+		
+		
 		let loading = false;
 		let page_cnt = 1;
 		let post_send = { "page_cnt" : page_cnt };
@@ -235,7 +249,7 @@
 					</a>
 		            
 					<p class="postbox_body">  ` + json[i].p_content + ` </p>
-		            <button class="Like"><a href="#" class="Like">좋아요</a></button>
+		            <button class="Like"><a href="javascript:likePost('`+ json[i].p_idx+`')" class="Like">좋아요</a></button>
 		            <button class="post_origin">
 		            
 		            <a href="javascript:onePost('`+ json[i].p_idx+`')" class="Origin">원문보기</a></button>
@@ -301,12 +315,11 @@
 			success : function(receive_data){
 				console.log(receive_data);
 				if (receive_data.resCode === 1) {
-				alert("좋아요💚");			
-				ajax_love_suc(receive_data);
-				}else{
+				alert("좋아요💚")				
+				}else if(receive_data.resCode === 0){
 				alert("이미 눌렀어요💚");					
-				}
-
+				};				
+				
 			},
 			error : function(erreMsg){
 				console.log(erreMsg);
@@ -317,9 +330,10 @@
 	};
 	
 	const ajax_love_suc = function(receive_data){
-		let json=receice_data;
+		let json=receive_data;
 		console.log(json);
-		
+		let conText=document.getElementById("likeNum");  
+		conText.innerHTML+=`♡`;
 	};
 
 
