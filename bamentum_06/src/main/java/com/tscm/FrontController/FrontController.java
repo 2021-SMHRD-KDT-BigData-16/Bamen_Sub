@@ -23,6 +23,7 @@ import com.tscm.controller.PostDelete;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
 import com.tscm.controller.UpdateService;
+import com.tscm.controller.BicNumIns;
 import com.tscm.controller.CmtCreate;
 import com.tscm.controller.CmtDelete;
 import com.tscm.controller.SelectPostOne;
@@ -121,9 +122,14 @@ public class FrontController extends HttpServlet {
 			CmtDelete cmtdelete= new CmtDelete();
 			moveURL = cmtdelete.execute(request, response);
 			LOG.debug("cmtService moveURL {} ", moveURL);
+	// 2023.03.31 경수 추가			
+		} else if(strUriDo.equals("BicNumIns.do")) {
+			BicNumIns bic_num_ins= new BicNumIns();
+			moveURL = bic_num_ins.execute(request, response);
+			LOG.debug("BicNumIns moveURL {} ", moveURL);
 			
 		}else {
-			LOG.debug("FrontController : {}", "�옒紐삳맂 �슂泥�媛�");
+			LOG.debug("FrontController : {}", "Unknown page");
 		}
 
 		if(moveURL != null) {

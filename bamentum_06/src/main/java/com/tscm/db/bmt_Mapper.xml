@@ -54,6 +54,13 @@
 	</insert>
 
 
+  <insert id="bic_insert" parameterType="com.tscm.model.BmtBicDTO">
+  
+	insert into bmt_bic
+		values (#{b_num}, #{u_email}, #{b_img}, #{b_brand}, #{b_model})
+		
+  </insert>
+
 
 
 	<!-- /////////////////////////////////////////////////////////// 이전자료와 구분하는 

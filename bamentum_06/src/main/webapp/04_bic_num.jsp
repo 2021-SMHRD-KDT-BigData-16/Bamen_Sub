@@ -59,7 +59,7 @@
 <div class="bic_num_sector" >
 
 
-<form action="BicInsert.do" method="post">
+<form action="BicNumIns.do" method="post">
         <h4 style="width : 300px; font-size : 22px; margin-left : 20px;">브랜드를 선택해 주세요.</h4>
         <div class="selectBox_1" style="margin-left: 20px; margin-top : -20px;">
 
