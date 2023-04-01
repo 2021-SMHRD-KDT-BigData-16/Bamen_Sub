@@ -32,16 +32,14 @@ public class LikeService implements Command {
 			dtolike.setP_idx(p_idx);
 			dtolike.setU_email(u_email);
 
-			BmtLikeDAO daolike = new BmtLikeDAO();
-						
+			BmtLikeDAO daolike = new BmtLikeDAO();						
 			daolike.likeInsert(dtolike);
 			
 //			int cnt=daolike.showLike(dtolike);
 //			session.setAttribute("likeNum", cnt);
 //			session.setAttribute("u_email", u_email);
 //			
-//			System.out.println("좋아요 수"+cnt);
-			
+//			System.out.println("좋아요 수"+cnt);			
 //			String gson = new Gson().toJson(cnt);
 //			System.out.println("ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"+gson);
 //			
