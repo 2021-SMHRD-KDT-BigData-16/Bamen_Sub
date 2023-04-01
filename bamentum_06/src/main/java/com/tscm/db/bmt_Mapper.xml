@@ -18,6 +18,12 @@
 
 	</select>
 
+	<select id="search" parameterType="com.tscm.model.BmtOnePostDTO" resultType="com.tscm.model.BmtOnePostDTO">
+	 select * from bmt_post p, bmt_user u where u.u_email=p.u_email and p.p_content like '%'||#{p_content}||'%' order by p_date desc
+	</select>
+
+
+
 
 	<select id="bmt_selectPagePost" parameterType="int"
 		resultType="com.tscm.model.BmtOnePostDTO">

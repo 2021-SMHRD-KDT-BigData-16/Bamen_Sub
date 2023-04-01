@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Bamen_Sub/project5/css/myprofile.css">
+    <link rel="stylesheet" href="./css/myprofile.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -26,14 +26,14 @@
 <div class="page">
     <header id="nav_bar">
 
-        <a href="#"><img src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/로고_투명_흰색.png" width="80px"
+        <a href="#"><img src="./img/bg-img/로고_투명_흰색.png" width="80px"
                 class="Logo"></a>
         <nav>
             <ul>
-                <li><a href="#" class="menuLink">바멘텀</a></li>
-                <li><a href="#" class="menuLink">내 피드보기</a></li>
-                <li><a href="#" class="menuLink">Game</a></li>
-                <li><a href="#" class="menuLink">Dream</a></li>
+                <li><a href="01_post.jsp" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
+                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
+                    <li><a href="#" class="menuLink" style="width : 60px;">팔로잉보기</a></li>
+                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
             </ul>
 
         </nav>
@@ -42,7 +42,7 @@
             <input class="submit_btn" type="submit" value="검색">
 
             <a href="#" class="bic_icon"><img class="bic_icon"
-                    src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/bicycle.svg"></a>
+                    src="./img/bg-img/bicycle.svg"></a>
     </header>
 
 
@@ -54,7 +54,7 @@
 
     <!-- 프로필 사진 / 이름(닉네임) 표시 -->
     <div class="profile_elements">
-        <img class="profile_pic" src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/person-circle.svg">
+        <img class="profile_pic" src="./img/bg-img/person-circle.svg">
         <h3 class="profile_name">김연우</h3>
 
 
