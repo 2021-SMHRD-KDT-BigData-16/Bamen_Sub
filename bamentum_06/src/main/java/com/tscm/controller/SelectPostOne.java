@@ -16,6 +16,8 @@ import org.slf4j.LoggerFactory;
 
 import com.tscm.model.BmtPostDTO;
 import com.tscm.model.BmtCmtDtDTO;
+import com.tscm.model.BmtLikeDAO;
+import com.tscm.model.BmtLikeDTO;
 import com.tscm.model.BmtOnePostDTO;
 import com.tscm.model.BmtUserDAO;
 
@@ -38,6 +40,12 @@ public class SelectPostOne implements Command {
 			BmtUserDAO dao = new BmtUserDAO();
 			BmtOnePostDTO postDto = dao.selectOnePost(dto);
 			
+			BmtLikeDTO likeDto = new BmtLikeDTO();
+			likeDto.setP_idx(postid);			
+			
+			BmtLikeDAO daoLike = new BmtLikeDAO();
+			int cnt=daoLike.showLike(likeDto);
+			
 			//comment 
 			LOG.debug("*********error1");
 			ArrayList<BmtCmtDtDTO> clDto = dao.selectComment(dto);
@@ -49,8 +57,10 @@ public class SelectPostOne implements Command {
 				session.setAttribute("post", postDto);				
 				session.setAttribute("cmtlist", clDto);
 				//포스트 아이디 세션에서 저장하기
-				session.setAttribute("p_idx", postid);				
+				session.setAttribute("p_idx", postid);
+				session.setAttribute("likeNum", cnt);
 				System.out.println("선택한 게시글 번호: "+postid);
+				System.out.println("좋아요 수: "+cnt);
 				moveURL="03_onePost.jsp";
 			}
 			

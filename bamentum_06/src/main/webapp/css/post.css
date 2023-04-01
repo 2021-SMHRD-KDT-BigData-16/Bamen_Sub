@@ -235,6 +235,11 @@ div#foot{
 
 } 
 
+/*좋아요*/
+#like{
+	font-size: 12px;
+}
+
 /*SECTION영역 CSS*/
 .post{        
     margin-left: 100px;
