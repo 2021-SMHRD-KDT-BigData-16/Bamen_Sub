@@ -21,11 +21,9 @@ import com.tscm.controller.MorePageService;
 import com.tscm.controller.MyProfile;
 import com.tscm.controller.PostCreate;
 import com.tscm.controller.PostDelete;
-import com.tscm.controller.Search;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
 import com.tscm.controller.UpdateService;
-import com.tscm.controller.Search;
 import com.tscm.controller.BicNumIns;
 import com.tscm.controller.CmtCreate;
 import com.tscm.controller.CmtDelete;
@@ -133,6 +131,7 @@ public class FrontController extends HttpServlet {
 			BicNumIns bic_num_ins= new BicNumIns();
 			moveURL = bic_num_ins.execute(request, response);
 			LOG.debug("BicNumIns moveURL {} ", moveURL);
+			
 		} else if(strUriDo.equals("MyProfile.do")) {
 			MyProfile my_profile = new MyProfile();
 			moveURL = my_profile.execute(request, response);
@@ -156,11 +155,6 @@ public class FrontController extends HttpServlet {
 			moveURL = FollowDelect.execute(request, response);
 			LOG.debug("FollowDelect moveURL {} ", moveURL);
 		
-		}else if(strUriDo.equals("Search.do")) {
-			Search search = new Search();
-			moveURL = search.execute(request, response);
-			LOG.debug("cmtService moveURL {} ", moveURL);
-			
 		}else {
 			LOG.debug("FrontController : {}", "Unknown page");
 		}

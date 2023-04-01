@@ -153,27 +153,27 @@ CREATE TABLE bmt_connection
 commit;
 
 
-insert into bmt_user values ('Gyu_nam1211@bamentum.com',    'aaa', '강규남', './DATA/ImgProfil/img000.jpg', '광주동구에서 스마트인재개발원까지 자전거로 출퇴근하고 있습니다 잘부탁드립니다ㅇㅂㅇ', ' ' , TO_DATE('2023/03/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Ho_won0806@bamentum.com',     'aaa', '김호원', './DATA/ImgProfil/img001.jpg', '제안에는 또다른 라이더가 있어요 저의 내면아이도 사랑해주세요', ' ' , TO_DATE('2023/03/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
-insert into bmt_user values ('Kwon_Min1102@bamentum.com',   'aaa', '김권민', './DATA/ImgProfil/img002.jpg', '목포평광에서 자전거타는 김아무개입니다', ' ' , TO_DATE('2023/03/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Sohyun0519@bamentum.com',     'aaa', '구소현', './DATA/ImgProfil/img003.jpg', '나주에서 자전거타고 상경했답니당v', ' ' , TO_DATE('2023/03/04 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('KIHYUN0928@bamentum.com',     'aaa', '권기현', './DATA/ImgProfil/img004.jpg', '판교까지 자전거로 출퇴근하는 샌즈 개발자입니다', ' ' , TO_DATE('2023/03/05 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Young_Min0531@bamentum.com',  'aaa', '기영민', './DATA/ImgProfil/img005.jpg', '청담동에서 자전거로 출퇴근하는 CEO ', ' ' , TO_DATE('2023/03/06 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Ha_Eun0103@bamentum.com',     'aaa', '남하은', './DATA/ImgProfil/img006.jpg', '초절정 미녀 신입입니다~ 잘부탁드립니다', ' ' , TO_DATE('2023/03/07 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Kyungsoo0723@bamentum.com',   'aaa', '문경수', './DATA/ImgProfil/img007.jpg', '클라이밍과 자전거로 자기관리!', ' ' , TO_DATE('2023/03/08 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Da-gyeong0711@bamentum.com',  'aaa', '배다경', './DATA/ImgProfil/img008.jpg', '자전거 디자인팀장입니다! 잘부탁드립니다!', ' ' , TO_DATE('2023/03/09 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Hyeong_sun0331@bamentum.com', 'aaa', '심형선', './DATA/ImgProfil/img009.jpg', '마이스터고에서 자전거로 출퇴근하는 중입니다', ' ' , TO_DATE('2023/03/10 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Mi_yeon0602@bamentum.com',    'aaa', '안미연', './DATA/ImgProfil/img010.jpg', '자전거로 해외여행다니는 중이에요 정보공유해요!', ' ' , TO_DATE('2023/03/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Sangjae0604@bamentum.com',    'aaa', '윤상재', './DATA/ImgProfil/img011.jpg', '자전거 엔지니어 현업을 하고 있는 라이더입니다!', ' ' , TO_DATE('2023/03/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Jung_Hyun0421@bamentum.com',  'aaa', '윤정현', './DATA/ImgProfil/img012.jpg', '뒤쳐지기싫다,끌려다니기싫다,포기하기싫다! 내가능성을 보여주자!', ' ' , TO_DATE('2023/03/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Semi1108@bamentum.com',       'aaa', '이세미', './DATA/ImgProfil/img013.jpg', '자전거로 우리나라 국토여행중이에요~', ' ' , TO_DATE('2023/03/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('JiKang1010@bamentum.com',     'aaa', '왕지강', './DATA/ImgProfil/img014.jpg', '자전거로 맛집탐방중입니다 냠냠', ' ' , TO_DATE('2023/03/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('ESOO0710@bamentum.com',       'aaa', '장이수', './DATA/ImgProfil/img015.jpg', '자전거 어디까지 예뻐질 수 있는데? 내가 꾸며주지', ' ' , TO_DATE('2023/03/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Young-rae0618@bamentum.com',  'aaa', '주영래', './DATA/ImgProfil/img016.jpg', '나만의 자전거길을 개척한다! 자전거길 코스 추천은 나에게', ' ' , TO_DATE('2023/03/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('JunYong0112@bamentum.com',    'aaa', '조준용', './DATA/ImgProfil/img017.jpg', '가정의 화목을 위해 온가족이 다함께 자전거 타고 있습니다', ' ' , TO_DATE('2023/03/18 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('zipgalle1116@bamentum.com',   'aaa', '최근호', './DATA/ImgProfil/img018.jpg', '해외에서 유학하는 중에 자전거로 여행다니는 미스터리최입니다', ' ' , TO_DATE('2023/03/19 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('SeongGyu0407@bamentum.com',   'aaa', '한성규', './DATA/ImgProfil/img019.jpg', '생명공학 바이오 회사 다니고 있는 한연구원입니다ㅇㅅㅇ', ' ' , TO_DATE('2023/03/20 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('Yeonwoo0806@bamentum.com',    'aaa', '김연우', './DATA/ImgProfil/img020.jpg', '앞질러보자,넘어서보자,가볍게,우월해지자! 나의 가오는 나만의 내자전거로! ', ' ' , TO_DATE('2023/03/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Gyu_nam1211@bamentum.com',    'aaa', '강규남', './DATA/ImgProfil/pf000.jpg', '광주동구에서 스마트인재개발원까지 자전거로 출퇴근하고 있습니다 잘부탁드립니다ㅇㅂㅇ', ' ' , TO_DATE('2023/03/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Ho_won0806@bamentum.com',     'aaa', '김호원', './DATA/ImgProfil/pf001.jpg', '제안에는 또다른 라이더가 있어요 저의 내면아이도 사랑해주세요', ' ' , TO_DATE('2023/03/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
+insert into bmt_user values ('Kwon_Min1102@bamentum.com',   'aaa', '김권민', './DATA/ImgProfil/pf002.jpg', '목포평광에서 자전거타는 김아무개입니다', ' ' , TO_DATE('2023/03/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Sohyun0519@bamentum.com',     'aaa', '구소현', './DATA/ImgProfil/pf003.jpg', '나주에서 자전거타고 상경했답니당v', ' ' , TO_DATE('2023/03/04 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('KIHYUN0928@bamentum.com',     'aaa', '권기현', './DATA/ImgProfil/pf004.jpg', '판교까지 자전거로 출퇴근하는 샌즈 개발자입니다', ' ' , TO_DATE('2023/03/05 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Young_Min0531@bamentum.com',  'aaa', '기영민', './DATA/ImgProfil/pf005.jpg', '청담동에서 자전거로 출퇴근하는 CEO ', ' ' , TO_DATE('2023/03/06 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Ha_Eun0103@bamentum.com',     'aaa', '남하은', './DATA/ImgProfil/pf006.jpg', '초절정 미녀 신입입니다~ 잘부탁드립니다', ' ' , TO_DATE('2023/03/07 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Kyungsoo0723@bamentum.com',   'aaa', '문경수', './DATA/ImgProfil/pf007.jpg', '클라이밍과 자전거로 자기관리!', ' ' , TO_DATE('2023/03/08 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Da-gyeong0711@bamentum.com',  'aaa', '배다경', './DATA/ImgProfil/pf008.jpg', '자전거 디자인팀장입니다! 잘부탁드립니다!', ' ' , TO_DATE('2023/03/09 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Hyeong_sun0331@bamentum.com', 'aaa', '심형선', './DATA/ImgProfil/pf009.jpg', '마이스터고에서 자전거로 출퇴근하는 중입니다', ' ' , TO_DATE('2023/03/10 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Mi_yeon0602@bamentum.com',    'aaa', '안미연', './DATA/ImgProfil/pf010.jpg', '자전거로 해외여행다니는 중이에요 정보공유해요!', ' ' , TO_DATE('2023/03/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Sangjae0604@bamentum.com',    'aaa', '윤상재', './DATA/ImgProfil/pf011.jpg', '자전거 엔지니어 현업을 하고 있는 라이더입니다!', ' ' , TO_DATE('2023/03/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Jung_Hyun0421@bamentum.com',  'aaa', '윤정현', './DATA/ImgProfil/pf012.jpg', '뒤쳐지기싫다,끌려다니기싫다,포기하기싫다! 내가능성을 보여주자!', ' ' , TO_DATE('2023/03/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Semi1108@bamentum.com',       'aaa', '이세미', './DATA/ImgProfil/pf013.jpg', '자전거로 우리나라 국토여행중이에요~', ' ' , TO_DATE('2023/03/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('JiKang1010@bamentum.com',     'aaa', '왕지강', './DATA/ImgProfil/pf014.jpg', '자전거로 맛집탐방중입니다 냠냠', ' ' , TO_DATE('2023/03/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('ESOO0710@bamentum.com',       'aaa', '장이수', './DATA/ImgProfil/pf015.jpg', '자전거 어디까지 예뻐질 수 있는데? 내가 꾸며주지', ' ' , TO_DATE('2023/03/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Young-rae0618@bamentum.com',  'aaa', '주영래', './DATA/ImgProfil/pf016.jpg', '나만의 자전거길을 개척한다! 자전거길 코스 추천은 나에게', ' ' , TO_DATE('2023/03/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('JunYong0112@bamentum.com',    'aaa', '조준용', './DATA/ImgProfil/pf017.jpg', '가정의 화목을 위해 온가족이 다함께 자전거 타고 있습니다', ' ' , TO_DATE('2023/03/18 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('zipgalle1116@bamentum.com',   'aaa', '최근호', './DATA/ImgProfil/pf018.jpg', '해외에서 유학하는 중에 자전거로 여행다니는 미스터리최입니다', ' ' , TO_DATE('2023/03/19 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('SeongGyu0407@bamentum.com',   'aaa', '한성규', './DATA/ImgProfil/pf019.jpg', '생명공학 바이오 회사 다니고 있는 한연구원입니다ㅇㅅㅇ', ' ' , TO_DATE('2023/03/20 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('Yeonwoo0806@bamentum.com',    'aaa', '김연우', './DATA/ImgProfil/pf020.jpg', '앞질러보자,넘어서보자,가볍게,우월해지자! 나의 가오는 나만의 내자전거로! ', ' ' , TO_DATE('2023/03/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 
 insert into bmt_user values ('aaa@aaa.aaa',    'aaa', '관리자', './DATA/ImgProfil/img021.jpg', '앞질러보자,넘어서보자,가볍게,우월해지자! 나의 가오는 나만의 내자전거로! ', ' ' , TO_DATE('2023/03/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('eee@eee.eee',    'eee', '관리자', './DATA/ImgProfil/img021.jpg', '앞질러보자,넘어서보자,가볍게,우월해지자! 나의 가오는 나만의 내자전거로! ', ' ' , TO_DATE('2023/03/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
@@ -257,7 +257,6 @@ insert into bmt_bic values ('WTU189C0817T',          'Young_Min0531@bamentum.com
 insert into bmt_bic values ('WTU190C7684T',          'Kyungsoo0723@bamentum.com',      './DATA/bic_num_img/bic_num/3-1.jpg',   ' ',  ' ');
 insert into bmt_bic values ('WSBC001002294R',        'Sangjae0604@bamentum.com',       './DATA/bic_num_img/bic_num/4-1.jpg',   ' ',  ' ');
 insert into bmt_bic values ('STR23D25221070081T',    'Yeonwoo0806@bamentum.com',       './DATA/bic_num_img/bic_num/5-1.jpg',   ' ',  ' ');
-
 insert into bmt_bic values ('wto017ct0074m0207',     'Gyu_nam1211@bamentum.com',       './DATA/bic_num_img/bic_num/6-1.jpg',   ' ',  ' ');
 insert into bmt_bic values ('JG22120672',            'SeongGyu0407@bamentum.com',      './DATA/bic_num_img/bic_num/7-2.jpg',   ' ',  ' ');
 insert into bmt_bic values ('JMH220404156',          'Kwon_Min1102@bamentum.com',      './DATA/bic_num_img/bic_num/8-2.jpg',   ' ',  ' ');
@@ -278,7 +277,7 @@ commit;
 
 
 insert into bmt_post values (10031, 'f', '남천동 벚꽃 라이딩', '오늘 야간 근무라 벚꽃 다 떨어지기 전 남천동 삼익비치쪽 라이딩 하고 왔슴다 ㅎ 지금 절정이니 함 다녀오세유 ㅎ??', './DATA/PostImage/img001.jpeg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
-insert into bmt_post values (10032, 'f', 'XC하드테일로 오산 마등산 싱글 라이딩 후기', '[제주] 강풍 라이딩', '바람 덕분에 공기는 깨끗했지만 쌀쌀하고 자전거가 휘청일 정도로 세게 불어댔습니다 ', './DATA/PostImage/img002.jpeg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
+insert into bmt_post values (10032, 'f', '[제주] 강풍 라이딩', '바람 덕분에 공기는 깨끗했지만 쌀쌀하고 자전거가 휘청일 정도로 세게 불어댔습니다 ', './DATA/PostImage/img002.jpeg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
 commit;
 
 -- insert into bmt_follow values (bmt_fw_seq.NEXTVAL, 'ddd@ddd.ddd', 'ccc@ccc.ccc', TO_DATE('2023/03/05 11:05:00', 'YYYY/MM/DD HH24:MI:SS'));
@@ -286,8 +285,5 @@ commit;
 select u.u_email, u.u_nick, u.u_profile, u.u_info, u.u_joindate, b.b_num, b.b_img, b.b_brand, b.b_model 
 from bmt_user u, bmt_bic b 
 where u.u_email = b.u_email ;
-
-Gyu_nam1211@bamentum.com
-Mi_yeon0602@bamentum.com
 
 */

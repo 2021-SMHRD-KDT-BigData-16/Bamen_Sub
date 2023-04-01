@@ -12,24 +12,55 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="org.slf4j.Logger"%>
 <%@ page import="org.slf4j.LoggerFactory"%>
-
-
+    
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/myprofile2.css">
+    <link rel="stylesheet" href="/Bamen_Sub/project5/css/myprofile.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
     <title>바멘텀 | 내 프로필</title>
-
 </head>
-<body>
 
+<style>
+    .edit_btn {
+        width: 60px;
+        height: 40px;
+        margin-left: 1250px;
+        margin-top: -50px;
+        border: 1px solid gray;
+    }
+</style>
+<div class="page">
+    <header id="nav_bar">
+
+        <a href="#"><img src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/로고_투명_흰색.png" width="80px"
+                class="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="menuLink">바멘텀</a></li>
+                <li><a href="#" class="menuLink">내 피드보기</a></li>
+                <li><a href="#" class="menuLink">Game</a></li>
+                <li><a href="#" class="menuLink">Dream</a></li>
+            </ul>
+
+        </nav>
+        <div class="nav_others">
+            <input class="search_win" type="search" placeholder="검색하기!">
+            <input class="submit_btn" type="submit" value="검색">
+
+            <a href="#" class="bic_icon"><img class="bic_icon"
+                    src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/bicycle.svg"></a>
+    </header>
+
+
+</div>
+
+<body>
 
 	<%
 		Logger LOG = LoggerFactory.getLogger(getClass());
@@ -89,49 +120,67 @@
 
 
 
-    <!--헤더부분: 바멘텀 로고 등등-->
-    <div class="page">
-        <header>
-            <img src="./img/로고_투명_흰색.png" class="Logo">
-            <nav>
-                <ul>
-                    <li><a href="#" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px;">여긴 뭐야</a></li>
-                    <li><a href="#" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
+    <!-- 프로필 사진 / 이름(닉네임) 표시 -->
+    <div class="profile_elements">
+    
+    
+        <img class="profile_pic" src=<%= dtoUser.getU_profile() %> >
+ 
+        <h3 class="profile_name"> <%= dtoUser.getU_nick()%> </h3>
 
-                </ul>
-
-                <div class="search-box">
-                    <button class="btn-search"><i class="fas fa-search"><img
-                                src="./img/search_white(2).png" class="search_icon"
-                                style="width : 40px; margin-top : 8px;"></i></button>
-
-                    <input type="text" class="input-search" placeholder="검색어를 입력하세요!">
-                </div>
-
-                <img src="./img/profile_2.PNG" class="profile_circle">
-
-            </nav>
-        </header>
     </div>
 
-    <div class="banner"
-        style="display: flex; margin-top : 15px; margin-left : 400px; margin-bottom : -20px; height : 100px;">
-        <img src="./img/배너4.jpg" style="border : 1px solid rgb(228, 107, 173); width : 700px;">
+    <!-- 정보 수정 버튼 -->
+    <input class="edit_btn" type="submit" value="수정">
+
+
+    <!-- 차대번호 표시 -->
+    <h2 class="bic_num_letter">차대번호 : </h2>
+    <h3 class="bic_num"> <%= listBic.get(0).getB_num() %> </h3>
+
+    <!-- 게시물 / 팔로워 / 팔로잉 수 표시 -->
+    <div class="postn_fol">
+        <span>게시물</span> <span style="font-weight: 700;"> <%= listPost.size() %> </span> 
+        <span style="margin-left : 100px;">팔로워</span> 
+        <span style="font-weight: 700;">250</span> 
+        <span style="margin-left : 100px;">팔로잉</span> 
+        <span style="font-weight: 700;">274</span>
     </div>
 
-    <section class = "profile_sector">
-        <img class = "profile_pic" src=<%= dtoUser.getU_profile() %> >
-        <p class = "my_name"> 이름 :<%= dtoUser.getU_nick()%></p>
-        <p class = "my_name"> 이메일 :<%= dtoUser.getU_email() %></p>
-        <p class = "my_name"> 가입날짜 :<%= dtoUser.getU_joindate() %></p>
-        <p class = "my_introduce"><%= dtoUser.getU_info() %></p>
-        <p class = "profile_bic_num">자전거 차대번호 : <%= listBic.get(0).getB_num() %> </p> 
-    </section>
 
+
+    <!-- 내가 쓴 글 표시 -->
+    <%
+	if(listPost != null)
+	{
+		LOG.debug("05_myprofile.jsp - listPost size {} ", listPost.size());
+		for(int i=0; i< listPost.size(); i++)
+		{
+	%>
+
+		    <div class="my_write">
+		        <p class="write_content"><%= listPost.get(i).getP_content() %> </p>
+		    </div>
+
+    <%
+		}
+	}
+    
+	%>
+
+    <div class="ad">
+
+    </div>
+
+
+    <footer style="border : 1px solid red;">
+        <div style="width : 100%; height : 50px; color : black; border : 1px solid gray;">
+            바멘텀
+        </div>
+    </footer>
 
 
 </body>
+
 
 </html>

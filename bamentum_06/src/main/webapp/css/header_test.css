@@ -13,21 +13,21 @@ ul {
     padding: 0;
 }
 
-.menuLink {
+a {
     text-decoration: none;
     outline: none;
 }
 
-.menuLink:link {
+a:link {
     color: white;
 }
 
-.menuLink:visited {
+a:visited {
     color: white;
 
 }
 
-.menuLink:hover {
+a:hover {
     color: rgb(255, 143, 91)
 }
 
@@ -46,7 +46,6 @@ a:active {
     background-color: #1bbc98;
     width: 100%;
     padding: 0;
-    border-radius: 25px;
 }
 
 header {
@@ -57,6 +56,9 @@ header {
     justify-content: space-between;
 }
 
+header>h2 {
+    margin-left: 20px;
+}
 
 header>nav {
     width: 600px;
@@ -67,12 +69,12 @@ header>nav {
 
 }
 
+
 .search-box {
     margin-left: 455px;
     width: fit-content;
     height: fit-content;
     position: relative;
-
 }
 
 .input-search {
@@ -89,7 +91,6 @@ header>nav {
     background-color: #1bbc98;
     padding-right: 40px;
     color: #fff;
-    margin-left: -60px;
 }
 
 .input-search::placeholder {
@@ -113,7 +114,6 @@ header>nav {
     color: #ffffff;
     background-color: transparent;
     pointer-events: painted;
-
 }
 
 .btn-search:focus~.input-search {
