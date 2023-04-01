@@ -277,11 +277,17 @@ insert into bmt_bic values ('P19CE9110084',          'zipgalle1116@bamentum.com'
 commit;
 
 
+insert into bmt_post values (10031, 'f', '남천동 벚꽃 라이딩', '오늘 야간 근무라 벚꽃 다 떨어지기 전 남천동 삼익비치쪽 라이딩 하고 왔슴다 ㅎ 지금 절정이니 함 다녀오세유 ㅎ??', './DATA/PostImage/img001.jpeg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
+insert into bmt_post values (10032, 'f', 'XC하드테일로 오산 마등산 싱글 라이딩 후기', '[제주] 강풍 라이딩', '바람 덕분에 공기는 깨끗했지만 쌀쌀하고 자전거가 휘청일 정도로 세게 불어댔습니다 ', './DATA/PostImage/img002.jpeg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
+commit;
 
 -- insert into bmt_follow values (bmt_fw_seq.NEXTVAL, 'ddd@ddd.ddd', 'ccc@ccc.ccc', TO_DATE('2023/03/05 11:05:00', 'YYYY/MM/DD HH24:MI:SS'));
 /*
 select u.u_email, u.u_nick, u.u_profile, u.u_info, u.u_joindate, b.b_num, b.b_img, b.b_brand, b.b_model 
 from bmt_user u, bmt_bic b 
 where u.u_email = b.u_email ;
+
+Gyu_nam1211@bamentum.com
+Mi_yeon0602@bamentum.com
 
 */
