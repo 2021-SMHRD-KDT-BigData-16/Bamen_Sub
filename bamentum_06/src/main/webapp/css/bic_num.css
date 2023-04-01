@@ -16,6 +16,10 @@ ul {
 .menuLink {
     text-decoration: none;
     outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 50px;
+    
 }
 
 .menuLink:link {
@@ -35,12 +39,6 @@ a:active {
     color: #ffc045;
 }
 
-.menuLink {
-    font-size: 15px;
-    font-weight: 500;
-    margin-right: 50px;
-
-}
 
 .page {
     background-color: #1bbc98;
@@ -167,10 +165,10 @@ header ul>li {
 }
 
 .bic_num_sector {
-    display: inline-block;
+    display: block;
     border: 2px solid #1bbc98;
     width: 700px;
-    height: 1000px;
+    height: 600px;
     margin-left: 600px;
     margin-top: 80px;
     margin-bottom : 80px;
@@ -264,11 +262,10 @@ header ul>li {
 }
 
 .image-upload {
-    margin-top : 400px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding : 0;
 }
 
 .button {
@@ -329,5 +326,25 @@ label {
 }
 
 .img {
-    position : absolute;
+    position: absolute;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

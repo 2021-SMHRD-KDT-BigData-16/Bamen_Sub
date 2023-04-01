@@ -27,24 +27,22 @@
 					<img src=".img/로고_투명_흰색.png" class="Logo">
 					<nav>
 						<ul>
-							<li><a href="01_post.jsp" class="menuLink"
-								style="width: 50px; align: center;">바멘텀</a></li>
-							<li><a href="#" class="menuLink"
-								style="width: 60px; align: center;">내 프로필</a></li>
-							<li><a href="#" class="menuLink">Game</a></li>
-							<li><a href="#" class="menuLink">Dream</a></li>
+						<li><a href="01_post.jsp" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
+                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
+                    <li><a href="#" class="menuLink" style="width : 60px;">팔로잉보기</a></li>
+                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
 
 						</ul>
 
 						<div class="search-box">
-							<button class="btn-search">
-								<i class="fas fa-search"><img
-									src="/Bamen_Sub/project5/img/search_white(2).png"
-									class="search_icon" style="width: 40px; margin-top: 8px;"></i>
-							</button>
+				<button type="button" class="btn-search" id="search_btn">
+						<i class="fas fa-search"><img src="./img/search_white(2).png"
+							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
+					</button>
+					<input type="text" id="input_search" class="input-search" placeholder="검색어를 입력하세요!">
 
-							<input type="text" class="input-search" placeholder="검색어를 입력하세요!">
-						</div>
+
+				</div>
 
 						<img src=".img/person-circle.svg" class="profile_circle">
 

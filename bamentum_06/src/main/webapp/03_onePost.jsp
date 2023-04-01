@@ -35,18 +35,16 @@
 	request.setCharacterEncoding("UTF-8");
 	BmtOnePostDTO retDto = (BmtOnePostDTO) session.getAttribute("post");
 
-	Long p_idx=(Long)session.getAttribute("p_idx");
-	System.out.println("03_onePost.jsp - p_idx: " + p_idx );
-	
+	Long p_idx = (Long) session.getAttribute("p_idx");
+	System.out.println("03_onePost.jsp - p_idx: " + p_idx);
 	%>
 	<%
 	Logger LOG = LoggerFactory.getLogger(getClass());
 	LOG.debug(" page Start : {} ", "01_post.jsp");
 
 	ArrayList<BmtCmtDtDTO> clist = (ArrayList) session.getAttribute("cmtlist");
-	int likeNum = (int)session.getAttribute("likeNum");
-	
-	
+	int likeNum = (int) session.getAttribute("likeNum");
+
 	if (clist != null) {
 		LOG.debug("onePost.jsp - listDto size {} ", clist.size());
 		for (int i = 0; i < clist.size(); i++) {
@@ -56,8 +54,6 @@
 	} else {
 		LOG.debug("onePost.jsp - clDto null ");
 	}
-	
-	
 	%>
 
 
@@ -74,22 +70,23 @@
 				<ul>
 					<li><a href="01_post.jsp" class="menuLink"
 						style="width: 50px; align: center;">바멘텀</a></li>
-					<li><a href="#" class="menuLink"
+					<li><a href="05_myprofile.jsp" class="menuLink"
 						style="width: 60px; align: center;">내 프로필</a></li>
-					<li><a href="#" class="menuLink" style="width: 60px;">여긴
-							뭐야</a></li>
-					<li><a href="#" class="menuLink" style="width: 90px;">내
-							자전거 등록</a></li>
+					<li><a href="#" class="menuLink" style="width: 60px;">팔로잉보기</a></li>
+					<li><a href="04_bic_num.jsp" class="menuLink"
+						style="width: 90px;">내 자전거 등록</a></li>
 
 				</ul>
 
 				<div class="search-box">
-					<button class="btn-search">
+					<button type="button" class="btn-search" id="search_btn">
 						<i class="fas fa-search"><img src="./img/search_white(2).png"
 							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
 					</button>
+					<input type="text" id="input_search" class="input-search"
+						placeholder="검색어를 입력하세요!">
 
-					<input type="text" class="input-search" placeholder="검색어를 입력하세요!">
+
 				</div>
 
 				<img src="./img/person-circle.svg" class="profile_circle">
@@ -99,27 +96,31 @@
 	</div>
 
 
-		<!--0331 영민 포스트 삭제하기-->
-		
-		<button id="post_delete" onclick="delPost('<%=p_idx%>')">삭제</button>
-		<!--  <form action="postDelete.do">
+	<!--0331 영민 포스트 삭제하기-->
+
+	
+	<!--  <form action="postDelete.do">
 			<input type="submit" value="삭제하기">		
 		
 		</form>-->
-<% %>
+	<%
+
+	%>
 	<!--포스트들이 들어가있는 영역-->
 	<section class="post">
 		<div class="postbox">
-			<a class="postbox_head" href="#" style="text-decoration: none;">🍟</a><span
+			<a class="postbox_head" href="#" style="text-decoration: none;">💚</a><span
 				class="writer"><%=retDto.getU_nick()%></span>
+				<span class="time"><%=retDto.getP_date()%></span>
+				<button id="post_delete" onclick="delPost('<%=p_idx%>')">글 삭제하기</button>
 			<p class="postbox_neck"><%=retDto.getP_title()%></p>
 			<hr>
-			<%=retDto.getP_date()%>
 			
-			<p class="postbox_body"><img alt="이미지" height=100px
-					src=<%=retDto.getP_file()%>><br><%=retDto.getP_content()%></p>
+
+			<p class="postbox_body">
+				<img alt="이미지" height=100px src=<%=retDto.getP_file()%>><br><%=retDto.getP_content()%></p>
 			<!--버튼영역-->
-			
+
 
 		</div>
 
@@ -133,17 +134,25 @@
 
 		<div class="allaboutcomment">
 
-				<div class="comment-count">
-					총 댓글수 <span id="count"><%=clist.size()%></span>
-				</div>
-				<div class="comment-count">
-					❤좋아요 수 <span id="count"><%=likeNum%></span>
-				</div>
-				<button type="button" id="comment_submit">댓글등록🤍</button>
-
+			<div class="comment-count">
+				총 댓글수 <span id="count"><%=clist.size()%></span>
+			</div>
+			<button id="post_like">
+				<a href="javascript:likePost('<%=p_idx%>')" class="Like"><span id="heart">♥</span>좋아요</a>
+			</button>
+			<div class="comment-count">
+				 <span id="likecount"><%=likeNum%></span>
+			</div>
+			<span class="submit_position">
+			<button type="button" id="comment_submit">댓글등록🤍</button></span>
+			
+			
+			
+			
 			<div id="comment">
-				<label for="itemname"><span>❤ </span>댓글쓰기</label> <input
-					type="text" id="comment_input" placeholder="어디입력해보시지">
+				<label for="itemname"><span>❤ </span>댓글쓰기</label> <input type="text"
+					id="comment_input" placeholder="어디입력해보시지">
+					
 			</div>
 			<div class="space"></div>
 
@@ -155,11 +164,10 @@
 				%>
 
 				<div>
-					<span id="cmtNick"><%=s.getU_nick()%></span>
-					<span id="cmtList"><%=s.getC_content()%></span>					
-					
-					<button id="comment_delete" onclick="delCmt('<%=s.getC_idx()%>')">삭제</button>					
-					<br><span id="cmtTime"><%=s.getC_date()%></span>
+					<span id="cmtNick"><%=s.getU_nick()%></span> <span id="cmtList"><%=s.getC_content()%></span>
+
+					<button id="comment_delete" onclick="delCmt('<%=s.getC_idx()%>')">삭제</button>
+					<br> <span id="cmtTime"><%=s.getC_date()%></span>
 
 					<hr>
 				</div>
@@ -231,30 +239,55 @@
 		};
 
 		// 댓글 삭제하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-		function delCmt(c_idx){
+		function delCmt(c_idx) {
 			console.log(c_idx);
 			$.ajax({
 				type : "post",
 				url : "CmtDelete.do",
-				data: {"c_idx":c_idx},
-				success: function(data){
+				data : {
+					"c_idx" : c_idx
+				},
+				success : function(data) {
 					location.reload();
 				}
 			})
 		}
-		
-		function delPost(p_idx){
+
+		function delPost(p_idx) {
 			$.ajax({
-				type :"post",
+				type : "post",
 				url : "PostDelete.do",
-				data: {"p_idx":p_idx},				
-				success: function(data){
+				data : {
+					"p_idx" : p_idx
+				},
+				success : function(data) {
 					location.replace("01_post.jsp");
 				}
 			})
 		}
-		
-		
+
+		//좋아요 ㅎㅎ
+		function likePost(postid) {
+
+			$.ajax({
+				type : "post",
+				url : "LikeService.do",
+				data : {
+					"p_idx" : postid
+				},
+				dataType : "text",
+				success : function() {
+					location.reload();					
+					
+
+				},
+				error : function(erreMsg) {
+					console.log(erreMsg);
+				}
+
+			});
+
+		};
 	</script>
 
 

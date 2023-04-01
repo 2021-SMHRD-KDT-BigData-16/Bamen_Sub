@@ -24,12 +24,12 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
 	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 	crossorigin="anonymous"> </script>
-
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-<style>
-@import url("css/post.css");
-</style>
+<link rel="stylesheet" href="./css/post.css">
 
 </head>
 
@@ -63,25 +63,24 @@
 				<ul>
 					<li><a href="01_post.jsp" class="menuLink"
 						style="width: 50px; align: center;">바멘텀</a></li>
-					<li><a href="MyProfile.do" class="menuLink"
-						style="width: 60px; align: center;">내 프로필</a></li>
-					<li><a href="#" class="menuLink" style="width: 60px;">여긴
-							뭐야</a></li>
+					<li><a href="05_myprofile.jsp" class="menuLink"
+						style="width: 70px; align: center;">내 프로필</a></li>
+					<li><a href="#" class="menuLink" style="width: 80px;">팔로잉보기</a></li>
 					<li><a href="04_bic_num.jsp" class="menuLink"
-						style="width: 90px;">내 자전거 등록</a></li>
+						style="width: 120px;">내 자전거 등록</a></li>
 
 				</ul>
 
 				<div class="search-box">
-					<button class="btn-search">
+					<button type="button" id="search_btn" class="btn-search">
 						<i class="fas fa-search"><img src="./img/search_white(2).png"
 							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
 					</button>
 
-					<input type="text" class="input-search" placeholder="검색어를 입력하세요!">
+					<input type="text" id="input_search" class="input-search" placeholder="검색어를 입력하세요!">
 				</div>
 
-				<img src="./img/person-circle.svg" class="profile_circle">
+				<img src="./img/profile_2.PNG" class="profile_circle">
 
 			</nav>
 		</header>
@@ -118,20 +117,17 @@
 			for (int i = 0; i < listDto.size(); i++) {
 			%>
 			<div class="postbox">
-
-
 				<a class="postbox_head" href="#" style="text-decoration: none;">
-					<span class="writer"> <%=listDto.get(i).getU_nick()%></span>
-				</a>
+					<img src="./img/person-circle.svg" class="profile"><span
+					class="writer"> <%=listDto.get(i).getU_nick()%></span>
+				</a> <span class="time"><%=listDto.get(i).getP_date()%></span>
 				<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
-				<p>
-					<%=listDto.get(i).getP_date()%>
 
-				</p>
 
 				<hr>
 
 				<a href="javascript:PostView('<%=listDto.get(i).getP_idx()%>')">
+
 					<img alt="이미지가 없네요" height=100px
 					src=<%=listDto.get(i).getP_file()%>>
 				</a>
@@ -152,7 +148,7 @@
 						class="Like">좋아요</a>
 				</button>
 
-				<span id="likeNum">♥</span>
+				<span id="likeNum"></span>
 				<button class="post_origin">
 					<!-- postid 보내기작업(to selectpostone.java) -->
 					<a href="javascript:onePost('<%=listDto.get(i).getP_idx()%>')"
@@ -173,24 +169,63 @@
 
 		<!-- 무한 스크롤 자바스크립트 -->
 		<script type="text/javascript">
-		let buttonList=document.getElementById('post_like');
-		let likeList = document.getElementById('likeNum');
+	
 		
-		for (var i = 0; i < buttonList.length; i++) {
+		
+		window.onscroll = function() {scrollInfinite()};
+		function scrollInfinite()
+			{
+			    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight*0.8)) {
+		            console.log(`scrollInfinite : ` + page_cnt);
+			    	
+			    	if(!loading) {
+			    		loading = true;
+			            console.log(`scrollInfinite loading : ` + loading);
+			            
+				        setTimeout( function() { next_load() }, 100);
+		    		}
+			    }			
+			} 
+		// 검색기능 해보자
+		let input_search;
+		
+		$('#search_btn').click(function(){
+			console.log("서치클릭안되나확인");
+			input_search = $('#input_search').val();
+		
+			go_search();
+				
+		});
+		
+		const go_search = function(){		
+						
+			$.ajax({
+				type :"post",
+				url : "Search.do",
+				data:{
+					"input_search" : input_search
+				},
+				success: function(){
+					window.location.href = "search.jsp"
+				},
+				error : function(erreMsg) {
+					console.log('error');
+					console.log(erreMsg);
+					alert("서버가 원활하지 않습니다..");
+				}
+			});
 			
-			buttonList[i].addEventListener('click',function(){			
-			likeList[i].style.color='red';
-		})
-		
-		};
+		}
 		
 		
+		
+		//무한스크롤 및 무한더보기
 		
 		let loading = false;
 		let page_cnt = 1;
 		let post_send = { "page_cnt" : page_cnt };
 		
-		// 무한스크롤 들어갈 자리
+		
 	
 		$('#btn_post_more').click(function(){
 			console.log("btnPost function");
@@ -314,9 +349,10 @@
 			dataType : "json",
 			success : function(receive_data){
 				console.log(receive_data);
-				if (receive_data.resCode === 1) {
-				alert("좋아요💚")				
-				}else if(receive_data.resCode === 0){
+			if (receive_data.resCode === 1) {
+				alert("좋아요💚");
+				
+			}else if(receive_data.resCode === 0){
 				alert("이미 눌렀어요💚");					
 				};				
 				
@@ -329,13 +365,7 @@
 
 	};
 	
-	const ajax_love_suc = function(receive_data){
-		let json=receive_data;
-		console.log(json);
-		let conText=document.getElementById("likeNum");  
-		conText.innerHTML+=`♡`;
-	};
-
+	
 
 
 
