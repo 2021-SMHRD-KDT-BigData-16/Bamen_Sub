@@ -1,21 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <!DOCTYPE html>
-    <html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- css 경로 -->
-        <link rel="stylesheet" href="./css/bic_num.css">
-        <title>바멘텀 | 내 자전거 등록</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
-
-    </head>
+    <!-- css 경로 -->
+    <link rel="stylesheet" href="css/bic_num.css">
+    
+    <title>바멘텀 | 내 자전거 등록</title>
+</head>
 
 <body>
 
@@ -25,10 +26,10 @@
             <img src="./img/로고_투명_흰색.png" class="Logo">
             <nav>
                 <ul>
-                    <li><a href="01_post.jsp" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
-                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 70px; align : center;">내 프로필</a></li>
-                    <li><a href="#" class="menuLink" style="width : 80px;">팔로잉보기</a></li>
-                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 120px;">내 자전거 등록</a></li>
+                    <li><a href="#" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
+                    <li><a href="#" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
+                    <li><a href="#" class="menuLink" style="width : 60px;">여긴 뭐야</a></li>
+                    <li><a href="#" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
 
                 </ul>
 
@@ -56,10 +57,11 @@
             있으며 <br> 분실 및 도난 사고에 대비할 수 있습니다.</h6>
     </div>
 
-<div class="bic_num_sector" >
+    <div class="bic_num_sector" style = "margin-top : -20px;">
 
 
-<form action="BicNumIns.do" method="post">
+	<form action="BicNumIns.do" method="post">
+
         <h4 style="width : 300px; font-size : 22px; margin-left : 20px;">브랜드를 선택해 주세요.</h4>
         <div class="selectBox_1" style="margin-left: 20px; margin-top : -20px;">
 
@@ -194,91 +196,86 @@
 
         </div>
 
-        <h4 style="width : 700px; font-size : 22px; margin-left : 20px;">차대번호를 입력해 주세요.
-            <img src="/Bamen_Sub/project5/img/question.svg" style="width : 15px; height : 13px; margin-left : 20px;">
-            <button
-                style="width : 180px; height : 40px; margin-top : -50px; margin-left : -20px; background-color: transparent; border : none; cursor: pointer;"
-                onClick="javascript:popOpen();">
-                차대번호는 어디에 있나요?</button>
+        <h4 style="width : 250px; height : 10px; font-size : 22px; margin-left : 20px; margin-bottom : 0px;">
+            차대번호를 입력해 주세요.</h4>
 
+        <!-- 차대번호 입력 input -->
+        <br>
 
-            <br>
-            <span style="font-weight : 300; font-size : 14px; margin-top : -20px;">*차대번호는 입력 후 수정하실 수 없습니다.</span>
+            <input class="input_model"  name="b_num" style="margin-left: 20px; margin-top : -400px;">
 
-        </h4>
-        <div class="selectBox_2" style="margin-left: 20px; margin-top : -20px;">
+        <!-- 차대번호 위치 표시 문구(클릭 시 모달창 표시) -->
 
-            <input class="input_model"  name="b_num">
-
-
-            <!-- <div style="margin-top : -100px; margin-left : -200px; border : 1px solid gray;" ">
-                <img src="/Bamen_Sub/project5/img/question.svg" 
-                    style="width : 10px; border-radius: 25px; margin-top : -10px; margin-left : 450px;">
-                <span style="font-size : 13px; font-weight : 300; margin-top : -500px;">차대번호는 어디에 있나요?</span>
-            </div> -->
-
-
-
-
-        
-
+        <!-- 모달 창(차대번호 위치 이미지)-->
         <div class="modal-bg" onClick="javascript:popClose();"></div>
         <div class="num_info"
             style="background-color: #ffffff; width : 760px;  height : 500px; margin-left : 30px; border : 1px solid gray;">
             <img src="./img/num_location.PNG"
-                style="width : 700px; margin-left : 30px; margin-bottom : -460px; border : 2px solid #1bbc98;">
-            <img src="./img/x-lg.svg"
-                style="width : 30px; margin-top : -15px; margin-left : 720px; margin-bottom : 20px; cursor: pointer;"
-                onclick="javascript:popClose();">
+                style="width : 700px; margin-left : 30px; margin-top : 30px; border : 2px solid #1bbc98;">
+                
         </div>
 
-        <h4 style="width : 500px; font-size : 22px; margin-left : 20px;">차대번호가 포함된 사진을 등록해 주세요.</h4>
-        <div class="container" style="margin-top : -250px; margin-left : -70px;">
-            <div class="image-upload" id="image-upload">
 
-                <form method="post" enctype="multipart/form-data">
+        <h4 style="width : 500px; font-size : 22px; margin-left : 20px;">차대번호가 포함된 사진을 등록해 주세요.</h4>
+
+
+    
+
+        <div class="container" style = "margin-left : 20px; margin-top : -470px;">
+            <div class="image-upload" id="image-upload">
+                <form method="post" enctype="multipart/form-data" style = "box-shadow: 2px 2px 2px gray; border : 1px solid gray; border-radius : 5px; 
+                background-color : #1bbc98; color : #ffffff; width : 300px; height : 25px; margin-left : 0px; margin-top : 60px;">
                     <div class="button">
                         <label for="chooseFile">
-                            이곳을 클릭하여 사진을 선택해 주세요!
+                            이곳을 클릭해 파일을 선택하세요.
                         </label>
                     </div>
                     <input type="file" id="chooseFile" name="b_img" accept="image/*" onchange="loadFile(this)">
                 </form>
 
-                <div class="fileContainer">
+                <div class="fileContainer" style = "margin-left : -90px; margin-top : 20px;">
                     <div class="fileInput">
-                        <p>파일명 : </p>
+                        <p>FILE NAME: </p>
                         <p id="fileName"></p>
                     </div>
                     <div class="buttonContainer">
-                        <div class="submitButton" id="submitButton">사진등록</div>
+                        <div class="submitButton" id="submitButton" style = "font-size : 14px;">등록</div>
                     </div>
                 </div>
             </div>
-            <div class="image-show" id="image-show" style="margin-left : -500px;"></div>
-        </div>
-
-        <script src="index.js"></script>
-
-
-
-
-
-
-        <input type="submit" value="내 자전거 등록하기"
-            style="margin-top : 50px; margin-left : 500px; width : 150px; height : 40px; font-size : 16px;
+            
+            <div class="image-show" id="image-show" style = "border : 1px solid black; width : 655px; height : 300px; margin-top : 570px; color : rgb(161, 161, 161);">사진</div>
+            <input type="submit" value="내 자전거 등록하기"
+            style="margin-top : 350px; margin-left : 500px; width : 150px; height : 40px; font-size : 16px;
             font-weight : 700; background-color : #1bbc98; border-radius: 5px; color : #ffffff; border : none; cursor: pointer;">
-
-
-
+        </div>
+    
 
     </div>
+    
     </form>
+    
+    
+        <div style="display: flex; height : 10px; margin: 0 auto;">
+            <img src="./img/question.svg"
+                style="width : 17px; height : 17px; margin-top : 39px; margin-left : 450px; margin-right : -20px;">
+                
+                 
+            <button  onclick="javascript:popOpen();"
+                style="cursor : pointer; margin-left : 20px; margin-top : 35px; margin-bottom : 10px; border : none; background-color: transparent; font-size : 15px;">
+                차대번호는
+                어디있나요?</button>
+               
+        </div>    
+    
+    
     </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"> </script>
+
+    <script src="index.js"></script>
 
 <script>
 
@@ -334,8 +331,8 @@
 
         newImage.src = URL.createObjectURL(file);
 
-        newImage.style.width = "20%";
-        newImage.style.height = "20%";
+        newImage.style.width = "100%";
+        newImage.style.height = "100%";
         newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
         newImage.style.objectFit = "contain";
 

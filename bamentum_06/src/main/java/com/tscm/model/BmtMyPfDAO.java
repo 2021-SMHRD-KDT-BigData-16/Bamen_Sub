@@ -50,29 +50,60 @@ public class BmtMyPfDAO {
 	}	
 
 	public ArrayList<BmtBicDTO> select_bic_list(BmtUserDTO dto) {
-		ArrayList<BmtBicDTO>  retDto = null;
+		ArrayList<BmtBicDTO>  listDto = null;
 
-		LOG.debug(" select_user email: {} ", dto.getU_email());
+		LOG.debug(" select_bic_list email: {} ", dto.getU_email());
 		
 		SqlSession session = factory.openSession(true);
 		try {
-			retDto = session.selectOne("bmt_select_bic_list", dto);
-			if (retDto == null) {
-				LOG.debug(" login fail : {} ", retDto);
+			
+			listDto = (ArrayList)session.selectList("bmt_select_bic_list", dto);
+			if (listDto != null) {
+				for(int i=0; i< listDto.size(); i++)
+				{
+					LOG.debug("select_bic_list - {} : {} - {} ", 
+							i, listDto.get(i).getU_email(), listDto.get(i).getB_num() );
+				}
 			} else {
-				LOG.debug(" login success : {} ", retDto);
-				
-//				LOG.debug(" login success email : {} : {} : {} ", 
-//						retDto.getU_email(), retDto.getU_nick(), retDto.getU_profile());
+				LOG.debug("{} Fail ", "select_bic_list" );
 			}
 			
 		} finally {
 			session.close();
 		}
 		
-		return retDto;
+		return listDto;
 	}	
 
+	
+	public ArrayList<BmtPostDTO> select_my_post(BmtUserDTO dto) {
+		ArrayList<BmtPostDTO>  listDto = null;
+
+		LOG.debug(" select_my_post email: {} ", dto.getU_email());
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			
+			listDto = (ArrayList)session.selectList("bmt_select_my_post", dto);
+			if (listDto != null) {
+				for(int i=0; i< listDto.size(); i++)
+				{
+					LOG.debug("select_my_post - {} : {} - {} - {} ", 
+							i, listDto.get(i).getU_email(), listDto.get(i).getP_title(), listDto.get(i).getP_content() );
+				}
+			} else {
+				LOG.debug("{} Fail ", "select_my_post" );
+			}
+			
+		} finally {
+			session.close();
+		}
+		
+		return listDto;
+	}	
+
+	
+	
 	
 
 }

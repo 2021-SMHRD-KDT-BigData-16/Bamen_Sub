@@ -1,6 +1,13 @@
 package com.tscm.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.tscm.controller.BicNumIns;
+
 public class BmtBicDTO {
+	private static final Logger LOG = LoggerFactory.getLogger(BicNumIns.class);
+	
 	private String b_num;
 	private String u_email;
 	private String b_img;
@@ -9,7 +16,6 @@ public class BmtBicDTO {
 	
 	
 	public BmtBicDTO() {
-		super();
 	}
 
 
