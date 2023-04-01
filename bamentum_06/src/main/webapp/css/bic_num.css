@@ -16,6 +16,10 @@ ul {
 .menuLink {
     text-decoration: none;
     outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 50px;
+    
 }
 
 .menuLink:link {
@@ -35,12 +39,6 @@ a:active {
     color: #ffc045;
 }
 
-.menuLink {
-    font-size: 15px;
-    font-weight: 500;
-    margin-right: 50px;
-
-}
 
 .page {
     background-color: #1bbc98;
@@ -168,7 +166,7 @@ header ul>li {
 
 .bic_num_sector {
     display: block;
-    border: 1px solid #1bbc98;
+    border: 2px solid #1bbc98;
     width: 700px;
     height: 600px;
     margin-left: 600px;
@@ -330,3 +328,23 @@ label {
 .img {
     position: absolute;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

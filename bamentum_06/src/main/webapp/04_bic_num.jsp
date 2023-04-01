@@ -11,7 +11,7 @@
             rel="stylesheet">
 
         <!-- css 경로 -->
-        <link rel="stylesheet" href="/bamentum_06/src/main/webapp/css/bic_num.css">
+        <link rel="stylesheet" href="./css/bic_num.css">
         <title>바멘텀 | 내 자전거 등록</title>
 
 
@@ -22,25 +22,25 @@
     <!--헤더부분: 바멘텀 로고 등등-->
     <div class="page">
         <header>
-            <img src="/Bamen_Sub/project5/img/로고_투명_흰색.png" class="Logo">
+            <img src="./img/로고_투명_흰색.png" class="Logo">
             <nav>
                 <ul>
-                    <li><a href="#" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px;">여긴 뭐야</a></li>
-                    <li><a href="#" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
+                    <li><a href="01_post.jsp" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
+                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 70px; align : center;">내 프로필</a></li>
+                    <li><a href="#" class="menuLink" style="width : 80px;">팔로잉보기</a></li>
+                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 120px;">내 자전거 등록</a></li>
 
                 </ul>
 
                 <div class="search-box">
                     <button class="btn-search"><i class="fas fa-search"><img
-                                src="/Bamen_Sub/project5/img/search_white(2).png" class="search_icon"
+                                src="./img/search_white(2).png" class="search_icon"
                                 style="width : 40px; margin-top : 8px;"></i></button>
 
                     <input type="text" class="input-search" placeholder="검색어를 입력하세요!">
                 </div>
 
-                <img src="/Bamen_Sub/project5/img/profile_2.PNG" class="profile_circle">
+                <img src="./img/profile_2.PNG" class="profile_circle">
 
             </nav>
         </header>
@@ -49,7 +49,7 @@
 
 
     <div class="intro">
-        <img src="/Bamen_Sub/project5/img/bicycle.svg" style="width : 100px; margin-bottom : -50px;">
+        <img src="./img/bicycle.svg" style="width : 100px; margin-bottom : -50px;">
         <h5 style="font-size: 40px;">바멘텀에 내 자전거를 등록해 보세요!</h5>
         <h6 style="font-size: 20px; font-weight : 300; margin-top : -50px;">자전거를 인증 등록해 보세요. <br> 사람들에게 나의 자전거를 소개할
             수
@@ -225,9 +225,9 @@
         <div class="modal-bg" onClick="javascript:popClose();"></div>
         <div class="num_info"
             style="background-color: #ffffff; width : 760px;  height : 500px; margin-left : 30px; border : 1px solid gray;">
-            <img src="/Bamen_Sub/project5/img/num_location.PNG"
+            <img src="./img/num_location.PNG"
                 style="width : 700px; margin-left : 30px; margin-bottom : -460px; border : 2px solid #1bbc98;">
-            <img src="/Bamen_Sub/project5/img/x-lg.svg"
+            <img src="./img/x-lg.svg"
                 style="width : 30px; margin-top : -15px; margin-left : 720px; margin-bottom : 20px; cursor: pointer;"
                 onclick="javascript:popClose();">
         </div>

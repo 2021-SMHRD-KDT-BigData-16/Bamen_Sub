@@ -21,7 +21,7 @@
   <div class="introducing">
         <span>당신</span><span style="color : #ffffff">과</span> <span>자전거,</span>
         <br><span style="color : #ffffff">그렇게</span> <span>바멘텀.</span>
-        <img src="/img/bicycle.svg" class="login_bic">
+        <img src="./img/bicycle.svg" class="login_bic">
         <hr class="title-line" style="border : 1px solid #ffffff; width : 1100px;">
     </div>
 
