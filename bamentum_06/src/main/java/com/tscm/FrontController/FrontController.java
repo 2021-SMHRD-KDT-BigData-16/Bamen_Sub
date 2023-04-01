@@ -21,17 +21,12 @@ import com.tscm.controller.MorePageService;
 import com.tscm.controller.MyProfile;
 import com.tscm.controller.PostCreate;
 import com.tscm.controller.PostDelete;
-import com.tscm.controller.Search;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
 import com.tscm.controller.UpdateService;
-import com.tscm.controller.Search;
 import com.tscm.controller.BicNumIns;
 import com.tscm.controller.CmtCreate;
 import com.tscm.controller.CmtDelete;
-import com.tscm.controller.FollowDelect;
-import com.tscm.controller.FollowInsert;
-import com.tscm.controller.FollowselectAll;
 import com.tscm.controller.SelectPostOne;
 import com.tscm.model.BmtPostDTO;
 import com.tscm.model.BmtOnePostDTO;
@@ -137,35 +132,9 @@ public class FrontController extends HttpServlet {
 			MyProfile my_profile = new MyProfile();
 			moveURL = my_profile.execute(request, response);
 			LOG.debug("MyProfile moveURL {} ", moveURL);
-	// 2023.04.01 추가 
-		}else if(strUriDo.equals("FollowInsert.do")) {
-			FollowInsert FollowInsert= new FollowInsert();
-			moveURL = FollowInsert.execute(request, response);
-			LOG.debug("FollowInsert moveURL {} ", moveURL);
-			
-		}else if(strUriDo.equals("FollowselectAll.do")) {
-			
-			System.out.println("확인2");
-			FollowselectAll FollowselectAll= new FollowselectAll();
-			moveURL = FollowselectAll.execute(request, response);
-			System.out.println("FollowselectALL 이동!");
-			LOG.debug("FollowselectAll moveURL {} ", moveURL);
-			
-		}else if(strUriDo.equals("FollowDelect.do")){
-			FollowDelect FollowDelect= new FollowDelect();
-			moveURL = FollowDelect.execute(request, response);
-			LOG.debug("FollowDelect moveURL {} ", moveURL);
-		
-		}else if(strUriDo.equals("Search.do")) {
-			Search search = new Search();
-			moveURL = search.execute(request, response);
-			LOG.debug("cmtService moveURL {} ", moveURL);
-			
 		}else {
 			LOG.debug("FrontController : {}", "Unknown page");
 		}
-		
-		
 
 		if(moveURL != null) {
 			RequestDispatcher rd =  request.getRequestDispatcher(moveURL);

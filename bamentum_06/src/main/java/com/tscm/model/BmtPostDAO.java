@@ -38,34 +38,5 @@ public class BmtPostDAO {
 		return listDto;
 	}
 	
-	
-	public ArrayList<BmtOnePostDTO> SearchAll(BmtOnePostDTO dto){
-		ArrayList<BmtOnePostDTO> result = null;
-		SqlSession session = factory.openSession(true);
-		try {
-			result = (ArrayList)session.selectList("search", dto);
-						
-			
-			if (result != null) {
-				for(int i=0; i< result.size(); i++)
-				{
-					LOG.debug("bmt_*******search - {} : {} - {} ", 
-							i, result.get(i).getU_nick(), result.get(i).getP_content() );
-				}
-			} else {
-				LOG.debug("{} Fail ", "SelectPagePost" );
-			}
-			
-		}finally {
-			session.close();
-		}
-		return result;
-		
-	}
-	
-	
-	
-	
-	
 
 }
