@@ -69,10 +69,43 @@
 	<insert id="bic_insert" parameterType="com.tscm.model.BmtBicDTO">
 
 		insert into bmt_bic
-		values (#{b_num}, #{u_email}, #{b_img}, #{b_brand},
-		#{b_model})
+		values (#{b_num}, #{u_email}, #{b_img}, #{b_brand}, #{b_model})
 
 	</insert>
+
+
+	<select id="bmt_select_user" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="com.tscm.model.BmtUserDTO">
+
+		select *
+			from bmt_user
+		where u_email = #{u_email}
+
+
+	</select>
+
+	<select id="bmt_select_bic_list" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="com.tscm.model.BmtBicDTO">
+
+		select *
+			from bmt_bic
+		where u_email = #{u_email}
+
+	</select>
+
+	<select id="bmt_select_my_post" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="com.tscm.model.BmtPostDTO">
+
+		select *
+			from bmt_post
+		where u_email = #{u_email}
+
+	</select>
+
+
 
 
 

@@ -1,5 +1,8 @@
 package com.tscm.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,6 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import com.tscm.model.BmtBicDTO;
 import com.tscm.model.BmtMyPfDAO;
+import com.tscm.model.BmtOnePostDTO;
+import com.tscm.model.BmtPostDAO;
+import com.tscm.model.BmtPostDTO;
 import com.tscm.model.BmtUserDTO;
 
 public class MyProfile implements Command {
@@ -28,23 +34,30 @@ public class MyProfile implements Command {
 			LOG.debug(" {} u_email {} ", "MyProfile", u_email);
 			
 			BmtMyPfDAO dao = new BmtMyPfDAO();
-			BmtUserDTO dtoUser = new BmtUserDTO();
-			BmtBicDTO dtoBic = new BmtBicDTO();
 			
-			dao.select_user(dtoUser);
-			dao.select_bic_list(dtoUser);
-/*
-			LOG.debug(" bic_num ins return cnt : {} ", cnt);
-			if (cnt > 0) {
-				request.setAttribute("u_email", u_email);
-				moveURL = "01_post.jsp";
+			BmtUserDTO dtoLogin = new BmtUserDTO();
+			
+			dtoLogin.setU_email(u_email);
+			
+			BmtUserDTO dtoUserMy =  dao.select_user(dtoLogin);
+			
+			LOG.debug(" MyProfile select User : email {} nick {} info {} ", 
+					dtoUserMy.getU_email(), dtoUserMy.getU_nick(), dtoUserMy.getU_info());
+			
+			ArrayList<BmtBicDTO> listBic = dao.select_bic_list(dtoLogin);
+			
+			LOG.debug(" MyProfile listBic size {}  ", listBic.size());
+			
+			ArrayList<BmtPostDTO> listPost = dao.select_my_post(dtoLogin);
 
-			} else {
-				moveURL = "04_bic_num.jsp";
-			}
-*/			
+			LOG.debug(" MyProfile listPost size {}  ", listPost.size());
 			
-			
+			session.setAttribute("mp_user", dtoUserMy);
+			session.setAttribute("mp_bic_list", listBic);
+			session.setAttribute("mp_post_list", listPost);
+
+			moveURL = "05_myprofile.jsp";
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			LOG.debug(" exception : {} ", e);
