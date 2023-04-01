@@ -13,7 +13,8 @@
 		select *
 		from bmt_user
 		where u_email = #{u_email}
-		and u_pw = #{u_pw}
+		and u_pw =
+		#{u_pw}
 
 	</select>
 
@@ -26,16 +27,19 @@
 		SELECT A.* , ROWNUM AS RN
 		FROM (
 
-		select u.u_nick, p.p_title, p.p_content, p.p_file, p.p_date, p.p_view,
+		select
+		u.u_nick, p.p_title, p.p_content, p.p_file, p.p_date, p.p_view,
 		p.p_idx
 		from bmt_user u, bmt_post p
 		where u.u_email = p.u_email
-		order by p.p_date desc
+		order by
+		p.p_date desc
 
 		) A
 		)
 
-		WHERE RN BETWEEN (#{page}*3 + 1) AND ((#{page}+1) * 3)
+		WHERE RN BETWEEN (#{page}*3 + 1) AND ((#{page}+1) *
+		3)
 
 
 	</select>
@@ -48,18 +52,21 @@
 	<insert id="bmt_join" parameterType="com.tscm.model.BmtUserDTO">
 
 		insert into bmt_user
-		values (#{u_email}, #{u_pw}, #{u_nick}, #{u_profile},
-		#{u_info}, #{u_course}, sysdate, #{u_type})
+		values
+		(#{u_email}, #{u_pw}, #{u_nick}, #{u_profile},
+		#{u_info}, #{u_course},
+		sysdate, #{u_type})
 
 	</insert>
 
 
-  <insert id="bic_insert" parameterType="com.tscm.model.BmtBicDTO">
-  
-	insert into bmt_bic
-		values (#{b_num}, #{u_email}, #{b_img}, #{b_brand}, #{b_model})
-		
-  </insert>
+	<insert id="bic_insert" parameterType="com.tscm.model.BmtBicDTO">
+
+		insert into bmt_bic
+		values (#{b_num}, #{u_email}, #{b_img}, #{b_brand},
+		#{b_model})
+
+	</insert>
 
 
 
@@ -79,7 +86,7 @@
 		(BMT_POST_LIKES_SEQ.nextval,#{p_idx},#{u_email},sysdate)
 
 	</insert>
-	
+
 
 
 
@@ -94,9 +101,11 @@
 	<select id="bmt_selectAllPost"
 		resultType="com.tscm.model.BmtOnePostDTO">
 
-		select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgPath
+		select p.postid, u.email, u.u_name, p.title, p.p_content,
+		p.imgPath
 		from bmt_post p, bmt_user u
-		where u.email = p.email  order by p_date
+		where u.email = p.email order by
+		p_date
 
 	</select>
 
@@ -104,9 +113,11 @@
 		parameterType="com.tscm.model.BmtOnePostDTO"
 		resultType="com.tscm.model.BmtOnePostDTO">
 
-		select p.postid, u.email, u.u_name, p.title, p.p_content, p.imgpath
+		select p.postid, u.email, u.u_name, p.title, p.p_content,
+		p.imgpath
 		from bmt_post p, bmt_user u
-		where u.email = p.email and p.postid=#{postId}
+		where u.email = p.email and
+		p.postid=#{postId}
 
 	</select>
 
@@ -124,10 +135,12 @@
 		parameterType="com.tscm.model.BmtOnePostDTO"
 		resultType="com.tscm.model.BmtOnePostDTO">
 
-		select p.p_idx, u.u_email, u.u_nick, p.p_title, p.p_content, p.p_file,
+		select p.p_idx, u.u_email, u.u_nick, p.p_title,
+		p.p_content, p.p_file,
 		p.p_date
 		from bmt_post p, bmt_user u
-		where u.u_email = p.u_email and p.p_idx=#{p_idx}
+		where
+		u.u_email = p.u_email and p.p_idx=#{p_idx}
 
 	</select>
 
@@ -135,34 +148,62 @@
 		parameterType="com.tscm.model.BmtOnePostDTO"
 		resultType="com.tscm.model.BmtCmtDtDTO">
 
-		select c.c_idx, c.p_idx, c.c_content, c.c_date, c.u_email, u.u_nick
+		select c.c_idx, c.p_idx, c.c_content, c.c_date, c.u_email,
+		u.u_nick
 		from bmt_comment c, bmt_user u
-		where u.u_email = c.u_email and c.p_idx=#{p_idx} order by c.c_idx desc
+		where u.u_email = c.u_email and
+		c.p_idx=#{p_idx} order by c.c_idx desc
 
 	</select>
 
 
 	<insert id="cmt_insert" parameterType="com.tscm.model.BmtCmtDTO">
-		insert into bmt_comment values (BMT_COMMENT_SEQ.nextval, #{p_idx},
-		#{c_content}, sysdate, #{u_email})
+		insert into bmt_comment
+		values (BMT_COMMENT_SEQ.nextval, #{p_idx},
+		#{c_content}, sysdate,
+		#{u_email})
 	</insert>
 
 	<delete id="cmt_delete" parameterType="com.tscm.model.BmtCmtDTO">
-		delete from bmt_comment where c_idx=#{c_idx}
+		delete from bmt_comment
+		where c_idx=#{c_idx}
 	</delete>
 
 	<insert id="post_insert"
 		parameterType="com.tscm.model.BmtPostDTO">
-		insert into bmt_post values(BMT_POST_SEQ.nextval,#{p_type}, #{p_title},
-		#{p_content}, #{p_file}, sysdate, #{u_email}, #{p_view})
+		insert into bmt_post
+		values(BMT_POST_SEQ.nextval,#{p_type}, #{p_title},
+		#{p_content},
+		#{p_file}, sysdate, #{u_email}, #{p_view})
 	</insert>
 
 	<delete id="post_delete"
 		parameterType="com.tscm.model.BmtPostDTO">
 		delete from bmt_post where p_idx=#{p_idx}
 	</delete>
+<!-- 2023.04.01 추가 follow page -->
+	<select id="Follow_selectAll"
+		parameterType="com.tscm.model.BmtFollowDTO"
+		resultType="com.tscm.model.BmtFollowDTO">
+		SELECT *
+		FROM bmt_follow
+		WHERE FOLLOWER = #{follower}
+	</select>
 
 
+	<insert id="bmt_following"
+		parameterType="com.tscm.model.BmtFollowDTO">
+		insert into bmt_follow
+		values ( BMT_FOLLOW_SEQ.NEXTVAL, #{follower},
+		#{following}, sysdate)
+	</insert>
+
+	<delete id="bmt_delect"
+		parameterType="com.tscm.model.BmtFollowDTO">
+		DELETE FROM BMT_FOLLOW
+		WHERE FOLLOWER = #{follower} and FOLLOWING = #{following}
+
+	</delete>
 
 
 
