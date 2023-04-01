@@ -65,7 +65,7 @@
 						style="width: 50px; align: center;">바멘텀</a></li>
 					<li><a href="05_myprofile.jsp" class="menuLink"
 						style="width: 60px; align: center;">내 프로필</a></li>
-					<li><a href="#" class="menuLink" style="width: 60px;">팔로잉보기</a></li>
+					<li><a href="FollowselectAll.do" class="menuLink" style="width: 60px;">팔로우 조회</a></li>
 					<li><a href="04_bic_num.jsp" class="menuLink"
 						style="width: 90px;">내 자전거 등록</a></li>
 

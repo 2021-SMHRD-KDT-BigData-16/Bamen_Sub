@@ -200,16 +200,21 @@
 	<insert id="bmt_following"
 		parameterType="com.tscm.model.BmtFollowDTO">
 		insert into bmt_follow
-		values ( BMT_FOLLOW_SEQ.NEXTVAL, #{follower},
-		#{following}, sysdate)
+ 		values (BMT_FOLLOW_SEQ.nextval, 
+   		#{follower}, 
+    	(select  U_EMAIL
+    	FROM  BMT_USER 
+    	WHERE  U_NICK = #{following})
+    	, SYSDATE)
 	</insert>
 
-	<delete id="bmt_delect"
+	<delete id="bmt_Unfollow"
 		parameterType="com.tscm.model.BmtFollowDTO">
 		DELETE FROM BMT_FOLLOW
 		WHERE FOLLOWER = #{follower} and FOLLOWING = #{following}
 
 	</delete>
+
 
 
 

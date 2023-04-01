@@ -54,7 +54,7 @@ public class BmtFollowDAO{
 	}
 	
 
-	public int delete (BmtFollowDTO dto) {
+	public int bmt_Unfollow (BmtFollowDTO dto) {
 		LOG.debug(" DAO-delete 시작 ", dto);
 		int cnt = 0;
 		SqlSession session = factory.openSession(true);
@@ -62,7 +62,7 @@ public class BmtFollowDAO{
 
 			LOG.debug(" DTO :{},{} " , dto.getFollower(), dto.getFollowing());
 			
-			cnt = session.insert("bmt_delect", dto);
+			cnt = session.insert("bmt_Unfollow", dto);
 			
 		} finally {
 			session.close();
