@@ -131,6 +131,26 @@
     </section>
 
 
+    <!-- 내가 쓴 글 표시 -->
+    <%
+	if(listPost != null)
+	{
+		LOG.debug("05_myprofile.jsp - listPost size {} ", listPost.size());
+		for(int i=0; i< listPost.size(); i++)
+		{
+	%>
+
+		    <div class="my_write">
+		        <p class="write_content"><%= listPost.get(i).getP_content() %> </p>
+		    </div>
+
+    <%
+		}
+	}
+    
+	%>
+
+
 
 </body>
 
