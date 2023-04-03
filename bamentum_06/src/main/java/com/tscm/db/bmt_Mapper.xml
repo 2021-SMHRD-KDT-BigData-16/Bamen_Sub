@@ -266,11 +266,12 @@ where f.following = u.u_email
 	</delete>
 
 	<insert id="post_insert"
+	
 		parameterType="com.tscm.model.BmtPostDTO">
 		insert into bmt_post
-		values(BMT_POST_SEQ.nextval,#{p_type}, #{p_title},
-		#{p_content},
-		#{p_file}, sysdate, #{u_email}, #{p_view})
+		values( BMT_POST_SEQ.nextval, #{p_type}, #{p_title},
+		#{p_content}, #{p_file}, sysdate, #{u_email}, #{p_view})
+		
 	</insert>
 
 	<delete id="post_delete"

@@ -17,7 +17,6 @@ public class BmtFwDetailDTO {
 		super();
 	}
 	
-	
 	public long getF_idx() {
 		return f_idx;
 	}

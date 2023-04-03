@@ -43,10 +43,10 @@ public class PostCreate implements Command  {
 			dtopost.setP_type('f');
 			dtopost.setP_view(10);			
 			
-			System.out.println("!!!!!확인하자!!!"+u_email+p_title+p_content);
+			System.out.println("!!!!!확인하자!!!" + u_email + p_title + p_content);
+			
 			BmtPostCrDAO daopost= new BmtPostCrDAO();
 			daopost.postInsert(dtopost);
-			
 			
 			int iPage = 0;
 			session.setAttribute("post_page", iPage);
@@ -54,8 +54,6 @@ public class PostCreate implements Command  {
 			LOG.debug(" iPage : {}", iPage);
 			
 			moveURL="01_post.jsp";
-						
-			
 						
 		} catch (Exception e) {
 			e.printStackTrace();
