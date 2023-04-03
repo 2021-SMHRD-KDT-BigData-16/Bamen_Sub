@@ -315,6 +315,7 @@
 					<p class="postbox_body">  ` + json[i].p_content + ` </p>
 					<hr>
 		            <button class="Like"><a href="javascript:likePost('`+ json[i].p_idx+`')" class="Like">좋아요</a></button>
+		            <button class="Follow"><a href="javascript:PostFollowing('`+ json[i].p_idx+`')" class="Follow">팔로윙</a></button>
 		            <button class="post_origin">
 		            
 		            <a href="javascript:onePost('`+ json[i].p_idx+`')" class="Origin">원문보기</a></button>
