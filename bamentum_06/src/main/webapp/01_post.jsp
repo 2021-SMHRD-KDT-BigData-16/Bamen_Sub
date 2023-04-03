@@ -253,6 +253,9 @@
 		
 	    $(document).ready(function(){
             console.log(`ready : ` + page_cnt);
+            page_cnt = 0;
+            post_send = { "page_cnt" : page_cnt };            
+            
 			next_load();
 	    });
 
@@ -325,6 +328,7 @@
 			
 			page_cnt = page_cnt + 1;
             console.log(`page_cnt : ` + page_cnt);
+            post_send = { "page_cnt" : page_cnt };            
 			
 			loading = false;
 		};
