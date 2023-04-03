@@ -112,6 +112,11 @@
 			LOG.debug("05_myprofile.jsp - listPost null ");
 		}
 		
+		int iFollowing = (int)session.getAttribute("mp_following");;
+		int iFollower = (int)session.getAttribute("mp_follower");;
+		LOG.debug("05_myprofile.jsp - Following {}, Follower {}", iFollowing, iFollower);
+		
+		
 		BmtUserDTO dtoUser = (BmtUserDTO)session.getAttribute("mp_user");;
 		if(dtoUser != null)
 		{
@@ -137,6 +142,14 @@
     </div>
 
 
+    <!-- 자기정보 표시 -->
+    <h2 class="my_profile"> 자기소개 </h2>
+    <h4 class="my_profile" > 
+        이메일 :<%= dtoUser.getU_email() %><br>
+        가입날짜 :<%= sdf.format(dtoUser.getU_joindate()) %><br>
+        자기소개 : <%= dtoUser.getU_info() %><br>
+    </h4>
+
 
     <!-- 차대번호 표시 -->
     <h2 class="bic_num_letter">차대번호  </h2>
@@ -158,9 +171,9 @@
     <div class="postn_fol">
         <span>게시물</span> <span style="font-weight: 700;"> <%= listPost.size() %> </span> 
         <span style="margin-left : 100px;">팔로워</span> 
-        <span style="font-weight: 700;">250</span> 
-        <span style="margin-left : 100px;">팔로잉</span> 
-        <span style="font-weight: 700;">274</span>
+        <span style="font-weight: 700;"><%=iFollower %></span> 
+        <span style="margin-left : 100px;"> 팔로잉 </span> 
+        <span style="font-weight: 700;"> <%=iFollowing %> </span>
     </div>
     
 		<br> <br>
@@ -195,9 +208,17 @@
 	%>
 
 		    <div class="my_write" style="padding:5px 30px;">
+		        <span class="subject_content" ><%= listPost.get(i).getP_date() %></span>
 		        <span class="subject_content" ><%=listPost.get(i).getP_title() %></span>
+				<button class="post_origin">
+					<a href="javascript:onePost('<%=listPost.get(i).getP_idx()%>')"	class="Origin">원문보기</a>
+				</button>
 		    
 		        <hr>
+		        
+		        
+		        <img class="profile_pic" src=<%= listPost.get(i).getP_file() %> >
+		        
 		        <p class="write_content"><%= listPost.get(i).getP_content() %> </p>
 		    </div>
 		    <br>
@@ -208,7 +229,26 @@
     
 	%>
 
+	<script>	
    
+		function onePost(postid){
+			console.log(postid);		
+		    let f = document.createElement('form');
+		    
+		    let obj;
+		    obj = document.createElement('input');
+		    obj.setAttribute('type', 'hidden');
+		    obj.setAttribute('name', 'postid');
+		    obj.setAttribute('value', postid);
+		    
+		    f.appendChild(obj);
+		    f.setAttribute('method', 'post');
+		    f.setAttribute('action', 'onePost.do');
+		    document.body.appendChild(f);
+		    f.submit();
+		}	
+	
+	</script>
 
 
 

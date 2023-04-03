@@ -139,7 +139,7 @@
                     <div class="profile_box">
                         <img class="profile_img" src=<%=listDto.get(i).getU_profile()%>>
                     </div>
-                    <form action="FollowDelect.do" method="post">
+                    <form action="UnFollow.do" method="post">
 
                         <strong style="font-weight: bolder;">
                             <p class="follower_name"> <%= listDto.get(i).getU_nick() %> </p>
@@ -147,7 +147,12 @@
                         <p class="follower_intro"> <%= sdf.format(listDto.get(i).getF_date()) %> </p><br>
                         <p class="follower_intro" style="color:black; font-size:14px;"> <%= listDto.get(i).getU_info() %> </p>
                         
-                        <button class = "cancel_follow"><a onclick = "alert('팔로우를 취소하시겠습니까?')" style = "font-size : 14px;">팔로우 취소</a></button>
+						<input type = "text" style = "display:none" name = "following" value = "<%=listDto.get(i).getFollowing()%>">                        
+						<input type = "text" style = "display:none" name = "follower" value = "<%=listDto.get(i).getFollower()%>">                        
+                        
+                        <button class = "cancel_follow">
+                       		<a onclick = "alert('팔로우를 취소하시겠습니까?')" style = "font-size : 14px;">팔로우 취소</a>
+                        </button>
                     </form>
                 </div>
 

@@ -9,46 +9,43 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tscm.model.BmtBicDTO;
 import com.tscm.model.BmtFollowDAO;
 import com.tscm.model.BmtFollowDTO;
 import com.tscm.model.BmtFwDetailDTO;
-import com.tscm.model.BmtMyPfDAO;
 import com.tscm.model.BmtUserDTO;
 
-public class Follow implements Command {
-	private static final Logger LOG = LoggerFactory.getLogger(Follow.class);
+public class PostFollowing implements Command {
+	private static final Logger LOG = LoggerFactory.getLogger(PostFollowing.class);
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		LOG.debug(" {} service - start ", "Follow");
+		LOG.debug(" {} service - start ", getClass());
 		
 		String moveURL = null;
 		try {
 			request.setCharacterEncoding("UTF-8");
 			HttpSession session = request.getSession();
 			String u_email=(String)session.getAttribute("email");
+			Long p_idx= Long.parseLong(request.getParameter("postid"));
+			LOG.debug(" p_idx = {} , u_email = {} ", p_idx, u_email);
 			
 			BmtFollowDAO dao = new BmtFollowDAO();
 			
-			BmtUserDTO dtoLogin = new BmtUserDTO();
-			dtoLogin.setU_email(u_email);
+			String strWriter = dao.select_post_writer(p_idx);
+			LOG.debug(" {} writer, {} p_idx,  {} login", strWriter, p_idx, u_email);
 			
-			BmtUserDTO dtoSelUsr =  dao.select_user(dtoLogin);
-			LOG.debug("u_email : {}, u_nick : {}, u_joindate : {} ", 
-					dtoSelUsr.getU_email(), dtoSelUsr.getU_nick(), dtoSelUsr.getU_joindate());
+			BmtFollowDTO dtoInsert = new BmtFollowDTO();
 			
-			ArrayList<BmtFwDetailDTO> listFwDetail = dao.select_follow(dtoSelUsr);
-
-			session.setAttribute("fw_user", dtoSelUsr);
-			session.setAttribute("fw_detail_list", listFwDetail);
+			dtoInsert.setFollower(u_email);
+			dtoInsert.setFollowing(strWriter);
 			
-			moveURL = "06_follow.jsp";
+			dao.insert_follow(dtoInsert);
+            moveURL = "01_post.jsp";
 			
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			LOG.debug(" exception : {} ", e);
+            moveURL = "01_post.jsp";
 		}
 		return moveURL;
 	}

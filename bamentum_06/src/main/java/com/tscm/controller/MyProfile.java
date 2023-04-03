@@ -44,6 +44,9 @@ public class MyProfile implements Command {
 			LOG.debug(" MyProfile select User : email {} nick {} info {} ", 
 					dtoUserMy.getU_email(), dtoUserMy.getU_nick(), dtoUserMy.getU_info());
 			
+			int iFollowing =  dao.count_following(dtoLogin);
+			int iFollower =  dao.count_follower(dtoLogin);
+			
 			ArrayList<BmtBicDTO> listBic = dao.select_bic_list(dtoLogin);
 			
 			LOG.debug(" MyProfile listBic size {}  ", listBic.size());
@@ -52,6 +55,8 @@ public class MyProfile implements Command {
 
 			LOG.debug(" MyProfile listPost size {}  ", listPost.size());
 			
+			session.setAttribute("mp_follower", iFollower);
+			session.setAttribute("mp_following", iFollowing);
 			session.setAttribute("mp_user", dtoUserMy);
 			session.setAttribute("mp_bic_list", listBic);
 			session.setAttribute("mp_post_list", listPost);

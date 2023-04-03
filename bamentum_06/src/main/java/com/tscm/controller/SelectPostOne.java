@@ -26,14 +26,15 @@ public class SelectPostOne implements Command {
 	private static final Logger LOG = LoggerFactory.getLogger(SelectPostOne.class); 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		LOG.debug(" {} service - start ", getClass());
 		
 		String moveURL=null;
-		
 	
 		try {
 			request.setCharacterEncoding("UTF-8");
 			//01_post.jsp에서 받아온 postid
 			long postid = Long.parseLong(request.getParameter("postid"));
+			LOG.debug(" SelectPostOne postid {} ", postid);
 			
 			BmtOnePostDTO dto = new BmtOnePostDTO();
 			dto.setP_idx(postid);

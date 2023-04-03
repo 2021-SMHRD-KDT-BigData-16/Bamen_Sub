@@ -21,6 +21,7 @@ import com.tscm.controller.MorePageService;
 import com.tscm.controller.MyProfile;
 import com.tscm.controller.PostCreate;
 import com.tscm.controller.PostDelete;
+import com.tscm.controller.PostFollowing;
 import com.tscm.controller.Search;
 import com.tscm.controller.SelectMyPage;
 import com.tscm.controller.SelectPost;
@@ -34,6 +35,7 @@ import com.tscm.controller.FollowDelect;
 import com.tscm.controller.FollowInsert;
 import com.tscm.controller.FollowselectAll;
 import com.tscm.controller.SelectPostOne;
+import com.tscm.controller.UnFollow;
 import com.tscm.model.BmtPostDTO;
 import com.tscm.model.BmtOnePostDTO;
 
@@ -61,7 +63,6 @@ public class FrontController extends HttpServlet {
 			moveURL = login.execute(request, response);
 			LOG.debug("LogInService moveURL {} ", moveURL);
 			response.sendRedirect(moveURL);
-			
 			return;
 
 		} else if (strUriDo.equals("PublicPage.do")) {
@@ -73,6 +74,7 @@ public class FrontController extends HttpServlet {
 			LOG.debug("**** onePost moveURL {} ", moveURL);
 			SelectPostOne selectpostone= new SelectPostOne();		
 			moveURL = selectpostone.execute(request, response);
+			
 			HttpSession session = request.getSession();
 			BmtOnePostDTO retDto = (BmtOnePostDTO)session.getAttribute("post");		
 						
@@ -150,6 +152,16 @@ public class FrontController extends HttpServlet {
 			Follow follow = new Follow();
 			moveURL = follow.execute(request, response);
 			LOG.debug("Follow moveURL {} ", moveURL);
+		} else if(strUriDo.equals("UnFollow.do")) {
+			UnFollow unfollow = new UnFollow();
+			moveURL = unfollow.execute(request, response);
+			LOG.debug("UnFollow moveURL {} ", moveURL);
+			response.sendRedirect(moveURL);
+			return;
+		} else if(strUriDo.equals("PostFollowing.do")) {
+			PostFollowing post_follow = new PostFollowing();
+			moveURL = post_follow.execute(request, response);
+			LOG.debug("PostFollowing moveURL {} ", moveURL);
 			
 	// 2023.04.01 추가 
 		}else if(strUriDo.equals("FollowInsert.do")) {

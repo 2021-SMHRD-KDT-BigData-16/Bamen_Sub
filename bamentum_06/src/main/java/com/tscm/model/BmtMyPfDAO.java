@@ -103,6 +103,42 @@ public class BmtMyPfDAO {
 	}	
 
 	
+		
+	public int count_follower(BmtUserDTO dto) {
+		int iCount = 0;
+
+		LOG.debug(" select_user email: {} ", dto.getU_email());
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			iCount = session.selectOne("bmt_count_follower", dto);
+			LOG.debug(" bmt_count_following : {} ", iCount);
+			
+		} finally {
+			session.close();
+		}
+		
+		return iCount;
+	}	
+	
+	public int count_following(BmtUserDTO dto) {
+		int iCount = 0;
+
+		LOG.debug(" select_user email: {} ", dto.getU_email());
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			iCount = session.selectOne("bmt_count_following", dto);
+			LOG.debug(" bmt_count_following : {} ", iCount);
+			
+		} finally {
+			session.close();
+		}
+		
+		return iCount;
+	}	
+
+	
 	
 	
 

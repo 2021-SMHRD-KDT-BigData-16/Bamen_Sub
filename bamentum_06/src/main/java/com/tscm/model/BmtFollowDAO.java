@@ -20,7 +20,6 @@ import com.tscm.db.SqlSessionManager;
 public class BmtFollowDAO{
 	private static final Logger LOG = LoggerFactory.getLogger(BmtFollowDAO.class); 
 	private SqlSessionFactory factory = SqlSessionManager.getFactory();
-
 	
 	public BmtUserDTO select_user(BmtUserDTO dto) {
 		BmtUserDTO retDto = null;
@@ -42,6 +41,28 @@ public class BmtFollowDAO{
 		}
 		
 		return retDto;
+	}	
+
+	public String select_post_writer(long post_idx) {
+		String strWriter = "";
+
+		LOG.debug(" select_post_writer post_idx: {} ", post_idx);
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			strWriter = session.selectOne("bmt_select_post_writer", post_idx);
+			if (strWriter == null) {
+				LOG.debug(" select_post_writer fail : {} ", strWriter);
+			} else {
+				LOG.debug(" select_post_writer success email : {}  ", 
+						strWriter);
+			}
+			
+		} finally {
+			session.close();
+		}
+		
+		return strWriter;
 	}	
 
 	public ArrayList<BmtFwDetailDTO> select_follow(BmtUserDTO dto) {
@@ -71,6 +92,40 @@ public class BmtFollowDAO{
 		
 		return listDto;
 	}	
+	
+	public int delete_follow(BmtFollowDTO dto) {
+		LOG.debug(" delete_follow follower : {} , following : {} ", 
+				dto.getFollower(), dto.getFollowing());
+		
+		int cnt = 0;
+		SqlSession session = factory.openSession(true);
+		try {
+			cnt = session.insert("bmt_delete_follow", dto);
+			
+		} finally {
+			session.close();
+		}
+		
+		return cnt;
+	}	
+
+	public int insert_follow(BmtFollowDTO dto) {
+		LOG.debug(" insert_follow follower : {} , following : {} ", 
+				dto.getFollower(), dto.getFollowing());
+		int cnt = 0;
+		SqlSession session = factory.openSession(true);
+		try {
+
+			
+			cnt = session.insert("bmt_insert_follow", dto);
+			
+		} finally {
+			session.close();
+			
+		}
+		return cnt;
+	}
+	
 	
 	
 /*	

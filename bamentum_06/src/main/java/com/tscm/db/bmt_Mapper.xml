@@ -113,6 +113,27 @@
 
 	</select>
 	
+	<select id="bmt_count_following" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="int">
+
+		select count(*) 
+			from bmt_follow
+		where follower = #{u_email}
+
+	</select>
+	
+	<select id="bmt_count_follower" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="int">
+
+		select count(*) 
+			from bmt_follow
+		where following = #{u_email}
+
+	</select>
+	
+	
 	<select id="bmt_select_fw_detail" 
 		parameterType="com.tscm.model.BmtUserDTO"
 		resultType="com.tscm.model.BmtFwDetailDTO">
@@ -123,6 +144,37 @@
 		        and f.follower = #{u_email}
 
 	</select>
+
+
+	<delete id="bmt_delete_follow" 
+		parameterType="com.tscm.model.BmtFollowDTO">
+
+		DELETE FROM BMT_FOLLOW
+		WHERE FOLLOWER = #{follower} 
+			and FOLLOWING = #{following}
+
+	</delete>
+	
+	<insert id="bmt_insert_follow" 
+		parameterType="com.tscm.model.BmtFollowDTO">
+
+		insert into bmt_follow 
+		values (BMT_FOLLOW_SEQ.nextval, #{follower}, #{following}, SYSDATE)
+
+	</insert>
+	
+	
+	<select id = "bmt_select_post_writer" 
+		parameterType="long"
+		resultType="String">
+
+		select u_email
+			from bmt_post
+		where p_idx = #{p_idx}
+
+	</select>
+	
+	
 	
 <!-- 2023.04.01 추가 follow page -->
 <!-- 
@@ -266,8 +318,8 @@ where f.following = u.u_email
 	</delete>
 
 	<insert id="post_insert"
-	
 		parameterType="com.tscm.model.BmtPostDTO">
+		
 		insert into bmt_post
 		values( BMT_POST_SEQ.nextval, #{p_type}, #{p_title},
 		#{p_content}, #{p_file}, sysdate, #{u_email}, #{p_view})
