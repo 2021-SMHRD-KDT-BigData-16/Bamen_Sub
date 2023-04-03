@@ -24,13 +24,13 @@
 		<body>
 			<div class="page">
 				<header>
-					<img src=".img/로고_투명_흰색.png" class="Logo">
+					<img src="./img/로고_투명_흰색.png" class="Logo">
 					<nav>
 						<ul>
 						<li><a href="01_post.jsp" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
-                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px;">팔로잉보기</a></li>
-                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
+                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 70px; align : center;">내 프로필</a></li>
+                    <li><a href="#" class="menuLink" style="width : 80px;">팔로잉보기</a></li>
+                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 120px;">내 자전거 등록</a></li>
 
 						</ul>
 
@@ -44,7 +44,7 @@
 
 				</div>
 
-						<img src=".img/person-circle.svg" class="profile_circle">
+						<img src="./img/profile_2.PNG" class="profile_circle">
 
 					</nav>
 				</header>
@@ -58,9 +58,23 @@
 	
 			
 		<form action="PostCreate.do" method="post">
-			<input type="text" name="p_title" class="input_title" placeholder="제목을 입력하세요!"> 
-			<input type="text" name="p_content" class="input_content" placeholder="당신의 생각을 적어주세요">
-			<input type="submit" value="글올리기" class="p_create">
+		
+        <div class = "postCreate_intro">
+            <img src="./img/pencil-square.svg" style = "width : 50px; height : 50px; margin-left : 220px; margin-bottom : -30px;">
+            <p class = "intro" style = "font-size : 30px; font-weight : 700">게시물 작성</p>
+            <p class = "sub_intro_1">당신의 일상, 생각, 자전거와 관련된 모든 것들을</p>
+            <p class = "sub_intro_2">바멘텀에서 공유해보세요!</p>
+        </div>
+
+        <section class="post_section">
+
+            <div class="writing_div">
+                <p><textarea class="title_input" placeholder="제목을 입력하세요!😊"></textarea></p>
+                <p><textarea class="content_input" placeholder="내용을 입력하세요!😉"></textarea></p>
+                <button class="post_submit" onclick="alert('피드를 등록하시겠습니까?')">등록</button>
+                <button class="cancel_submit" onclick="alert('피드 작성을 취소하시겠습니까?')">취소</button>
+            </div>
+        </section>
 		</form>
 			
 

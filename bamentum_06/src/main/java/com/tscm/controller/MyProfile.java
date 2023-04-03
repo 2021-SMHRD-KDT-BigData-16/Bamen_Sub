@@ -56,7 +56,7 @@ public class MyProfile implements Command {
 			session.setAttribute("mp_bic_list", listBic);
 			session.setAttribute("mp_post_list", listPost);
 			
-			moveURL = "05_myprofile_old.jsp";
+			moveURL = "05_myprofile.jsp";
 
 		} catch (Exception e) {
 			e.printStackTrace();

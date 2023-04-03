@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Bamen_Sub/project5/css/myprofile.css">
+    <link rel="stylesheet" href="./css/myprofile2.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -35,27 +35,38 @@
         border: 1px solid gray;
     }
 </style>
+
+
+
 <div class="page">
-    <header id="nav_bar">
+    <header>
+			<img src="./img/로고_투명_흰색.png" class="Logo">
+			<nav>
+				<ul>
+					<li><a href="01_post.jsp" class="menuLink"
+						style="width: 50px; align: center;">바멘텀</a></li>
+					<li><a href="MyProfile.do" class="menuLink"
+						style="width: 70px; align: center;">내 프로필</a></li>
+					<li><a href="Follow.do" class="menuLink" style="width: 80px;">팔로잉보기</a></li>
+					<li><a href="04_bic_num.jsp" class="menuLink"
+						style="width: 120px;">내 자전거 등록</a></li>
 
-        <a href="#"><img src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/로고_투명_흰색.png" width="80px"
-                class="Logo"></a>
-        <nav>
-            <ul>
-                <li><a href="#" class="menuLink">바멘텀</a></li>
-                <li><a href="#" class="menuLink">내 피드보기</a></li>
-                <li><a href="#" class="menuLink">Game</a></li>
-                <li><a href="#" class="menuLink">Dream</a></li>
-            </ul>
+				</ul>
 
-        </nav>
-        <div class="nav_others">
-            <input class="search_win" type="search" placeholder="검색하기!">
-            <input class="submit_btn" type="submit" value="검색">
+				<div class="search-box">
+					<button type="button" id="search_btn" class="btn-search">
+						<i class="fas fa-search"><img src="./img/search_white(2).png"
+							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
+					</button>
 
-            <a href="#" class="bic_icon"><img class="bic_icon"
-                    src="/Bamen_Sub/bamentum_UI02/src/main/webapp/img/bg-img/bicycle.svg"></a>
-    </header>
+					<input type="text" id="input_search" class="input-search"
+						placeholder="검색어를 입력하세요!">
+				</div>
+
+				<img src="./img/profile_2.PNG" class="profile_circle">
+
+			</nav>
+		</header>
 
 
 </div>
@@ -121,12 +132,12 @@
 
 
     <!-- 프로필 사진 / 이름(닉네임) 표시 -->
+    <div class="myself">
     <div class="profile_elements">
     
     
         <img class="profile_pic" src=<%= dtoUser.getU_profile() %> >
- 
-        <h3 class="profile_name"> <%= dtoUser.getU_nick()%> </h3>
+         <h3 class="profile_name"> <%= dtoUser.getU_nick()%> </h3>
 
     </div>
 
@@ -147,10 +158,7 @@
     	<%
 	  			}
 			}
-  		%>
-		    
-		 
-    
+  		%>    
     </h3>
 
     <!-- 게시물 / 팔로워 / 팔로잉 수 표시 -->
@@ -161,7 +169,7 @@
         <span style="margin-left : 100px;">팔로잉</span> 
         <span style="font-weight: 700;">274</span>
     </div>
-
+</div>
 
 
     <!-- 내가 쓴 글 표시 -->

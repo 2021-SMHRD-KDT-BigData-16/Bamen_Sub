@@ -130,10 +130,10 @@
 				<a href="javascript:PostView('<%=listDto.get(i).getP_idx()%>')">
 					<!-- 이미지 포함여부에 따라 나오게하기 --> <%
  if (listDto.get(i).getP_file().contains("jpg")) {
- %> <img alt="이미지가 없네요" height=100px
-					src=<%=listDto.get(i).getP_file()%>> <%
- }
- %>
+ %> <img alt="이미지가 없네요" height=100px src=<%=listDto.get(i).getP_file()%>>
+					<%
+					}
+					%>
 				</a>
 				<div class="div_postbox_body">
 					<p class="postbox_body" style="line-height: 30px;"><%=listDto.get(i).getP_content()%></p>
@@ -174,19 +174,7 @@
 
 		<button id="btn_post_more">페이지 더보기</button>
 
-<!-- 사진 모달 창 -->
-
-   function popOpen() {
-
-            var modalPop = $('.join-form');
-            var modalBg = $('.modal-bg');
-
-            modalBg.fadeIn();
-
-            $(modalPop).show();
-            $(modalBg).show();
-
-        }
+		<!-- 사진 모달 창 -->
 
 
 		<!-- 무한 스크롤 자바스크립트 -->

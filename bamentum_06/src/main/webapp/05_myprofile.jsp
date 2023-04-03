@@ -28,6 +28,43 @@
     <title>바멘텀 | 내 프로필</title>
 
 </head>
+
+
+
+<div class="page">
+    <header>
+			<img src="./img/로고_투명_흰색.png" class="Logo">
+			<nav>
+				<ul>
+					<li><a href="01_post.jsp" class="menuLink"
+						style="width: 50px; align: center;">바멘텀</a></li>
+					<li><a href="MyProfile.do" class="menuLink"
+						style="width: 70px; align: center;">내 프로필</a></li>
+					<li><a href="Follow.do" class="menuLink" style="width: 80px;">팔로잉보기</a></li>
+					<li><a href="04_bic_num.jsp" class="menuLink"
+						style="width: 120px;">내 자전거 등록</a></li>
+
+				</ul>
+
+				<div class="search-box">
+					<button type="button" id="search_btn" class="btn-search">
+						<i class="fas fa-search"><img src="./img/search_white(2).png"
+							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
+					</button>
+
+					<input type="text" id="input_search" class="input-search"
+						placeholder="검색어를 입력하세요!">
+				</div>
+
+				<img src="./img/profile_2.PNG" class="profile_circle">
+
+			</nav>
+		</header>
+
+
+</div>
+
+
 <body>
 
 
@@ -86,54 +123,62 @@
 		}
 		
 	%>    
+    <!-- 프로필 사진 / 이름(닉네임) 표시 -->
+     <div class="myself">
+    <div class="profile_elements">
+    
+    
+        <img class="profile_pic" src=<%= dtoUser.getU_profile() %> >
+ 
+        <h3 class="profile_name"> <%= dtoUser.getU_nick()%> </h3>
 
-
-
-    <!--헤더부분: 바멘텀 로고 등등-->
-    <div class="page">
-        <header>
-            <img src="./img/로고_투명_흰색.png" class="Logo">
-            <nav>
-                <ul>
-                    <li><a href="#" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px; align : center;">내 프로필</a></li>
-                    <li><a href="#" class="menuLink" style="width : 60px;">여긴 뭐야</a></li>
-                    <li><a href="#" class="menuLink" style="width : 90px;">내 자전거 등록</a></li>
-
-                </ul>
-
-                <div class="search-box">
-                    <button class="btn-search"><i class="fas fa-search"><img
-                                src="./img/search_white(2).png" class="search_icon"
-                                style="width : 40px; margin-top : 8px;"></i></button>
-
-                    <input type="text" class="input-search" placeholder="검색어를 입력하세요!">
-                </div>
-
-                <img src="./img/profile_2.PNG" class="profile_circle">
-
-            </nav>
-        </header>
     </div>
 
-    <div class="banner"
-        style="display: flex; margin-top : 15px; margin-left : 400px; margin-bottom : -20px; height : 100px;">
-        <img src="./img/배너4.jpg" style="border : 1px solid rgb(228, 107, 173); width : 700px;">
-    </div>
+    <!-- 정보 수정 버튼 -->
+    <input class="edit_btn" type="submit" value="수정">
 
-    <section class = "profile_sector">
+
+    <!-- 차대번호 표시 -->
+    <h2 class="bic_num_letter">차대번호 : </h2>
+    <h3 class="bic_num"> 
+    	<%
+	  		if(listBic != null)
+			{
+	  			if(listBic.size() > 0)
+	  			{
+  		%>
+				    <%= listBic.get(0).getB_num() %>
+    	<%
+	  			}
+			}
+  		%>    
+    </h3>
+
+    <!-- 게시물 / 팔로워 / 팔로잉 수 표시 -->
+    <div class="postn_fol">
+        <span>게시물</span> <span style="font-weight: 700;"> <%= listPost.size() %> </span> 
+        <span style="margin-left : 100px;">팔로워</span> 
+        <span style="font-weight: 700;">250</span> 
+        <span style="margin-left : 100px;">팔로잉</span> 
+        <span style="font-weight: 700;">274</span>
+    </div>
+</div>
+
+
+
+
     <!-- 
+    <section class = "profile_sector">
         <img class = "profile_pic" src=< %= dtoUser.getU_profile() %> >
         
-        <p class = "my_name"> 이름 :< %= dtoUser.getU_nick()%></p>
-        
+        <p class = "my_name"> 이름 :< %= dtoUser.getU_nick()%></p>        
         <p class = "my_name"> 이메일 :< %= dtoUser.getU_email() %></p>
         <p class = "my_name"> 가입날짜 :< %= dtoUser.getU_joindate() %></p>
         <p class = "my_introduce">< %= dtoUser.getU_info() %></p>
         <p class = "profile_bic_num">자전거 차대번호 : < %= listBic.get(0).getB_num() %> </p>
         
-          -->
     </section>
+          -->
 
 
     <!-- 내가 쓴 글 표시 -->
@@ -154,6 +199,8 @@
 	}
     
 	%>
+
+   
 
 
 
