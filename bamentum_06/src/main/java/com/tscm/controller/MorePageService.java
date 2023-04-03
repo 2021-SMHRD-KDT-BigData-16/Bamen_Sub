@@ -26,13 +26,22 @@ public class MorePageService implements Command {
 		try {
 			request.setCharacterEncoding("UTF-8");
 			
-//			String str_page = request.getParameter("page_cnt");
-//			LOG.debug(" **** MorePageService before - page_cnt {} ", str_page);
-			
 			HttpSession session = request.getSession();
-			int post_page = (int)session.getAttribute("post_page");
-			LOG.debug(" **** MorePageService before - post_page {} ", post_page);
 			
+			String str_page = request.getParameter("page_cnt");
+			LOG.debug(" **** MorePageService before - page_cnt {} ", str_page);
+			
+			int post_page = 0;
+			
+			if(Integer.parseInt(str_page) == 0)
+			{
+				LOG.debug(" On Reload Page - page_cnt {} ", Integer.parseInt(str_page));
+				post_page = 0;
+			} else {
+				post_page = (int)session.getAttribute("post_page");
+				LOG.debug(" MorePageService getSession post_page =  {} ", post_page);
+			}
+				
 			BmtPostDAO daoPost = new BmtPostDAO();
 			ArrayList<BmtOnePostDTO> listDto = daoPost.SelectPagePost(post_page);
 			for(int i=0; i< listDto.size(); i++) {
