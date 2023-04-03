@@ -294,21 +294,26 @@
 			
 	        for(let i = 0; i < json.length; i++){
 	        	
+	        	if(json[i].p_file.includes('jpg')){
+	        	
 				resultHTML += `
 				
 			        <div class = "postbox">
 		            
-					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer">` + json[i].u_nick  + ` </span></a>
+					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer"><img src="./img/person-circle.svg"> ` + json[i].u_nick  + ` </span></a>
 		            
+		            <p class="time">   ` + json[i].p_date  + ` : ` +json[i].rn + ` </p>
 		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
-		            <p class="postbox_neck">   ` + json[i].p_date  + ` : ` +json[i].rn + ` </p>
-		            <hr>
+		           
 					<a href = "javascript:PostView(' ` + json[i].p_idx  + ` ')">
-		            
-				    <p><img alt="이미지가 없네요" height = 100px src= ` + json[i].p_file + ` ></p>
+		           
+					
+					
+				    <p><img alt="이미지" height = 100px src= ` + json[i].p_file + ` ></p>		            
 					</a>
 		            
 					<p class="postbox_body">  ` + json[i].p_content + ` </p>
+					<hr>
 		            <button class="Like"><a href="javascript:likePost('`+ json[i].p_idx+`')" class="Like">좋아요</a></button>
 		            <button class="post_origin">
 		            
@@ -316,7 +321,30 @@
 		        </div>
 		    	<div class="space"></div>
 				`
-	            
+	        	}else{resultHTML += `
+				
+			        <div class = "postbox">
+		            
+					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer"><img src="./img/person-circle.svg"> ` + json[i].u_nick  + ` </span></a>
+		            
+		            <p class="time">   ` + json[i].p_date  + ` : ` +json[i].rn + ` </p>
+		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
+		          
+					<a href = "javascript:PostView(' ` + json[i].p_idx  + ` ')">	</a>	           
+					
+		            
+					<p class="postbox_body">  ` + json[i].p_content + ` </p>
+					<hr>
+		            <button class="Like"><a href="javascript:likePost('`+ json[i].p_idx+`')" class="Like">좋아요</a></button>
+		            <button class="post_origin">
+		            
+		            <a href="javascript:onePost('`+ json[i].p_idx+`')" class="Origin">원문보기</a></button>
+		        </div>
+		    	<div class="space"></div>
+				`
+	        		
+	        		
+	        	}
 	            console.log(json[i]);
 	            // console.log(resultHTML);
 	            	            

@@ -123,8 +123,8 @@
 			<div class="img_box">
 				<img  class="img_show" alt="이미지" height=100px src=<%=retDto.getP_file()%>>
 				</div><%} %>
-			<br><br>
 				<div><%=retDto.getP_content()%></div></p>
+			<br><br>
 			
 			
 		<!--버튼영역-->

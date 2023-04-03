@@ -41,7 +41,6 @@
             <input type="text" name="email" class="login_text-field" placeholder="아이디">
             <input type="password" name="pw" class="login_text-field" placeholder="비밀번호">
             <input type="submit" value="로그인" class="submit_btn">
-
             <button type="button" onclick="javascript:popOpen();" class="join_btn">회원가입</button>
         </form>
 

@@ -277,6 +277,7 @@ div#foot {
 .time {
 	font-size: 12px;
 	color: #565656;
+	
 }
 
 /*포스트 제목*/
@@ -287,6 +288,7 @@ p.postbox_neck {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	font-size: 16px;
 }
 
 /*포스트 내용*/
