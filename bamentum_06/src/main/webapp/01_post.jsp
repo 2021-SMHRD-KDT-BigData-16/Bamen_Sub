@@ -77,7 +77,8 @@
 							class="search_icon" style="width: 40px; margin-top: 8px;"></i>
 					</button>
 
-					<input type="text" id="input_search" class="input-search" placeholder="검색어를 입력하세요!">
+					<input type="text" id="input_search" class="input-search"
+						placeholder="검색어를 입력하세요!">
 				</div>
 
 				<img src="./img/profile_2.PNG" class="profile_circle">
@@ -127,17 +128,24 @@
 				<hr>
 
 				<a href="javascript:PostView('<%=listDto.get(i).getP_idx()%>')">
-
-					<img alt="이미지가 없네요" height=100px
-					src=<%=listDto.get(i).getP_file()%>>
+					<!-- 이미지 포함여부에 따라 나오게하기 --> <%
+ if (listDto.get(i).getP_file().contains("jpg")) {
+ %> <img alt="이미지가 없네요" height=100px
+					src=<%=listDto.get(i).getP_file()%>> <%
+ }
+ %>
 				</a>
-
 				<div class="div_postbox_body">
 					<p class="postbox_body" style="line-height: 30px;"><%=listDto.get(i).getP_content()%></p>
 				</div>
 
 				<div class="ad" style="border: 1px solid #1bbc98;">
-					<img src="./img/우측_배너1.jpg" style="margin-top: 50px; width: 298px;">
+					<img src="./img/우측_배너1.jpg" style="width: 298px; height: 398px;">
+				</div>
+				<div class="ad2" style="border: 1px solid #1bbc98;">
+					<a href="https://alton1736.modoo.at/"><img
+						src="./img/KakaoTalk_20230401_104927887.jpg"
+						style="width: 298px; height: 408px;"></a>
 				</div>
 
 				<hr style="border: 1 solid gray;">
@@ -165,6 +173,20 @@
 		</section>
 
 		<button id="btn_post_more">페이지 더보기</button>
+
+<!-- 사진 모달 창 -->
+
+   function popOpen() {
+
+            var modalPop = $('.join-form');
+            var modalBg = $('.modal-bg');
+
+            modalBg.fadeIn();
+
+            $(modalPop).show();
+            $(modalBg).show();
+
+        }
 
 
 		<!-- 무한 스크롤 자바스크립트 -->

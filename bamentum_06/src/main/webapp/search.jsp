@@ -80,13 +80,13 @@
 
 
 				<a class="postbox_head" href="#" style="text-decoration: none;">
-					<span class="writer"> <%=listDto.get(i).getU_nick()%></span>
+					<img src="./img/person-circle.svg" class="profile"><span class="writer"> <%=listDto.get(i).getU_nick()%></span>
 				</a>
-				<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
-				<p>
+				<span class="time">
 					<%=listDto.get(i).getP_date()%>
 
-				</p>
+				</span>
+				<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
 
 				<hr>
 
@@ -100,8 +100,12 @@
 					<p class="postbox_body" style="line-height: 30px;"><%=listDto.get(i).getP_content()%></p>
 				</div>
 
-				<div class="ad" style="border: 1px solid #1bbc98;">
-					<img src="./img/우측_배너1.jpg" style="margin-top: 50px; width: 298px;">
+						<div class="ad" style="border: 1px solid #1bbc98;">
+					<img src="./img/우측_배너1.jpg" style=" width: 298px; height: 398px;">
+				</div>
+				<div class="ad2" style="border: 1px solid #1bbc98;">
+					<a href="https://alton1736.modoo.at/"><img
+						src="./img/KakaoTalk_20230401_104927887.jpg" style=" width: 298px; height: 408px;"></a>
 				</div>
 
 				<hr style="border: 1 solid gray;">

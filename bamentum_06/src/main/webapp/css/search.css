@@ -199,15 +199,27 @@ header ul>li {
 	display: flex;
 }
 
+
 .ad {
 	border: 1px solid rgb(196, 196, 196);
 	width: 300px;
-	height: 500px;
+	height: 400px;
 	position: fixed;
-	left: 1150px;
-	bottom: 200px;
-	top: 220px;
+	left: 1200px;
+	bottom: 150px;
+	top: 100px;
 }
+.ad2{
+	
+	border: 1px solid rgb(196, 196, 196);
+	width: 300px;
+	height: 410px;
+	position: fixed;
+	left: 1200px;
+	bottom: 150px;
+	top: 530px;
+}
+
 
 /* ㄴ여기까지 헤더(연우) css */
 
@@ -274,12 +286,19 @@ div#foot {
 	display: flex;
 	vertical-align: center;
 }
+/*시간*/
+.time {
+	font-size: 12px;
+	color: #565656;
+}
 
 /* 작성자 */
 .writer {
 	color: black;
 	font-size: 16px;
 	font-weight: 700;
+	margin-right: 350px;
+	display: inline-block;
 }
 
 /*포스트 제목*/
