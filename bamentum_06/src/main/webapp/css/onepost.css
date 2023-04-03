@@ -13,6 +13,19 @@ ul {
 	padding: 0;
 }
 
+.img_box{
+	width: 300px;
+	height: 400px;
+	
+}
+
+.img_show{
+	width: 300px;
+	height: 400px;
+	object-fit: cover;	
+}
+
+
 .menuLink {
 	text-decoration: none;
 	outline: none;
@@ -323,6 +336,7 @@ input::placeholder {
 .time{
 	font-size: 12px;
 	color: #565656;
+	margin-right: 280px;
 }
 /*포스트 제목*/
 p.postbox_neck {

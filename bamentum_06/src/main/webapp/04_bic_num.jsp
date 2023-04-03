@@ -57,12 +57,12 @@
             있으며 <br> 분실 및 도난 사고에 대비할 수 있습니다.</h6>
     </div>
 
-    <div class="bic_num_sector" style = "margin-top : -20px;">
+    <div class="bic_num_sector" style = "margin-top : -30px;">
 
 
-	<form action="BicNumIns.do" method="post">
+	<form action="BicNumIns.do" method="post" >
 
-        <h4 style="width : 300px; font-size : 22px; margin-left : 20px;">브랜드를 선택해 주세요.</h4>
+        <h4 style="width : 300px; font-size : 22px; margin-left : 20px; margin-top:10px;">브랜드를 선택해 주세요.</h4>
         <div class="selectBox_1" style="margin-left: 20px; margin-top : -20px;">
 
             <select class="select" name="b_brand" >
@@ -196,7 +196,7 @@
 
         </div>
 
-        <h4 style="width : 250px; height : 10px; font-size : 22px; margin-left : 20px; margin-bottom : 0px;">
+        <h4 style="width : 250px; font-size : 22px; margin-left : 20px; margin-bottom : 0px;">
             차대번호를 입력해 주세요.</h4>
 
         <!-- 차대번호 입력 input -->
@@ -209,7 +209,7 @@
         <!-- 모달 창(차대번호 위치 이미지)-->
         <div class="modal-bg" onClick="javascript:popClose();"></div>
         <div class="num_info"
-            style="background-color: #ffffff; width : 760px;  height : 500px; margin-left : 30px; border : 1px solid gray;">
+            style="background-color: #ffffff; width : 760px;  height : 500px; border : 1px solid gray; margin-left : -10px; margin-top : 100px;">
             <img src="./img/num_location.PNG"
                 style="width : 700px; margin-left : 30px; margin-top : 30px; border : 2px solid #1bbc98;">
                 
@@ -219,24 +219,24 @@
         <h4 style="width : 500px; font-size : 22px; margin-left : 20px;">차대번호가 포함된 사진을 등록해 주세요.</h4>
 
 
-    
-
-        <div class="container" style = "margin-left : 20px; margin-top : -470px;">
-            <div class="image-upload" id="image-upload">
+        <div class="container" style = "margin-left : 20px; margin-top : -500px;">
+            <div class="image-upload" id="image-upload" style = "margin-top : 450px;">
                 <form method="post" enctype="multipart/form-data" style = "box-shadow: 2px 2px 2px gray; border : 1px solid gray; border-radius : 5px; 
-                background-color : #1bbc98; color : #ffffff; width : 300px; height : 25px; margin-left : 0px; margin-top : 60px;">
-                    <div class="button">
-                        <label for="chooseFile">
-                            이곳을 클릭해 파일을 선택하세요.
-                        </label>
-                    </div>
+                background-color : #1bbc98; color : #ffffff; width : 300px; height : 25px; margin-left : 0px; margin-top : 0px;">
+                    
                     <input type="file" id="chooseFile" name="b_img" accept="image/*" onchange="loadFile(this)">
                 </form>
 
-                <div class="fileContainer" style = "margin-left : -90px; margin-top : 20px;">
+                <div class="fileContainer" style = "margin-left : -90px; margin-top : 30px; margin-bottom:50px;">
                     <div class="fileInput">
-                        <p>FILE NAME: </p>
+                        <p>파일명 :  </p>
                         <p id="fileName"></p>
+                    </div>
+                    
+                    <div class="button_here" style = "margin-left : -50px; margin-bottom : -190px;">
+                        <label for="chooseFile">
+                            이곳을 클릭해 파일을 선택하세요.
+                        </label>
                     </div>
                     <div class="buttonContainer">
                         <div class="submitButton" id="submitButton" style = "font-size : 14px;">등록</div>
@@ -256,16 +256,15 @@
     </form>
     
     
-        <div style="display: flex; height : 10px; margin: 0 auto;">
+        <div style="height : 100px; margin-left : 500px; margin-top : -817px;">
             <img src="./img/question.svg"
                 style="width : 17px; height : 17px; margin-top : 39px; margin-left : 450px; margin-right : -20px;">
-                
+                   <button  onclick="javascript:popOpen();"
+                style="cursor : pointer; margin-left : 20px; margin-top : -1549px; margin-bottom : 0px; background-color: transparent; font-size : 15px; border : none;">
+                차대번호는 어디있나요?</button>
+                        
                  
-            <button  onclick="javascript:popOpen();"
-                style="cursor : pointer; margin-left : 20px; margin-top : 35px; margin-bottom : 10px; border : none; background-color: transparent; font-size : 15px;">
-                차대번호는
-                어디있나요?</button>
-               
+
         </div>    
     
     

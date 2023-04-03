@@ -181,11 +181,21 @@ header ul>li {
 .ad {
 	border: 1px solid rgb(196, 196, 196);
 	width: 300px;
-	height: 500px;
+	height: 400px;
 	position: fixed;
-	left: 1150px;
-	bottom: 200px;
-	top: 220px;
+	left: 1200px;
+	bottom: 150px;
+	top: 95px;
+}
+.ad2{
+	
+	border: 1px solid rgb(196, 196, 196);
+	width: 300px;
+	height: 410px;
+	position: fixed;
+	left: 1200px;
+	bottom: 150px;
+	top: 530px;
 }
 
 /* ㄴ여기까지 헤더(연우) css */
@@ -259,11 +269,10 @@ div#foot {
 	color: black;
 	font-size: 16px;
 	font-weight: 700;
+	margin-right: 400px;
+	display: inline-block;
 }
 
-.class {
-	
-}
 
 .time {
 	font-size: 12px;

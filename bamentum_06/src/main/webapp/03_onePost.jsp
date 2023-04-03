@@ -71,10 +71,10 @@
 					<li><a href="01_post.jsp" class="menuLink"
 						style="width: 50px; align: center;">바멘텀</a></li>
 					<li><a href="05_myprofile.jsp" class="menuLink"
-						style="width: 60px; align: center;">내 프로필</a></li>
-					<li><a href="#" class="menuLink" style="width: 60px;">팔로잉보기</a></li>
+						style="width: 70px; align: center;">내 프로필</a></li>
+					<li><a href="#" class="menuLink" style="width: 80px;">팔로잉보기</a></li>
 					<li><a href="04_bic_num.jsp" class="menuLink"
-						style="width: 90px;">내 자전거 등록</a></li>
+						style="width: 120px;">내 자전거 등록</a></li>
 
 				</ul>
 
@@ -112,16 +112,22 @@
 			<a class="postbox_head" href="#" style="text-decoration: none;">💚</a><span
 				class="writer"><%=retDto.getU_nick()%></span>
 				<span class="time"><%=retDto.getP_date()%></span>
+				
 				<button id="post_delete" onclick="delPost('<%=p_idx%>')">글 삭제하기</button>
 			<p class="postbox_neck"><%=retDto.getP_title()%></p>
 			<hr>
 			
 
 			<p class="postbox_body">
-				<img alt="이미지" height=100px src=<%=retDto.getP_file()%>><br><%=retDto.getP_content()%></p>
-			<!--버튼영역-->
-
-
+			<%if(retDto.getP_file().contains("jpg")) {%>
+			<div class="img_box">
+				<img  class="img_show" alt="이미지" height=100px src=<%=retDto.getP_file()%>>
+				</div><%} %>
+			<br><br>
+				<div><%=retDto.getP_content()%></div></p>
+			
+			
+		<!--버튼영역-->
 		</div>
 
 		<!--공간나누는영역-->
