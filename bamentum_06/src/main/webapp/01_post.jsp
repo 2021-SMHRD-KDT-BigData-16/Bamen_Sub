@@ -113,30 +113,31 @@
 		<!--포스트들이 들어가있는 영역-->
 		<section class="post">
 
-
-			<%
+<!-- 
+			< %
 			for (int i = 0; i < listDto.size(); i++) {
 			%>
 			<div class="postbox">
 				<a class="postbox_head" href="#" style="text-decoration: none;">
 					<img src="./img/person-circle.svg" class="profile"><span
-					class="writer"> <%=listDto.get(i).getU_nick()%></span>
-				</a> <span class="time"><%=listDto.get(i).getP_date()%></span>
-				<p class="postbox_neck"><%=listDto.get(i).getP_title()%></p>
+					class="writer"> < %=listDto.get(i).getU_nick()%></span>
+				</a> <span class="time">< %=listDto.get(i).getP_date()%></span>
+				<p class="postbox_neck">< %=listDto.get(i).getP_title()%></p>
 
 
 				<hr>
 
-				<a href="javascript:PostView('<%=listDto.get(i).getP_idx()%>')">
-					<!-- 이미지 포함여부에 따라 나오게하기 --> <%
+				<a href="javascript:PostView('< %=listDto.get(i).getP_idx()%>')">
+					< %
  if (listDto.get(i).getP_file().contains("jpg")) {
- %> <img alt="이미지가 없네요" height=100px src=<%=listDto.get(i).getP_file()%>>
-					<%
-					}
-					%>
+ %> <img alt="이미지가 없네요" height=100px
+					src=< %=listDto.get(i).getP_file()%>> 
+					< %
+ }
+ %>
 				</a>
 				<div class="div_postbox_body">
-					<p class="postbox_body" style="line-height: 30px;"><%=listDto.get(i).getP_content()%></p>
+					<p class="postbox_body" style="line-height: 30px;">< %=listDto.get(i).getP_content()%></p>
 				</div>
 
 				<div class="ad" style="border: 1px solid #1bbc98;">
@@ -152,29 +153,31 @@
 
 
 				<button id="post_like">
-					<a href="javascript:likePost('<%=listDto.get(i).getP_idx()%>')"
+					<a href="javascript:likePost('< %=listDto.get(i).getP_idx()%>')"
 						class="Like">좋아요</a>
 				</button>
 
 				<span id="likeNum"></span>
 				<button class="post_origin">
-					<!-- postid 보내기작업(to selectpostone.java) -->
-					<a href="javascript:onePost('<%=listDto.get(i).getP_idx()%>')"
+					<a href="javascript:onePost('< %=listDto.get(i).getP_idx()%>')"
 						class="Origin">원문보기</a>
 				</button>
-				<!--공간나누는영역-->
 			</div>
 			<div class="space"></div>
 
-			<%
+			< %
 			}
 			%>
-			<div id="post_more"></div>
+			
+-->			
+			<div id="post_more">
+		
+			</div>
+			
+			
 		</section>
 
 		<button id="btn_post_more">페이지 더보기</button>
-
-		<!-- 사진 모달 창 -->
 
 
 		<!-- 무한 스크롤 자바스크립트 -->
@@ -234,14 +237,19 @@
 		let loading = false;
 		let page_cnt = 1;
 		let post_send = { "page_cnt" : page_cnt };
-		
-		
 	
 		$('#btn_post_more').click(function(){
 			console.log("btnPost function");
 			next_load();
 			
 		});
+		
+	    $(document).ready(function(){
+            console.log(`ready : ` + page_cnt);
+			next_load();
+	    });
+
+		
 		
 	    const next_load = function(){
 			console.log("next_load function");
@@ -274,9 +282,6 @@
 			
 			let resultHTML = '';
 			
-			
-		
-			
 	        for(let i = 0; i < json.length; i++){
 	        	
 				resultHTML += `
@@ -286,7 +291,7 @@
 					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer">` + json[i].u_nick  + ` </span></a>
 		            
 		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
-		            <p class="postbox_neck">   ` + json[i].p_date  + ` </p>
+		            <p class="postbox_neck">   ` + json[i].p_date  + ` : ` +json[i].rn + ` </p>
 		            <hr>
 					<a href = "javascript:PostView(' ` + json[i].p_idx  + ` ')">
 		            
@@ -308,7 +313,8 @@
 	        };
 	        
 	        
-	        $('#post_more').after(resultHTML);
+//	        $('body').append(resultHTML);
+	        $('section').append(resultHTML);
 			
 			page_cnt = page_cnt + 1;
             console.log(`page_cnt : ` + page_cnt);
