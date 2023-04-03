@@ -46,6 +46,13 @@ public class PostCreate implements Command  {
 			System.out.println("!!!!!확인하자!!!"+u_email+p_title+p_content);
 			BmtPostCrDAO daopost= new BmtPostCrDAO();
 			daopost.postInsert(dtopost);
+			
+			
+			int iPage = 0;
+			session.setAttribute("post_page", iPage);
+			iPage = (int)session.getAttribute("post_page");
+			LOG.debug(" iPage : {}", iPage);
+			
 			moveURL="01_post.jsp";
 						
 			

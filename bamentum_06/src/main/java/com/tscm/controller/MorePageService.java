@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.tscm.model.BmtOnePostDTO;
 import com.tscm.model.BmtPostDAO;
 
@@ -46,7 +47,9 @@ public class MorePageService implements Command {
 			LOG.debug(" **** MorePageService after - post_page {} ", post_page);
 			
 			//json 타입으로 반환?
-			String gson = new Gson().toJson(listDto);
+			
+			Gson gsonFmt = new GsonBuilder().setDateFormat("yyyy/MM/dd HH:mm:ss").create();
+			String gson = gsonFmt.toJson(listDto);
 			
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("json");

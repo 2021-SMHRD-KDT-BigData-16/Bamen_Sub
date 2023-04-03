@@ -44,20 +44,10 @@ public class LogInService implements Command {
 				session.setAttribute("email", email);
 				
 				moveURL = "01_post.jsp";
-				
-				
-				BmtPostDAO daoPost = new BmtPostDAO();
+
 				int iPage = 0;
-				ArrayList<BmtOnePostDTO> listDto = daoPost.SelectPagePost(iPage);
-				for(int i=0; i< listDto.size(); i++) {
-					LOG.debug(" post {} - {} ", i, listDto.get(i).getP_content());
-				}
-				
-				
-				iPage++;
 				//로그인 성공시 postlist들을 세션에 저장함
 				session.setAttribute("post_page", iPage);
-				session.setAttribute("postlist", listDto);
 				
 				iPage = (int)session.getAttribute("post_page");
 				LOG.debug(" iPage : {}", iPage);

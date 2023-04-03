@@ -60,6 +60,9 @@ public class FrontController extends HttpServlet {
 			LogInService login = new LogInService();
 			moveURL = login.execute(request, response);
 			LOG.debug("LogInService moveURL {} ", moveURL);
+			response.sendRedirect(moveURL);
+			
+			return;
 
 		} else if (strUriDo.equals("PublicPage.do")) {
 			SelectPost SelectPublic = new SelectPost();
@@ -78,6 +81,8 @@ public class FrontController extends HttpServlet {
 			MorePageService more_page = new MorePageService();
 			moveURL = more_page.execute(request, response);
 			LOG.debug("MorePageService moveURL {} ", moveURL);
+			return;
+			
 						
 		} else if (strUriDo.equals("LikeService.do")) {
 
@@ -114,6 +119,8 @@ public class FrontController extends HttpServlet {
 			PostCreate postwrite= new PostCreate();
 			moveURL = postwrite.execute(request, response);
 			LOG.debug("PostCreate moveURL {} ", moveURL);
+			response.sendRedirect(moveURL);
+			return;
 			
 		}else if(strUriDo.equals("PostDelete.do")) {
 			PostDelete postdelete= new PostDelete();
@@ -171,8 +178,6 @@ public class FrontController extends HttpServlet {
 		}else {
 			LOG.debug("FrontController : {}", "Unknown page");
 		}
-		
-		
 
 		if(moveURL != null) {
 			RequestDispatcher rd =  request.getRequestDispatcher(moveURL);
