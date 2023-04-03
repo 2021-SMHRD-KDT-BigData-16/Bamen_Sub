@@ -55,8 +55,8 @@ public class MyProfile implements Command {
 			session.setAttribute("mp_user", dtoUserMy);
 			session.setAttribute("mp_bic_list", listBic);
 			session.setAttribute("mp_post_list", listPost);
-
-			moveURL = "05_myprofile.jsp";
+			
+			moveURL = "05_myprofile_old.jsp";
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -64,5 +64,57 @@ public class MyProfile implements Command {
 		}
 		return moveURL;
 	}
+	
+	private void checkNull(BmtBicDTO dto) {
+		
+		
+		if(dto.getB_brand() == null)
+		{
+			dto.setB_brand("a");
+		}
+		else
+		{
+			if(dto.getB_brand().length() <= 0) {
+				dto.setB_brand("a");
+			}
+		}
+
+		if(dto.getB_num() == null)
+		{
+			dto.setB_num("a");
+		}
+		else
+		{
+			if(dto.getB_num().length() <= 0) {
+				dto.setB_num("a");
+			}
+		}
+
+		if(dto.getB_img() == null)
+		{
+			dto.setB_img("a");
+		}
+		else
+		{
+			if(dto.getB_img().length() <= 0) {
+				dto.setB_img("a");
+			}
+		}
+
+		if(dto.getB_model() == null)
+		{
+			dto.setB_model("a");
+		}
+		else
+		{
+			if(dto.getB_model().length() <= 0) {
+				dto.setB_model("a");
+			}
+		}
+		
+		return;
+	}
+	
+	
 
 }

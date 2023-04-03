@@ -104,7 +104,69 @@
 		where u_email = #{u_email}
 
 	</select>
+	
+ 	
+	<select id="bmt_select_follow" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="com.tscm.model.BmtFollowDTO">
 
+		select * 
+			from bmt_follow
+		where follower = #{u_email}
+
+	</select>
+	
+	<select id="bmt_select_fw_detail" 
+		parameterType="com.tscm.model.BmtUserDTO"
+		resultType="com.tscm.model.BmtFwDetailDTO">
+
+		select f.f_idx, f.follower, f.following, u.u_nick, u.u_info, u.u_profile, f.f_date
+		    from bmt_follow f, bmt_user u
+		where f.following = u.u_email
+		        and f.follower = #{u_email}
+
+	</select>
+	
+<!-- 2023.04.01 추가 follow page -->
+<!-- 
+
+select f.f_idx, f.follower, f.following, u.u_nick, u.u_info, u.u_profile, f.f_date
+    from bmt_follow f, bmt_user u
+where f.following = u.u_email
+        and f.follower = 'Mi_yeon0602@bamentum.com';
+
+
+
+	<select id="Follow_selectAll"
+		parameterType="com.tscm.model.BmtFollowDTO"
+		resultType="com.tscm.model.BmtFollowDTO">
+		SELECT *
+		FROM bmt_follow
+		WHERE FOLLOWER = #{follower}
+	</select>
+
+	<insert id="bmt_following"
+		parameterType="com.tscm.model.BmtFollowDTO">
+		insert into bmt_follow
+ 		values (BMT_FOLLOW_SEQ.nextval, 
+   		#{follower}, 
+    	(select  U_EMAIL
+    	FROM  BMT_USER 
+    	WHERE  U_NICK = #{following})
+    	, SYSDATE)
+	</insert>
+
+	<delete id="bmt_Unfollow"
+		parameterType="com.tscm.model.BmtFollowDTO">
+		DELETE FROM BMT_FOLLOW
+		WHERE FOLLOWER = #{follower} and FOLLOWING = #{following}
+
+	</delete>
+
+ -->
+
+	
+	
 
 
 
@@ -125,8 +187,6 @@
 		(BMT_POST_LIKES_SEQ.nextval,#{p_idx},#{u_email},sysdate)
 
 	</insert>
-
-
 
 
 	<select id="bmt_selectPublic"
@@ -220,32 +280,6 @@
 		parameterType="com.tscm.model.BmtPostDTO">
 		delete from bmt_post where p_idx=#{p_idx}
 	</delete>
-<!-- 2023.04.01 추가 follow page -->
-	<select id="Follow_selectAll"
-		parameterType="com.tscm.model.BmtFollowDTO"
-		resultType="com.tscm.model.BmtFollowDTO">
-		SELECT *
-		FROM bmt_follow
-		WHERE FOLLOWER = #{follower}
-	</select>
-
-
-	<insert id="bmt_following"
-		parameterType="com.tscm.model.BmtFollowDTO">
-		insert into bmt_follow
-		values ( BMT_FOLLOW_SEQ.NEXTVAL, #{follower},
-		#{following}, sysdate)
-	</insert>
-
-	<delete id="bmt_delect"
-		parameterType="com.tscm.model.BmtFollowDTO">
-		DELETE FROM BMT_FOLLOW
-		WHERE FOLLOWER = #{follower} and FOLLOWING = #{following}
-
-	</delete>
-
-
-
 
 
 

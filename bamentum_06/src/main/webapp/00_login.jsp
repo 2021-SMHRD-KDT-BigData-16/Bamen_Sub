@@ -25,8 +25,6 @@
         <hr class="title-line" style="border : 1px solid #ffffff; width : 1100px;">
     </div>
 
-
-
     <!-- 메인 소개문구 우측 부가설명 문구 -->
     <div class="introducing_2">
         <span>오직 당신과 자전거만을 위한 특별한 공간.</span>
@@ -46,8 +44,6 @@
 
             <button type="button" onclick="javascript:popOpen();" class="join_btn">회원가입</button>
         </form>
-        
-        
 
         <div class="links">
             <a href="#">아이디 / 비밀번호 찾기</a>
@@ -122,11 +118,6 @@
         }
 
     </script>
-	
-	
-	
-	
-	
 	
 	<nav>
 		<a href="PublicPage.do">자유게시판</a>

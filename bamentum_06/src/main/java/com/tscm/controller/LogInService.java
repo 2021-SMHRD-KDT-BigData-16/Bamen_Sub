@@ -9,8 +9,6 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tscm.model.BmtLikeDAO;
-import com.tscm.model.BmtLikeDTO;
 import com.tscm.model.BmtOnePostDTO;
 import com.tscm.model.BmtPostDAO;
 import com.tscm.model.BmtUserDAO;
@@ -38,14 +36,13 @@ public class LogInService implements Command {
 			// select * from web_member where email = ? and pw = ?
 			BmtUserDTO retDto = daoUser.login(dtoUser);			
 			
-			
-			
 			if(retDto != null) {
 				LOG.debug(" ***  log in Success email : {} ", retDto.getU_email());
 				HttpSession session = request.getSession();
 				//session에 이메일 저장하기
 				session.setAttribute("user", retDto);
 				session.setAttribute("email", email);
+				
 				moveURL = "01_post.jsp";
 				
 				
@@ -55,8 +52,6 @@ public class LogInService implements Command {
 				for(int i=0; i< listDto.size(); i++) {
 					LOG.debug(" post {} - {} ", i, listDto.get(i).getP_content());
 				}
-				
-				
 				
 				
 				iPage++;

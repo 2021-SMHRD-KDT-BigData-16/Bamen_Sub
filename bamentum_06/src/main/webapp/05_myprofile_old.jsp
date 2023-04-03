@@ -136,7 +136,22 @@
 
     <!-- 차대번호 표시 -->
     <h2 class="bic_num_letter">차대번호 : </h2>
-    <h3 class="bic_num"> <%= listBic.get(0).getB_num() %> </h3>
+    <h3 class="bic_num"> 
+    	<%
+	  		if(listBic != null)
+			{
+	  			if(listBic.size() > 0)
+	  			{
+  		%>
+				    <%= listBic.get(0).getB_num() %>
+    	<%
+	  			}
+			}
+  		%>
+		    
+		 
+    
+    </h3>
 
     <!-- 게시물 / 팔로워 / 팔로잉 수 표시 -->
     <div class="postn_fol">

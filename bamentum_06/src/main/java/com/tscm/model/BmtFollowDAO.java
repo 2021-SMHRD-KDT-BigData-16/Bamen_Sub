@@ -18,9 +18,62 @@ import com.tscm.db.SqlSessionManager;
 
 
 public class BmtFollowDAO{
-	private static final Logger LOG = LoggerFactory.getLogger(BmtCmtDAO.class); 
+	private static final Logger LOG = LoggerFactory.getLogger(BmtFollowDAO.class); 
 	private SqlSessionFactory factory = SqlSessionManager.getFactory();
+
 	
+	public BmtUserDTO select_user(BmtUserDTO dto) {
+		BmtUserDTO retDto = null;
+
+		LOG.debug(" select_user email: {} ", dto.getU_email());
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			retDto = session.selectOne("bmt_select_user", dto);
+			if (retDto == null) {
+				LOG.debug(" login fail : {} ", retDto);
+			} else {
+				LOG.debug(" login success email : {} : {} : {} ", 
+						retDto.getU_email(), retDto.getU_nick(), retDto.getU_profile());
+			}
+			
+		} finally {
+			session.close();
+		}
+		
+		return retDto;
+	}	
+
+	public ArrayList<BmtFwDetailDTO> select_follow(BmtUserDTO dto) {
+		ArrayList<BmtFwDetailDTO>  listDto = null;
+
+		LOG.debug(" select_follow email: {} ", dto.getU_email());
+		
+		SqlSession session = factory.openSession(true);
+		try {
+			
+			listDto = (ArrayList)session.selectList("bmt_select_fw_detail", dto);
+			if (listDto != null) {
+				for(int i=0; i< listDto.size(); i++)
+				{
+					LOG.debug("select_follow - {} : {} - {} , {} , {}", 
+							listDto.get(i).getFollower(), listDto.get(i).getFollowing(), 
+							listDto.get(i).getF_date(), listDto.get(i).getU_nick(), 
+							listDto.get(i).getU_profile() );
+				}
+			} else {
+				LOG.debug("{} Fail ", "select_follow" );
+			}
+			
+		} finally {
+			session.close();
+		}
+		
+		return listDto;
+	}	
+	
+	
+/*	
 	public int following(BmtFollowDTO dto) {
 		LOG.debug(" DAO 시작 ", dto);
 		int cnt = 0;
@@ -54,7 +107,7 @@ public class BmtFollowDAO{
 	}
 	
 
-	public int delete (BmtFollowDTO dto) {
+	public int bmt_Unfollow (BmtFollowDTO dto) {
 		LOG.debug(" DAO-delete 시작 ", dto);
 		int cnt = 0;
 		SqlSession session = factory.openSession(true);
@@ -62,7 +115,7 @@ public class BmtFollowDAO{
 
 			LOG.debug(" DTO :{},{} " , dto.getFollower(), dto.getFollowing());
 			
-			cnt = session.insert("bmt_delect", dto);
+			cnt = session.insert("bmt_Unfollow", dto);
 			
 		} finally {
 			session.close();
@@ -72,7 +125,7 @@ public class BmtFollowDAO{
 		return cnt;
 	}
 	
-	
+*/	
 	
 	
 }

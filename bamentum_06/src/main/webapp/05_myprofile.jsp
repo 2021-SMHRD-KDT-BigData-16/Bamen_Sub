@@ -122,12 +122,17 @@
     </div>
 
     <section class = "profile_sector">
-        <img class = "profile_pic" src=<%= dtoUser.getU_profile() %> >
-        <p class = "my_name"> 이름 :<%= dtoUser.getU_nick()%></p>
-        <p class = "my_name"> 이메일 :<%= dtoUser.getU_email() %></p>
-        <p class = "my_name"> 가입날짜 :<%= dtoUser.getU_joindate() %></p>
-        <p class = "my_introduce"><%= dtoUser.getU_info() %></p>
-        <p class = "profile_bic_num">자전거 차대번호 : <%= listBic.get(0).getB_num() %> </p> 
+    <!-- 
+        <img class = "profile_pic" src=< %= dtoUser.getU_profile() %> >
+        
+        <p class = "my_name"> 이름 :< %= dtoUser.getU_nick()%></p>
+        
+        <p class = "my_name"> 이메일 :< %= dtoUser.getU_email() %></p>
+        <p class = "my_name"> 가입날짜 :< %= dtoUser.getU_joindate() %></p>
+        <p class = "my_introduce">< %= dtoUser.getU_info() %></p>
+        <p class = "profile_bic_num">자전거 차대번호 : < %= listBic.get(0).getB_num() %> </p>
+        
+          -->
     </section>
 
 

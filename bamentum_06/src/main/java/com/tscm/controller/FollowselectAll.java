@@ -24,21 +24,22 @@ public class FollowselectAll implements Command{
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("Followselect이동완료!");
 		String moveURL = null;
-		
+		HttpSession session = request.getSession();
 		
 		try {
+			String follower = (String)session.getAttribute("email");
 			LOG.debug(" {} service - start1 ", "FwSelectService");
 			request.setCharacterEncoding("UTF-8");
-			
+/*			
 			System.out.println("Followselect - U_Email 값 들어오는거 확인");
-			String follower = request.getParameter("follower");
-			
+		
 			BmtFollowDAO dao = new BmtFollowDAO();
 			BmtFollowDTO dto = new BmtFollowDTO(follower);
 			ArrayList<BmtFollowDTO> dtoList = dao.Follow_SelectAll(dto);
-			HttpSession session = request.getSession();
-			session.setAttribute("dtoList", dtoList);
-			moveURL = "06_follow.jsp";
+			
+			session.setAttribute("fw_dtoList", dtoList);
+			moveURL = "07_follow.jsp";
+*/			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

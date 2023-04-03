@@ -29,6 +29,7 @@ import com.tscm.controller.Search;
 import com.tscm.controller.BicNumIns;
 import com.tscm.controller.CmtCreate;
 import com.tscm.controller.CmtDelete;
+import com.tscm.controller.Follow;
 import com.tscm.controller.FollowDelect;
 import com.tscm.controller.FollowInsert;
 import com.tscm.controller.FollowselectAll;
@@ -137,6 +138,12 @@ public class FrontController extends HttpServlet {
 			MyProfile my_profile = new MyProfile();
 			moveURL = my_profile.execute(request, response);
 			LOG.debug("MyProfile moveURL {} ", moveURL);
+			
+		} else if(strUriDo.equals("Follow.do")) {
+			Follow follow = new Follow();
+			moveURL = follow.execute(request, response);
+			LOG.debug("Follow moveURL {} ", moveURL);
+			
 	// 2023.04.01 추가 
 		}else if(strUriDo.equals("FollowInsert.do")) {
 			FollowInsert FollowInsert= new FollowInsert();
