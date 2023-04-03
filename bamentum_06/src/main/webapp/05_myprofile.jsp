@@ -129,25 +129,25 @@
     
     
         <img class="profile_pic" src=<%= dtoUser.getU_profile() %> >
- 
-        <h3 class="profile_name"> <%= dtoUser.getU_nick()%> </h3>
-
-    </div>
-
+ <br>
+        <h3 class="profile_name" style="display: inline-block; width: 600px;"> <%= dtoUser.getU_nick()%> </h3>
     <!-- 정보 수정 버튼 -->
     <input class="edit_btn" type="submit" value="수정">
 
+    </div>
+
+
 
     <!-- 차대번호 표시 -->
-    <h2 class="bic_num_letter">차대번호 : </h2>
-    <h3 class="bic_num"> 
+    <h2 class="bic_num_letter">차대번호  </h2>
+    <h3 class="bic_num" > 
     	<%
 	  		if(listBic != null)
 			{
 	  			if(listBic.size() > 0)
 	  			{
   		%>
-				    <%= listBic.get(0).getB_num() %>
+				    <%= listBic.get(0).getB_num() %><br>
     	<%
 	  			}
 			}
@@ -162,8 +162,12 @@
         <span style="margin-left : 100px;">팔로잉</span> 
         <span style="font-weight: 700;">274</span>
     </div>
-</div>
+    
+		<br> <br>
+    <div><h3>내가 쓴 글 목록</h3>
+    </div>
 
+	</div>
 
 
 
@@ -190,9 +194,13 @@
 		{
 	%>
 
-		    <div class="my_write">
+		    <div class="my_write" style="padding:5px 30px;">
+		        <span class="subject_content" ><%=listPost.get(i).getP_title() %></span>
+		    
+		        <hr>
 		        <p class="write_content"><%= listPost.get(i).getP_content() %> </p>
 		    </div>
+		    <br>
 
     <%
 		}

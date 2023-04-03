@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
 }
+.myself{
+	margin-left:400px;
+}
 
 .Logo {
     width: 80px;
@@ -269,9 +272,10 @@ header ul>li {
     border : 2px solid #1bbc98;
     border-radius: 10px;
     width : 700px;
-    height : 320px;
+    height: auto;
     margin-top : 0px;
     margin-left : 400px;
+    
 }
 
 .my_write_profile {
@@ -309,5 +313,36 @@ header ul>li {
     font-size : 18px;
     font-weight : 600;
 }
+
+.edit_btn {
+	font-size: 14px;
+	border: 2px solid #05be79 !important;
+    color: #717171;
+    height: 40px;
+	font-weight: bold;    
+    border-radius: 10px;
+    background-color: white;
+}
+
+.edit_btn:hover{
+    background-color: #57fbda;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

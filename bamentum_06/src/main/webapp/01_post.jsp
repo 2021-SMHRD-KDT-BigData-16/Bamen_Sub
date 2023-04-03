@@ -112,7 +112,14 @@
 
 		<!--포스트들이 들어가있는 영역-->
 		<section class="post">
-
+	<div class="ad" style="border: 1px solid #1bbc98;">
+					<img src="./img/우측_배너1.jpg" style="width: 298px; height: 398px;">
+				</div>
+				<div class="ad2" style="border: 1px solid #1bbc98;">
+					<a href="https://alton1736.modoo.at/"><img
+						src="./img/KakaoTalk_20230401_104927887.jpg"
+						style="width: 298px; height: 408px;"></a>
+				</div>
 <!-- 
 			< %
 			for (int i = 0; i < listDto.size(); i++) {
