@@ -27,13 +27,10 @@
 					<img src="./img/로고_투명_흰색.png" class="Logo">
 					<nav>
 						<ul>
-						<li><a href="01_post.jsp" class="menuLink"
-						style="width: 50px; align: center;">바멘텀</a></li>
-					<li><a href="MyProfile.do" class="menuLink"
-						style="width: 70px; align: center;">내 프로필</a></li>
-					<li><a href="Follow.do" class="menuLink" style="width: 80px;">팔로잉보기</a></li>
-					<li><a href="04_bic_num.jsp" class="menuLink"
-						style="width: 120px;">내 자전거 등록</a></li>
+						<li><a href="01_post.jsp" class="menuLink" style="width : 50px; align : center;">바멘텀</a></li>
+                    <li><a href="05_myprofile.jsp" class="menuLink" style="width : 70px; align : center;">내 프로필</a></li>
+                    <li><a href="#" class="menuLink" style="width : 80px;">팔로잉보기</a></li>
+                    <li><a href="04_bic_num.jsp" class="menuLink" style="width : 120px;">내 자전거 등록</a></li>
 
 						</ul>
 
@@ -72,8 +69,8 @@
         <section class="post_section">
 
             <div class="writing_div">
-                <p><textarea class="title_input" placeholder="제목을 입력하세요!😊"></textarea></p>
-                <p><textarea class="content_input" placeholder="내용을 입력하세요!😉"></textarea></p>
+                <p><textarea class="title_input" name = "p_title" placeholder="제목을 입력하세요!😊"></textarea></p>
+                <p><textarea class="content_input" name = "p_content" placeholder="내용을 입력하세요!😉"></textarea></p>
                 <button class="post_submit" onclick="alert('피드를 등록하시겠습니까?')">등록</button>
                 <button class="cancel_submit" onclick="alert('피드 작성을 취소하시겠습니까?')">취소</button>
             </div>
