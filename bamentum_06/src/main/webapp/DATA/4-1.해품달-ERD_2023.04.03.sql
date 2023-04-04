@@ -329,8 +329,13 @@ where u.u_email = b.u_email ;
 
 
 
+insert into bmt_post values (10510, 'f', ' 혹시 XX근처에 자전고 두고가신분?? ', ' 오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요!! <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen003.jpg', TO_DATE('2023/04/02 15:40:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com',    10);
+
+insert into bmt_post values (10510, 'f', ' 혹시 XX근처에 자전고 두고가신분?? ',  ' 오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요!! <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen1.JPG', TO_DATE('2023/04/01 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com', 11);
 
 
+
+/*
 insert into bmt_user values ('bbb@bamentum.com',    'aaa', '홍아름', './DATA/ImgProfil/pf000.jpg', '안녕하세요 아름다운 아름입니다', ' ' , TO_DATE('2023/03/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('ccc@bamentum.com',     'aaa', '심이슬', './DATA/ImgProfil/pf001.jpg', '자전거를 배운지 얼마 안됐어요',               ' ' , TO_DATE('2023/03/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
 insert into bmt_user values ('ddd@bamentum.com',   'aaa', '류이레', './DATA/ImgProfil/pf002.jpg', '자전거령력 4년차 과장입니다',                              ' ' , TO_DATE('2023/03/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
@@ -468,12 +473,29 @@ insert into bmt_user values ('899@bamentum.com',    'aaa', '선해', './DATA/ImgPr
 
 
 
-insert into bmt_post values (10001, 'f', '혹시 XX근처에 자전고 두고가신분??',  '오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요? <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen1.jpg', TO_DATE('2023/04/01 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com', 11);
+insert into bmt_post values (10505, 'f', ' 혹시 XX근처에 자전고 두고가신분?? ',  ' 오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요!! <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen1.JPG', TO_DATE('2023/04/01 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com', 11);
 
 
+
+insert into bmt_post values (10509, 'f', '여기는 어디일까요?', '서울시 한강공원 입니다', './DATA/PostImage/img060.jpg', TO_DATE('2023/03/30 15:40:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com',    10);
+insert into bmt_post values (10060, 'f', '여기는 어디일까요?', '서울시 한강공원 입니다', './DATA/PostImage/img060.jpg', TO_DATE('2023/03/30 15:40:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com',    10);
+
+
+
+insert into bmt_post values (10060, 'f', '여기는 어디일까요?', '서울시 한강공원 입니다', './DATA/PostImage/img060.jpg', TO_DATE('2023/03/30 15:40:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com',    10);
+
+
+insert into bmt_post values (10007, 'f', '아라 부부라이딩 날씨 죽이네요',            '?신차구매후 참으로 오랜만에 라이딩 나왔더니<br>날씨 끝내주네요~ <br>청라에서 계양까지 달리고 왔네요~ <br>정서진에서 햄버거 하나 먹고, 아미노바이탈로 에너지 충전하니 좋네요 ㅎ', './DATA/PostImage/img007.jpg', TO_DATE('2023/03/04 14:56:00', 'YYYY/MM/DD HH24:MI:SS'), 'Ha_Eun0103@bamentum.com', 17);
 
 commit;
 
 
 
 
+insert into bmt_post values (10040, 'f', '장성황룡강 자전거길 공사구간안내', '장성황룡강자전거길중 천변좌로를 새로 말끔히 단장했기에<br>어제 답사를 했읍니다. 지도상 청색선이 기존이 도로이고<br>임곡->오룡교에서  빨간색좌로로 직진하면 쾌적하게 달릴수<br>있을것 같네요 다리가 거의 완공된듯하여 곧 개통될것 같습니다.<br>', './DATA/PostImage/img040.jpg', TO_DATE('2023/02/13 12:43:00', 'YYYY/MM/DD HH24:MI:SS'), 'ESOO0710@bamentum.com',       10);
+
+
+
+insert into bmt_post values (10020, 'f', '태국 자덕들의 성지를 소개합니다 -트렉편-',     '이렇게 전자팔찌를 태킹 태킹해주면 마법의 문이 열리며...게이트를 지나.. <br>이렇게 만남의 다리(?)에서 집결하게 됩니다. ', './DATA/PostImage/img020.jpg', TO_DATE('2022/01/16 14:21:00', 'YYYY/MM/DD HH24:MI:SS'), 'SeongGyu0407@bamentum.com', 10);
+
+*/
