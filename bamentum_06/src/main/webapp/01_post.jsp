@@ -294,7 +294,7 @@
 			
 	        for(let i = 0; i < json.length; i++){
 	        	
-	        	if(json[i].p_file.includes('jpg')){
+	        	if((json[i].p_file.includes('jpg'))||(json[i].p_file.includes('jpeg'))||(json[i].p_file.includes('png'))){
 	        	
 				resultHTML += `
 				
