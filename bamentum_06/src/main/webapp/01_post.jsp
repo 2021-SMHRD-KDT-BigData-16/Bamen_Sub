@@ -302,6 +302,7 @@
 		            
 					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer"><img src="./img/person-circle.svg"> ` + json[i].u_nick  + ` </span></a>
 		            
+		            <button class="Follow"><a href="javascript:PostFollowing('`+ json[i].p_idx+`')" class="follow">팔로우하기</a></button>
 		            <p class="time">   ` + json[i].p_date  + ` : ` +json[i].rn + ` </p>
 		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
 		           
@@ -315,7 +316,6 @@
 					<p class="postbox_body">  ` + json[i].p_content + ` </p>
 					<hr>
 		            <button class="Like"><a href="javascript:likePost('`+ json[i].p_idx+`')" class="Like">좋아요</a></button>
-		            <button class="Follow"><a href="javascript:PostFollowing('`+ json[i].p_idx+`')" class="Follow">팔로윙</a></button>
 		            <button class="post_origin">
 		            
 		            <a href="javascript:onePost('`+ json[i].p_idx+`')" class="Origin">원문보기</a></button>
@@ -327,6 +327,7 @@
 			        <div class = "postbox">
 		            
 					<a class="postbox_head" href="#" style = "text-decoration : none;"> <span class="writer"><img src="./img/person-circle.svg"> ` + json[i].u_nick  + ` </span></a>
+		            <button class="Follow"><a href="javascript:PostFollowing('`+ json[i].p_idx+`')" class="follow">팔로우하기</a></button>
 		            
 		            <p class="time">   ` + json[i].p_date  + ` : ` +json[i].rn + ` </p>
 		            <p class="postbox_neck">   ` + json[i].p_title + ` </p>
@@ -337,7 +338,6 @@
 					<p class="postbox_body">  ` + json[i].p_content + ` </p>
 					<hr>
 		            <button class="Like"><a href="javascript:likePost('`+ json[i].p_idx+`')" class="Like">좋아요</a></button>
-		            <button class="Follow"><a href="javascript:PostFollowing('`+ json[i].p_idx+`')" class="Follow">팔로윙</a></button>
 		            <button class="post_origin">
 		            
 		            <a href="javascript:onePost('`+ json[i].p_idx+`')" class="Origin">원문보기</a></button>

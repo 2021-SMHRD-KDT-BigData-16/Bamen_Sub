@@ -329,7 +329,15 @@ header ul>li {
     color: #ffffff;
 }
 
-
+.button_origin {
+	font-size: 14px;
+	border: 2px solid #05be79 !important;
+    color: #717171;
+    height: 40px;
+	font-weight: bold;    
+    border-radius: 10px;
+    background-color: white;
+}
 
 
 

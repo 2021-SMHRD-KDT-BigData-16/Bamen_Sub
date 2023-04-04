@@ -209,9 +209,9 @@
 
 		    <div class="my_write" style="padding:5px 30px;">
 		        <span class="subject_content" ><%= listPost.get(i).getP_date() %></span>
-		        <span class="subject_content" ><%=listPost.get(i).getP_title() %></span>
-				<button class="post_origin">
-					<a href="javascript:onePost('<%=listPost.get(i).getP_idx()%>')"	class="Origin">원문보기</a>
+		        <span class="subject_content" style="margin-right:200px;"><%=listPost.get(i).getP_title() %></span>
+				<button class="button_origin">
+					<a href="javascript:onePost('<%=listPost.get(i).getP_idx()%>')"	class="Origin" style="text-decoration-line: none; color:black;">원문보기</a>
 				</button>
 		    
 		        <hr>
