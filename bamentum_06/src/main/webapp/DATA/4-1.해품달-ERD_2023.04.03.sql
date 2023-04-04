@@ -317,6 +317,7 @@ commit;
 
 insert into bmt_post values (10501, 'f', '남천동 벚꽃 라이딩', '오늘 야간 근무라 벚꽃 다 떨어지기 전 남천동 삼익비치쪽 라이딩 하고 왔슴다 ㅎ 지금 절정이니 함 다녀오세유 ㅎ??', './DATA/PostImage/img001.jpeg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
 insert into bmt_post values (10502, 'f', '[제주] 강풍 라이딩', '바람 덕분에 공기는 깨끗했지만 쌀쌀하고 자전거가 휘청일 정도로 세게 불어댔습니다 ', './DATA/PostImage/img002.jpg', TO_DATE('2023/03/29 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'aaa@aaa.aaa', 11);
+insert into bmt_post values (10510, 'f', ' 혹시 XX근처에 자전고 두고가신분?? ', ' 오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요!! <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen003.jpg', TO_DATE('2023/04/02 15:40:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com',    10);
 commit;
 
 -- insert into bmt_follow values (bmt_fw_seq.NEXTVAL, 'ddd@ddd.ddd', 'ccc@ccc.ccc', TO_DATE('2023/03/05 11:05:00', 'YYYY/MM/DD HH24:MI:SS'));
@@ -329,48 +330,47 @@ where u.u_email = b.u_email ;
 
 
 
-insert into bmt_post values (10510, 'f', ' 혹시 XX근처에 자전고 두고가신분?? ', ' 오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요!! <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen003.jpg', TO_DATE('2023/04/02 15:40:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com',    10);
-
-insert into bmt_post values (10510, 'f', ' 혹시 XX근처에 자전고 두고가신분?? ',  ' 오늘 한강 산책 갔다가 제가 타던 자전거랑 똑같은 자전거가 있길래 유심히 보고 있었는데요<br> 매점 아주머니께서 며칠동안 자전거 주인이 안 나타난다고 하시더라구요!! <br> 혹시 바멘텀에 차대번호 등록하신분이라면 이 글 보고 연락주실 거 같아서 글 올려봐요!! ', './DATA/PostImage/bamen1.JPG', TO_DATE('2023/04/01 12:45:00', 'YYYY/MM/DD HH24:MI:SS'), 'Gyu_nam1211@bamentum.com', 11);
 
 
 
-/*
-insert into bmt_user values ('bbb@bamentum.com',    'aaa', '홍아름', './DATA/ImgProfil/pf000.jpg', '안녕하세요 아름다운 아름입니다', ' ' , TO_DATE('2023/03/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('ccc@bamentum.com',     'aaa', '심이슬', './DATA/ImgProfil/pf001.jpg', '자전거를 배운지 얼마 안됐어요',               ' ' , TO_DATE('2023/03/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
-insert into bmt_user values ('ddd@bamentum.com',   'aaa', '류이레', './DATA/ImgProfil/pf002.jpg', '자전거령력 4년차 과장입니다',                              ' ' , TO_DATE('2023/03/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('zzz@bamentum.com',     'aaa', '안송이', './DATA/ImgProfil/pf003.jpg', '자전거로 다이어트 효과를 볼 수 있을까요?',                                 ' ' , TO_DATE('2023/03/04 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('fff@bamentum.com',     'aaa', '성비', './DATA/ImgProfil/pf004.jpg', '저의 추천코스는 제주도 둘레길입니다.',                         ' ' , TO_DATE('2023/03/05 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('ggg@bamentum.com',  'aaa', '손나리', './DATA/ImgProfil/pf005.jpg', '자전거 대리점을 운영하는 CEO입니다',                            ' ' , TO_DATE('2023/03/06 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('hhh@bamentum.com',     'aaa', '박사랑', './DATA/ImgProfil/pf006.jpg', '박사랑입니다 ',                             ' ' , TO_DATE('2023/03/07 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('iii@bamentum.com',   'aaa', '탁푸름', './DATA/ImgProfil/pf007.jpg', '탁푸름입니다!', ' ' , TO_DATE('2023/02/08 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('jjj@bamentum.com',  'aaa', '조봄', './DATA/ImgProfil/pf008.jpg', '조봄입니다!', ' ' , TO_DATE('2023/02/09 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+
+insert into bmt_user values ('bbb@bamentum.com', 'aaa', '홍아름', './DATA/ImgProfil/pf000.jpg', '안녕하세요 아름다운 아름입니다', ' ' , TO_DATE('2023/03/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('ccc@bamentum.com', 'aaa', '심이슬', './DATA/ImgProfil/pf001.jpg', '자전거를 배운지 얼마 안됐어요',               ' ' , TO_DATE('2023/03/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
+insert into bmt_user values ('ddd@bamentum.com', 'aaa', '류이레', './DATA/ImgProfil/pf002.jpg', '자전거령력 4년차 과장입니다',                              ' ' , TO_DATE('2023/03/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('zzz@bamentum.com', 'aaa', '안송이', './DATA/ImgProfil/pf003.jpg', '자전거로 다이어트 효과를 볼 수 있을까요?',                                 ' ' , TO_DATE('2023/03/04 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('fff@bamentum.com', 'aaa', '성비', './DATA/ImgProfil/pf004.jpg', '저의 추천코스는 제주도 둘레길입니다.',                         ' ' , TO_DATE('2023/03/05 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('ggg@bamentum.com', 'aaa', '손나리', './DATA/ImgProfil/pf005.jpg', '자전거 대리점을 운영하는 CEO입니다',                            ' ' , TO_DATE('2023/03/06 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('hhh@bamentum.com', 'aaa', '박사랑', './DATA/ImgProfil/pf006.jpg', '박사랑입니다 ',                             ' ' , TO_DATE('2023/03/07 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('iii@bamentum.com', 'aaa', '탁푸름', './DATA/ImgProfil/pf007.jpg', '탁푸름입니다!', ' ' , TO_DATE('2023/02/08 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('jjj@bamentum.com', 'aaa', '조봄', './DATA/ImgProfil/pf008.jpg', '조봄입니다!', ' ' , TO_DATE('2023/02/09 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('kkk@bamentum.com', 'aaa', '신하루', './DATA/ImgProfil/pf009.jpg', '신하루입니다', ' ' , TO_DATE('2023/02/10 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('lll@bamentum.com',    'aaa', '정광', './DATA/ImgProfil/pf010.jpg', '정광입니다', ' ' , TO_DATE('2023/02/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('mmm@bamentum.com',    'aaa', '추호', './DATA/ImgProfil/pf011.jpg', '입니다', ' ' , TO_DATE('2023/02/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('nnn@bamentum.com',  'aaa', '최혁', './DATA/ImgProfil/pf012.jpg', '입니다', ' ' , TO_DATE('2023/02/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('ooo@bamentum.com',       'aaa', '남철', './DATA/ImgProfil/pf013.jpg', '입니다', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('ppp@bamentum.com',     'aaa', '설건', './DATA/ImgProfil/pf014.jpg', '입니다', ' ' , TO_DATE('2023/02/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('qqq@bamentum.com',       'aaa', '설혁', './DATA/ImgProfil/pf015.jpg', '입니다', ' ' , TO_DATE('2023/02/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('rrr@bamentum.com',  'aaa', '고호', './DATA/ImgProfil/pf016.jpg', '입니다', ' ' , TO_DATE('2023/02/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('sss@bamentum.com',    'aaa', '오건', './DATA/ImgProfil/pf017.jpg', '입니다', ' ' , TO_DATE('2023/02/18 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('ttt@bamentum.com',   'aaa', '정리', './DATA/ImgProfil/pf018.jpg', '입니다', ' ' , TO_DATE('2023/02/19 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('uuu@bamentum.com',   'aaa', '노리', './DATA/ImgProfil/pf019.jpg', '입니다', ' ' , TO_DATE('2023/02/20 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('vvv@bamentum.com',    'aaa', '성현', './DATA/ImgProfil/pf020.jpg', '입니다 ', ' ' , TO_DATE('2023/02/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('www@bamentum.com',    'aaa', '문은', './DATA/ImgProfil/pf000.jpg', '입니다', ' ' , TO_DATE('2023/02/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('xxx@bamentum.com',     'aaa', '봉설', './DATA/ImgProfil/pf001.jpg', '입니다',               ' ' , TO_DATE('2023/02/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
-insert into bmt_user values ('yyy@bamentum.com',   'aaa', '하진', './DATA/ImgProfil/pf002.jpg', '입니다',                              ' ' , TO_DATE('2023/02/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('111@bamentum.com',     'aaa', '윤은', './DATA/ImgProfil/pf003.jpg', '입니다',                                 ' ' , TO_DATE('2023/02/04 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('222@bamentum.com',     'aaa', '전설', './DATA/ImgProfil/pf004.jpg', '입니다',                         ' ' , TO_DATE('2023/02/05 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('333@bamentum.com',  'aaa', '조으뜸', './DATA/ImgProfil/pf005.jpg', '입니다',                            ' ' , TO_DATE('2023/02/06 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('lll@bamentum.com', 'aaa', '정광', './DATA/ImgProfil/pf010.jpg', '정광입니다', ' ' , TO_DATE('2023/02/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('mmm@bamentum.com', 'aaa', '추호', './DATA/ImgProfil/pf011.jpg', '입니다', ' ' , TO_DATE('2023/02/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('nnn@bamentum.com', 'aaa', '최혁', './DATA/ImgProfil/pf012.jpg', '입니다', ' ' , TO_DATE('2023/02/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('ooo@bamentum.com', 'aaa', '남철', './DATA/ImgProfil/pf013.jpg', '입니다', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('ppp@bamentum.com', 'aaa', '설건', './DATA/ImgProfil/pf014.jpg', '입니다', ' ' , TO_DATE('2023/02/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('qqq@bamentum.com', 'aaa', '설혁', './DATA/ImgProfil/pf015.jpg', '입니다', ' ' , TO_DATE('2023/02/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('rrr@bamentum.com', 'aaa', '고호', './DATA/ImgProfil/pf016.jpg', '입니다', ' ' , TO_DATE('2023/02/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('sss@bamentum.com', 'aaa', '오건', './DATA/ImgProfil/pf017.jpg', '입니다', ' ' , TO_DATE('2023/02/18 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('ttt@bamentum.com', 'aaa', '정리', './DATA/ImgProfil/pf018.jpg', '입니다', ' ' , TO_DATE('2023/02/19 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('uuu@bamentum.com', 'aaa', '노리', './DATA/ImgProfil/pf019.jpg', '입니다', ' ' , TO_DATE('2023/02/20 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('vvv@bamentum.com', 'aaa', '성현', './DATA/ImgProfil/pf020.jpg', '입니다 ', ' ' , TO_DATE('2023/02/21 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('www@bamentum.com', 'aaa', '문은', './DATA/ImgProfil/pf000.jpg', '입니다', ' ' , TO_DATE('2023/02/01 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('xxx@bamentum.com', 'aaa', '봉설', './DATA/ImgProfil/pf001.jpg', '입니다',               ' ' , TO_DATE('2023/02/02 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' '  ) ;
+insert into bmt_user values ('yyy@bamentum.com', 'aaa', '하진', './DATA/ImgProfil/pf002.jpg', '입니다',                              ' ' , TO_DATE('2023/02/03 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('111@bamentum.com', 'aaa', '윤은', './DATA/ImgProfil/pf003.jpg', '입니다',                                 ' ' , TO_DATE('2023/02/04 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('222@bamentum.com', 'aaa', '전설', './DATA/ImgProfil/pf004.jpg', '입니다',                         ' ' , TO_DATE('2023/02/05 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('333@bamentum.com', 'aaa', '조으뜸', './DATA/ImgProfil/pf005.jpg', '입니다',                            ' ' , TO_DATE('2023/02/06 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('444@bamentum.com',     'aaa', '복미르', './DATA/ImgProfil/pf006.jpg', '입니다',                             ' ' , TO_DATE('2023/02/07 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('555@bamentum.com',   'aaa', '문하다', './DATA/ImgProfil/pf007.jpg', '입니다', ' ' , TO_DATE('2023/02/08 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('666@bamentum.com',  'aaa',' 예하늬', './DATA/ImgProfil/pf008.jpg', '입니다', ' ' , TO_DATE('2023/02/09 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('777@bamentum.com', 'aaa', '표햇빛', './DATA/ImgProfil/pf009.jpg', '입니다', ' ' , TO_DATE('2023/02/10 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('888@bamentum.com',    'aaa', '개나리', './DATA/ImgProfil/pf010.jpg', '입니다', ' ' , TO_DATE('2023/02/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+
+
 insert into bmt_user values ('999@bamentum.com',    'aaa', '김허브', './DATA/ImgProfil/pf011.jpg', '입니다', ' ' , TO_DATE('2023/02/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('000@bamentum.com',  'aaa', '조한슨', './DATA/ImgProfil/pf012.jpg', '입니다', ' ' , TO_DATE('2023/02/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('1212@bamentum.com',       'aaa', '제이슨, './DATA/ImgProfil/pf013.jpg', '입니다~', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('1212@bamentum.com',       'aaa', '제이슨', './DATA/ImgProfil/pf013.jpg', '입니다~', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('2323@bamentum.com',     'aaa', '김세라', './DATA/ImgProfil/pf014.jpg', '입니다', ' ' , TO_DATE('2023/02/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('3434@bamentum.com',       'aaa', '이수지', './DATA/ImgProfil/pf015.jpg', '입니다', ' ' , TO_DATE('2023/02/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('4545@bamentum.com',  'aaa', '토마스', './DATA/ImgProfil/pf016.jpg', '입니다', ' ' , TO_DATE('2023/02/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
@@ -416,7 +416,7 @@ insert into bmt_user values ('7@bamentum.com', 'aaa', '표햇빛', './DATA/ImgProfi
 insert into bmt_user values ('8@bamentum.com',    'aaa', '개나리', './DATA/ImgProfil/pf010.jpg', '입니다', ' ' , TO_DATE('2023/02/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('9@bamentum.com',    'aaa', '김허브', './DATA/ImgProfil/pf011.jpg', '입니다', ' ' , TO_DATE('2023/02/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('0@bamentum.com',  'aaa', '조한슨', './DATA/ImgProfil/pf012.jpg', '입니다', ' ' , TO_DATE('2023/02/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('12@bamentum.com',       'aaa', '제이슨, './DATA/ImgProfil/pf013.jpg', '입니다~', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('12@bamentum.com',       'aaa', '제이슨', './DATA/ImgProfil/pf013.jpg', '입니다~', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('23@bamentum.com',     'aaa', '김세라', './DATA/ImgProfil/pf014.jpg', '입니다', ' ' , TO_DATE('2023/02/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('34@bamentum.com',       'aaa', '이수지', './DATA/ImgProfil/pf015.jpg', '입니다', ' ' , TO_DATE('2023/02/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('45@bamentum.com',  'aaa', '토마스', './DATA/ImgProfil/pf016.jpg', '입니다', ' ' , TO_DATE('2023/02/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
@@ -461,7 +461,7 @@ insert into bmt_user values ('77@bamentum.com', 'aaa', '표햇빛', './DATA/ImgProf
 insert into bmt_user values ('88@bamentum.com',    'aaa', '개나리', './DATA/ImgProfil/pf010.jpg', '입니다', ' ' , TO_DATE('2023/02/11 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('99@bamentum.com',    'aaa', '김허브', './DATA/ImgProfil/pf011.jpg', '입니다', ' ' , TO_DATE('2023/02/12 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('00@bamentum.com',  'aaa', '조한슨', './DATA/ImgProfil/pf012.jpg', '입니다', ' ' , TO_DATE('2023/02/13 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
-insert into bmt_user values ('122@bamentum.com',       'aaa', '제이슨, './DATA/ImgProfil/pf013.jpg', '입니다~', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
+insert into bmt_user values ('122@bamentum.com',       'aaa', '제이슨', './DATA/ImgProfil/pf013.jpg', '입니다~', ' ' , TO_DATE('2023/02/14 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('233@bamentum.com',     'aaa', '김세라', './DATA/ImgProfil/pf014.jpg', '입니다', ' ' , TO_DATE('2023/02/15 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('344@bamentum.com',       'aaa', '이수지', './DATA/ImgProfil/pf015.jpg', '입니다', ' ' , TO_DATE('2023/02/16 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
 insert into bmt_user values ('455@bamentum.com',  'aaa', '토마스', './DATA/ImgProfil/pf016.jpg', '입니다', ' ' , TO_DATE('2023/02/17 11:00:00', 'YYYY/MM/DD HH24:MI:SS'), ' ' ) ;
