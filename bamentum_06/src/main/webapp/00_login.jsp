@@ -118,11 +118,5 @@
 
     </script>
 	
-<!-- 	
-	<nav>
-		<a href="PublicPage.do">자유게시판</a>
-	</nav>
- -->	 
-	
 </body>
 </html>
